@@ -20,10 +20,10 @@ Pod::Spec.new do |s|
   s.framework = "UIKit"
   s.dependency 'IQKeyboardManagerSwift', '~> 6.5.10'
   
-  s.source_files = "swift-sestek-webchat/**/*.{swift}"
+  s.source_files = "Source/swift-sestek-webchat/**/*.{swift}"
   
-  s.resources = "swift-sestek-webchat/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-  s.resource_bundles = {'SestekWebchatBundle' => ['swift-sestek-webchat/Resources/*.*']}
+  s.resources = "Source/swift-sestek-webchat/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resource_bundles = {'SestekWebchatBundle' => ['Source/swift-sestek-webchat/Resources/*.*']}
   
   s.swift_version = "5.0"
   
