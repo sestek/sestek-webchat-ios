@@ -1,0 +1,6 @@
+framework module sestek_webchat_ios {
+  umbrella header "sestek-webchat-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

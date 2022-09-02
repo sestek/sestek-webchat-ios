@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_swift_sestek_webchat_swift_sestek_webchatTests : NSObject
+@end
+@implementation PodsDummy_Pods_swift_sestek_webchat_swift_sestek_webchatTests
+@end

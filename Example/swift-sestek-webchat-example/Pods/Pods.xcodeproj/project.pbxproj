@@ -1,0 +1,1797 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0178493C09B179043EEE5FBC04252444 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7292A2086FD46B28F6C2D34289753C49 /* Util.swift */; };
+		041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74FA4F54F1DC2616F38D44D3CDC55DE /* IQInvocation.swift */; };
+		04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF2A5CAEE3965380B78E407FF383E3 /* IQUIView+Hierarchy.swift */; };
+		0659019C70402430B4317FD0B224280F /* HttpClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BF9164FD100921EDD418D16727E5B7 /* HttpClientProtocol.swift */; };
+		0774537562C1232AC7F5FD053D5BBF4B /* HandshakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABF2BFA93C07226B5BB5719D5BCDCB /* HandshakeProtocol.swift */; };
+		08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F38298278DA6564A5853E702159B38 /* IQKeyboardManager+OrientationNotification.swift */; };
+		090A35C848A60590469311A8CB4AB778 /* DefaultTransportFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFA4F5DA3ADC794150495CF62B98D55 /* DefaultTransportFactory.swift */; };
+		09C9F7F62B2C025E2027DFCE8BDBC666 /* ReconnectPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1F1D90312E1DABF78A5423147D116 /* ReconnectPolicy.swift */; };
+		0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615AB13CC06C5DFC09B42ED8FC44B9CB /* IQKeyboardManagerConstantsInternal.swift */; };
+		12BD65C39A91AFF00916C8A93DE023CC /* ConversationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45573D38227F2755579F1388F93513 /* ConversationRequestModel.swift */; };
+		1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B0F7BF78C1D89726BA66A586C2ADAA /* IQToolbar.swift */; };
+		1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EB244AD79873584DF5275A31D8E432 /* IQKeyboardManagerSwift-dummy.m */; };
+		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72854F72E0889CC05AD906C479CBA47C /* IQKeyboardManager+Toolbar.swift */; };
+		1E9C41B95A08C30BFF3C195D8BFD0C56 /* knovvu_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED63C46798690F4223C829646609AC /* knovvu_logo@2x.png */; };
+		1F93449C8478FC40F58D2691001C2A32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7948F2836D6E5A2C382F373805A98 /* IQTitleBarButtonItem.swift */; };
+		20BB7935CE389E13DD6E553B248D9CAE /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E431A23A5BB262A9571F98194BF8D /* SignalRError.swift */; };
+		237BC814BCA7285DA800432C29EA00C0 /* knovvu_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73ED63C46798690F4223C829646609AC /* knovvu_logo@2x.png */; };
+		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A1802E658439BC4380D98DB8DC5F3 /* IQPreviousNextView.swift */; };
+		26E9B876F2E542AE6AA6E45CBC1F832D /* knovvu_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F07CB0C9E34991428942A3F370CD95D4 /* knovvu_logo.png */; };
+		280BE4B55B9CC0A98256C4EEBE2205CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		28823008E6235407970062756B3403F2 /* HubConnectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1502B5236E8D3A2ED2895380A78F8F /* HubConnectionExtensions.swift */; };
+		2C17A2C7C374299E9B4BDA03EA84AD12 /* ChatRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9719A0605C48BB20A8BFE2CFE9CE3A /* ChatRightTableViewCell.swift */; };
+		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA271F3A9B93DF8620F90EF07D6566 /* IQKeyboardManager+Internal.swift */; };
+		2DC0E76AFB9228F093E36BD13602B093 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92D8D8706F51E47B27EDFEB3EE71008 /* CustomButton.swift */; };
+		2E4CD60085BF84BECF493987FA30958B /* SestekWebChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC720FD59DD3D8632004244CFC00BA0 /* SestekWebChat.swift */; };
+		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
+		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C7104272A3D4FF208B5743BAB1FD2 /* IQKeyboardManager+Debug.swift */; };
+		31D66175916F1FF033D88EC90FFF49E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		32F3597A56C5555A1CD187194DA1BAF3 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9E58371D49E6DDC0F89F2272C3360 /* TransferFormat.swift */; };
+		331AFC68644B05C8666C54906C1E59D1 /* knovvu_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65493BB0CC5DF454CC71EDF260C75385 /* knovvu_logo@3x.png */; };
+		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280CDA65D22B3380E8F3793AD676448 /* IQUIView+IQKeyboardToolbar.swift */; };
+		3550F992FDFBDD1F71C3CEB4FE5FC8D1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DFDFDD919FCB487E9D1690A5174E3A /* UIViewController+Extensions.swift */; };
+		36E2A6F3AA1435612A6CF0200C41A22B /* DefaultHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5302BC304446E4375C06168EB0EAA1C /* DefaultHttpClient.swift */; };
+		399F19E131F7E645D0DA4EB2276C0BEA /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C25EB56992D3EBB1938E49272302F /* UIColor+Extension.swift */; };
+		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30101B5B5E098E3C8AF82705FC9153 /* IQUITextFieldView+Additions.swift */; };
+		4084EA3EE8EF71BD6130E0537ECE5673 /* ChatRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC83F56B592583443AE632A8A2A410FE /* ChatRightTableViewCell.xib */; };
+		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D76EF06E4464FFC6A5C773DB0BBE58 /* IQBarButtonItem.swift */; };
+		42AB0DD9DC0A208977FF1B99083FE666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		47A398CFC9B41728ECB9AE63A12C45A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
+		47E57F3114E203D881049C6D98255370 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0D747652BAB7F92FFFAE137A8D5341 /* Connection.swift */; };
+		4B05DC97E038B312B9D53668CD5920FA /* sestek-webchat-ios-SestekWebchatBundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AB626EA019304D01F19FC6AB8D6AE5C /* sestek-webchat-ios-SestekWebchatBundle */; };
+		4E8D331CA0306A7D5F39BFABBB30F7F1 /* ChatLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76605A972D65AC601C16EC38F52C52A /* ChatLeftTableViewCell.xib */; };
+		538004233DE1AE3AD09BB6CE6E1EAEA9 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98812A3121E08C2FE387A3F5F21FCFFC /* HttpConnection.swift */; };
+		5657FA4086D3E0825B17BDA11A9D8E79 /* UIViewController+loadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB0D0DD1D590E7FDDA88BCDEF6F4DF5 /* UIViewController+loadNib.swift */; };
+		593322CC25353B0EBC603EF2346E5A7D /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799B934A9276AA57F23603ECDF7C7E51 /* ImageCollectionViewCell.xib */; };
+		5F5574663D1EC777CA315A4B2CDC0D79 /* UITableView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B96331184A53C2F2FDBAD0FC41E449 /* UITableView+register.swift */; };
+		5F60800A3A84E074735ECBE5D6FD0D62 /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7069C0BF2404B1F3E3FF41491DC2582E /* HubConnectionBuilder.swift */; };
+		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		63CA991E63BFC677897DCAA64BCA15DB /* ServerInvocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40AFDB4EF4061494AEC6F884BC435E64 /* ServerInvocationHandler.swift */; };
+		648F7DFAEB9DD8C6B74494C0081D04AD /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736A8EA19A6E9D2259668E0F59AD05C /* NegotiationResponse.swift */; };
+		66282A986BA3CA74FFC84916BC05A526 /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2E5381440055F289913664F83A9C5 /* HubConnection.swift */; };
+		6A259D8ECA0477FA4632BB2BECB79EFC /* ChatLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A45757260BDDA26473B833096B2E22 /* ChatLeftTableViewCell.swift */; };
+		6A32A3BC8EC33AD61F8065B26632F11D /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6A10B9E8ACD8ED07B6247C8999DB15 /* TransportDelegate.swift */; };
+		6C6CF8AD83415B6B3806D57A29FFFA36 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7ACF8FBA12D0AD1722254463EAE59 /* TransportType.swift */; };
+		6FB1C0663AB738F2CBBBC9A4E8D0494F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17593C7A58BDA80DECD799D0A2E0FD2D /* ImageCollectionViewCell.swift */; };
+		70C2106425FD1D3A349039FE069DF236 /* ReconnectableConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABBCAFEF28380D73C216AE5F320EE70 /* ReconnectableConnection.swift */; };
+		7599192F2B2467FE62AE57DA9184C051 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DD75498D1C36EC1441BCDCC45213D2 /* Transport.swift */; };
+		75AA5726EFAFF36CE30B5FBCFF2DD8CE /* ChatTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116C405ACA9E4BC2E7C2D03F83D06A7 /* ChatTableViewSource.swift */; };
+		76A7DD2AB1A328B5CFFAD447D901F5D1 /* Pods-swift-sestek-webchat-exampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 384067FEFCA8399A421A83A672C00AB0 /* Pods-swift-sestek-webchat-exampleTests-dummy.m */; };
+		79A420526A96B049B31164D23C21E975 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677FFFAB4C78DC09EC30A0BDB4BD1AB1 /* UIImage+Extension.swift */; };
+		79F164DDA7E30C08736705FE84FA5894 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F435A00166626711367CE2DDF30E9C /* AlertUtil.swift */; };
+		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A5E28C072A0624118F840538984D /* IQNSArray+Sort.swift */; };
+		7F4D694BD41EF761DE71BC367CDF8B84 /* Pods-swift-sestek-webchat-example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08BB7ACB6046C442FE3E108C2704910E /* Pods-swift-sestek-webchat-example-dummy.m */; };
+		7FC4AD80045FF8A86608DA257D689875 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3B2F9182997D98E6C6D2400BFB5B39 /* UIImageView+Extensions.swift */; };
+		7FF4BEA1B36CECEE26990325EE6F4A0F /* WebsocketsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9343A49620E2686C4215F7C488702CFC /* WebsocketsTransport.swift */; };
+		828A161089B0841E89E32B230B5F375E /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59778955F16DD75FBB5B6CE11506F893 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m */; };
+		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7C8A5A21E510A303D762337DF7B23 /* IQKeyboardManagerConstants.swift */; };
+		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B74522135041E0DF1BF1033D9B174 /* IQKeyboardManager.swift */; };
+		86E0C132853F9A4692AA5EE44D47B69D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29B2C035B69710F2C2670E12737F98 /* ChatViewController.swift */; };
+		90B9D94245B072E1FC38440B48DF6C79 /* sestek-webchat-ios-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A607FE31E567A3628B224C71EC4A2CD9 /* sestek-webchat-ios-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90C03A726219CB6C45329C03D1A13292 /* HttpConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22DDFC88B6C5C288B99FE19B78F74A /* HttpConnectionOptions.swift */; };
+		918C97838C106D47D4F666E2C1AB8AA6 /* knovvu_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F07CB0C9E34991428942A3F370CD95D4 /* knovvu_logo.png */; };
+		98535A2CBCF7B46E748BFCC1B7D93978 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580994CC04E604D8AC445B69ED589AF /* DateFormatter+Extensions.swift */; };
+		987E82CBDF475C4980B7C84ECDF15A4F /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EDE0E9DC006D62038715F560C054B /* Bundle+Extension.swift */; };
+		98C9BFA5C34197526BC2924A0893E7E7 /* CodableHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE39909F693C109DFA853A17EF88027 /* CodableHelpers.swift */; };
+		9CE6544DE80F435CFD46EDB56A42E64A /* HubConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A0D3316B581EB41F95B6D01ED2430 /* HubConnectionOptions.swift */; };
+		9ED4672C705F6C5545A3740767533F9F /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D96919C937F48DF0A4C6904C0DDABC8 /* ConnectionDelegate.swift */; };
+		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AC1854EF5DFAE2B65F9F7F823EA27 /* IQKeyboardManager+UIKeyboardNotification.swift */; };
+		A520FE54A88AF88BEF7C0A758485EB0D /* UIView+makeShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD17814169851EC2009CF7B248086BBC /* UIView+makeShadow.swift */; };
+		A5D4353F7C4BC22097108D527EAAF191 /* ConnectionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEFD15E5C14DB76C9D610C5B7A08BF7 /* ConnectionInfoModel.swift */; };
+		A60052698D928B7929BE47C644B846E7 /* knovvu_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65493BB0CC5DF454CC71EDF260C75385 /* knovvu_logo@3x.png */; };
+		A8BDD84FCFC1EBFD28B68D5793CE997C /* HubConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337BBF5FA9CB87C945B6D40D7521FF1E /* HubConnectionDelegate.swift */; };
+		AD8C9838D1C143307FD64BF03CDF4F25 /* HubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013795E028422BBA1534B14023AEF34 /* HubProtocol.swift */; };
+		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
+		B5896F1B767C80DC1137675E7A9EC025 /* UICollectionView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA9FEBE826164DCAAAE7745567163 /* UICollectionView+register.swift */; };
+		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A298EC196A378BD5C7FE4A436CBD1BB9 /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
+		BB33B757206D3BAC0FF9BC3563DCF476 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B200E3C399AB0ADB62E2A8FE2C06B299 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE962545E69E3CF4D22703F61C54C3C4 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CC4AC1F74CA80E3E42E43685249B6 /* String+Extensions.swift */; };
+		C0AD263CF4825C902F6115D00894AE69 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FE2819641748A656DF95CD1DC37DC4 /* Logger.swift */; };
+		C3366791AA9408B74AE082D0DD3D6E4A /* UITableViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8F34D1100C550EBF6CA041D162CA53 /* UITableViewCell+identifier.swift */; };
+		C5A5AF099BB8D4C706C597E7707EE429 /* LongPollingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89AE8A3BA07703EEE1AFC06D57D058 /* LongPollingTransport.swift */; };
+		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137093D8E49217C090D374983F152184 /* IQKeyboardReturnKeyHandler.swift */; };
+		C9672F602A684509C450E73FE0AF2E91 /* SignalRConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C3F498846E13BF23250AB8664BCB80 /* SignalRConnectionManager.swift */; };
+		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C69CCD080DCE1292F31874E43B91D /* IQUIViewController+Additions.swift */; };
+		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E6BC7C022A99DF59AD0ED4B5597B7 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
+		D6F941575608159FDCEE97F003E7D68C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE3C7006E1043354026C08854D14FA3 /* Date+Extensions.swift */; };
+		D88A4648D28666B731DDF41D1BF8BF25 /* Pods-swift-sestek-webchat-exampleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C93F3493B26E55C9F2389ABD75CEABE /* Pods-swift-sestek-webchat-exampleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D95D30568D480D85759896BB9BC6D571 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C70AF5BAA458EABC235ED6736B1EE55 /* ChatModel.swift */; };
+		DBCA67584B3DB0812631666CE9F80164 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525E6C22A07A3B2AEA70796B4E856A0C /* HttpResponse.swift */; };
+		DC441995805193795D53D84EED323D8D /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243B290EAF51BD4CE93308550FAD6603 /* Language.swift */; };
+		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368438D51285F622AEC4CA45FB117A53 /* IQUIScrollView+Additions.swift */; };
+		E401D9E576C44BD4D89F0B4E9D5E5885 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C3C40644BFE49F8E34B433FA79DC00 /* ChatViewController.xib */; };
+		E470454599FABFD42598FCE8B55364C7 /* MessageDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D932F3EDBE566862782C3420E04A542 /* MessageDetailResponseModel.swift */; };
+		E6F7D0D4CED19EB6C792716DB749A829 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780DF3C6ED6BE6A25E3C4F4E68852A3 /* TextHelper.swift */; };
+		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE3BBAB67A853B21025B246B315134 /* IQTextView.swift */; };
+		E7D21330E68B1B5070E79C9965FDB4E4 /* sestek-webchat-ios-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B07C81AEC8FB8213EE49815BEB882B /* sestek-webchat-ios-dummy.m */; };
+		EE5B72D5E97C412D79302ECF8C0451FA /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B59E1A01E2C7814C7D05BDB2028FCD /* StreamHandle.swift */; };
+		F1CACFF3CF40E3CBEF9ACA0785C02C99 /* Pods-swift-sestek-webchat-example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DD31CDC713251143E31D9A6F0A3DB2B /* Pods-swift-sestek-webchat-example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA75D03BE22858F15248EF62C270F15 /* IQKeyboardManager+Position.swift */; };
+		F6B3012A1472464C4CE35186565C82A5 /* UICollectionViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD692A671370D0D3B7C1222F3ACF1B3E /* UICollectionViewCell+identifier.swift */; };
+		F72F76749582F767CA4FCD7CC1F936A4 /* JSONHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1050F443115730F68D90AA1C60B895 /* JSONHubProtocol.swift */; };
+		F8EDE04A2E35616D781FEC1E8A34621B /* FloatingRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD0313C083DD2FDDEF6F48D2B69095 /* FloatingRoundedButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E30F3F57FEC623A1833C8739F038E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF2FD36C319F5D1A6096B84AE13DF7C4;
+			remoteInfo = "sestek-webchat-ios";
+		};
+		81E7FC501408AF49A3FBEFAD0891EA57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		8A07562EED3C8FDA361F896DCD666BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF2FD36C319F5D1A6096B84AE13DF7C4;
+			remoteInfo = "sestek-webchat-ios";
+		};
+		94A0450840549CEA00D84F9BE49D563E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		A6B791331C955272FD63D274CB1B91F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		B2AF7F082BE2AB108EA8D87E5832EF8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 753921F0945FBA7ADC91AD7E03AA2F15;
+			remoteInfo = "sestek-webchat-ios-SestekWebchatBundle";
+		};
+		FF4E296D5BCDC681D0B0CAFC61286C7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C758FE246D695F0CE93F68BCB3C3729;
+			remoteInfo = "Pods-swift-sestek-webchat-example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00FE2819641748A656DF95CD1DC37DC4 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		05722F804887EE820DA9A6F10834458A /* Pods-swift-sestek-webchat-example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swift-sestek-webchat-example"; path = Pods_swift_sestek_webchat_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0580994CC04E604D8AC445B69ED589AF /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		06399801A796B608E6E42E80292C69D3 /* Pods-swift-sestek-webchat-exampleTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swift-sestek-webchat-exampleTests"; path = Pods_swift_sestek_webchat_exampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0780DF3C6ED6BE6A25E3C4F4E68852A3 /* TextHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		08BB7ACB6046C442FE3E108C2704910E /* Pods-swift-sestek-webchat-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-sestek-webchat-example-dummy.m"; sourceTree = "<group>"; };
+		0C0D747652BAB7F92FFFAE137A8D5341 /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		0E4C25EB56992D3EBB1938E49272302F /* UIColor+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		137093D8E49217C090D374983F152184 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		13C3F498846E13BF23250AB8664BCB80 /* SignalRConnectionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignalRConnectionManager.swift; sourceTree = "<group>"; };
+		15E4538C69FCFCE8F18F606B5786728E /* Pods-swift-sestek-webchat-exampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-exampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		17593C7A58BDA80DECD799D0A2E0FD2D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1AEFD15E5C14DB76C9D610C5B7A08BF7 /* ConnectionInfoModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionInfoModel.swift; sourceTree = "<group>"; };
+		243B290EAF51BD4CE93308550FAD6603 /* Language.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		24BF9164FD100921EDD418D16727E5B7 /* HttpClientProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpClientProtocol.swift; sourceTree = "<group>"; };
+		24C3C40644BFE49F8E34B433FA79DC00 /* ChatViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		284A0D3316B581EB41F95B6D01ED2430 /* HubConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubConnectionOptions.swift; sourceTree = "<group>"; };
+		293C7104272A3D4FF208B5743BAB1FD2 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
+		2AB626EA019304D01F19FC6AB8D6AE5C /* sestek-webchat-ios-SestekWebchatBundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "sestek-webchat-ios-SestekWebchatBundle"; path = SestekWebchatBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D21D041F487DD329F4D7D37B0F0767B /* sestek-webchat-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "sestek-webchat-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		2D22DDFC88B6C5C288B99FE19B78F74A /* HttpConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpConnectionOptions.swift; sourceTree = "<group>"; };
+		2DBB1613E5A0BC4CAF3DE161C1976D06 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
+		2DC1F1D90312E1DABF78A5423147D116 /* ReconnectPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReconnectPolicy.swift; sourceTree = "<group>"; };
+		2F52550AD1ACBAA22F54ABB6F6614A9F /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
+		30A45757260BDDA26473B833096B2E22 /* ChatLeftTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatLeftTableViewCell.swift; sourceTree = "<group>"; };
+		337BBF5FA9CB87C945B6D40D7521FF1E /* HubConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubConnectionDelegate.swift; sourceTree = "<group>"; };
+		368438D51285F622AEC4CA45FB117A53 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		36DD75498D1C36EC1441BCDCC45213D2 /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		384067FEFCA8399A421A83A672C00AB0 /* Pods-swift-sestek-webchat-exampleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-sestek-webchat-exampleTests-dummy.m"; sourceTree = "<group>"; };
+		3886E5DA241F77D543A8B1CD33312DDA /* sestek-webchat-ios.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "sestek-webchat-ios.modulemap"; sourceTree = "<group>"; };
+		389E5D7CE2A343710E65ABDB8929D043 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-frameworks.sh"; sourceTree = "<group>"; };
+		3AAA271F3A9B93DF8620F90EF07D6566 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
+		3C93F3493B26E55C9F2389ABD75CEABE /* Pods-swift-sestek-webchat-exampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-sestek-webchat-exampleTests-umbrella.h"; sourceTree = "<group>"; };
+		3D932F3EDBE566862782C3420E04A542 /* MessageDetailResponseModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessageDetailResponseModel.swift; sourceTree = "<group>"; };
+		3DAD0313C083DD2FDDEF6F48D2B69095 /* FloatingRoundedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FloatingRoundedButton.swift; sourceTree = "<group>"; };
+		40AFDB4EF4061494AEC6F884BC435E64 /* ServerInvocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerInvocationHandler.swift; sourceTree = "<group>"; };
+		4280CDA65D22B3380E8F3793AD676448 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		43ABF2BFA93C07226B5BB5719D5BCDCB /* HandshakeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HandshakeProtocol.swift; sourceTree = "<group>"; };
+		4A776F7E4EA744380F7BC7B0B89091E0 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4AA9E58371D49E6DDC0F89F2272C3360 /* TransferFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransferFormat.swift; sourceTree = "<group>"; };
+		4BB002435DC3C90726424E45694FDEEE /* Pods-swift-sestek-webchat-exampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-sestek-webchat-exampleTests.modulemap"; sourceTree = "<group>"; };
+		4C1502B5236E8D3A2ED2895380A78F8F /* HubConnectionExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubConnectionExtensions.swift; sourceTree = "<group>"; };
+		4D96919C937F48DF0A4C6904C0DDABC8 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
+		4EA75D03BE22858F15248EF62C270F15 /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
+		508E431A23A5BB262A9571F98194BF8D /* SignalRError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignalRError.swift; sourceTree = "<group>"; };
+		525E6C22A07A3B2AEA70796B4E856A0C /* HttpResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		59778955F16DD75FBB5B6CE11506F893 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m"; sourceTree = "<group>"; };
+		5ABBCAFEF28380D73C216AE5F320EE70 /* ReconnectableConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReconnectableConnection.swift; sourceTree = "<group>"; };
+		5D45573D38227F2755579F1388F93513 /* ConversationRequestModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConversationRequestModel.swift; sourceTree = "<group>"; };
+		5F8F34D1100C550EBF6CA041D162CA53 /* UITableViewCell+identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+identifier.swift"; sourceTree = "<group>"; };
+		615AB13CC06C5DFC09B42ED8FC44B9CB /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		622522F3D9942976E962F1137B3D6A60 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests"; path = Pods_swift_sestek_webchat_example_swift_sestek_webchat_exampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C7C8A5A21E510A303D762337DF7B23 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		64B0F7BF78C1D89726BA66A586C2ADAA /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
+		64F364E1BCAB356A85F5CE407D245861 /* Pods-swift-sestek-webchat-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-example.debug.xcconfig"; sourceTree = "<group>"; };
+		65493BB0CC5DF454CC71EDF260C75385 /* knovvu_logo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "knovvu_logo@3x.png"; sourceTree = "<group>"; };
+		677FFFAB4C78DC09EC30A0BDB4BD1AB1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		67B07C81AEC8FB8213EE49815BEB882B /* sestek-webchat-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "sestek-webchat-ios-dummy.m"; sourceTree = "<group>"; };
+		680DF06913B1491940727EAE40E41754 /* Pods-swift-sestek-webchat-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-sestek-webchat-example.modulemap"; sourceTree = "<group>"; };
+		68B5A5E28C072A0624118F840538984D /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		6A1E4870586DDF32DD9AA78CF4007928 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-Info.plist"; sourceTree = "<group>"; };
+		6D11C768D9065710F81ADD1B2FE69158 /* sestek-webchat-ios-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "sestek-webchat-ios-prefix.pch"; sourceTree = "<group>"; };
+		7013795E028422BBA1534B14023AEF34 /* HubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubProtocol.swift; sourceTree = "<group>"; };
+		7069C0BF2404B1F3E3FF41491DC2582E /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubConnectionBuilder.swift; sourceTree = "<group>"; };
+		72854F72E0889CC05AD906C479CBA47C /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
+		7292A2086FD46B28F6C2D34289753C49 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		72A29E27B76562EEC91DB8DBB4181093 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.modulemap"; sourceTree = "<group>"; };
+		73B785B630A512ED57988E8741826084 /* sestek-webchat-ios.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "sestek-webchat-ios.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		73ED63C46798690F4223C829646609AC /* knovvu_logo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "knovvu_logo@2x.png"; sourceTree = "<group>"; };
+		799B934A9276AA57F23603ECDF7C7E51 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7A6DCD873D11B0F25BA7BFF48E9F89C3 /* ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist"; sourceTree = "<group>"; };
+		7C1050F443115730F68D90AA1C60B895 /* JSONHubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JSONHubProtocol.swift; sourceTree = "<group>"; };
+		7F1C2871826F586F26E592D3B6FE71DF /* Pods-swift-sestek-webchat-exampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-exampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F6A10B9E8ACD8ED07B6247C8999DB15 /* TransportDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransportDelegate.swift; sourceTree = "<group>"; };
+		7FE41C621985F24A1D72E9977B1163A2 /* Pods-swift-sestek-webchat-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-sestek-webchat-example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8116C405ACA9E4BC2E7C2D03F83D06A7 /* ChatTableViewSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatTableViewSource.swift; sourceTree = "<group>"; };
+		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		87B59E1A01E2C7814C7D05BDB2028FCD /* StreamHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StreamHandle.swift; sourceTree = "<group>"; };
+		8C70AF5BAA458EABC235ED6736B1EE55 /* ChatModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		8D89AE8A3BA07703EEE1AFC06D57D058 /* LongPollingTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LongPollingTransport.swift; sourceTree = "<group>"; };
+		8FFA4F5DA3ADC794150495CF62B98D55 /* DefaultTransportFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTransportFactory.swift; sourceTree = "<group>"; };
+		9343A49620E2686C4215F7C488702CFC /* WebsocketsTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebsocketsTransport.swift; sourceTree = "<group>"; };
+		93A3935F165E9D6D2080618103130359 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		96F435A00166626711367CE2DDF30E9C /* AlertUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
+		98812A3121E08C2FE387A3F5F21FCFFC /* HttpConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpConnection.swift; sourceTree = "<group>"; };
+		9A9AC1854EF5DFAE2B65F9F7F823EA27 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DD31CDC713251143E31D9A6F0A3DB2B /* Pods-swift-sestek-webchat-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-sestek-webchat-example-umbrella.h"; sourceTree = "<group>"; };
+		9F6E6BC7C022A99DF59AD0ED4B5597B7 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
+		9FD7948F2836D6E5A2C382F373805A98 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		A298EC196A378BD5C7FE4A436CBD1BB9 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
+		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A44A1802E658439BC4380D98DB8DC5F3 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
+		A607FE31E567A3628B224C71EC4A2CD9 /* sestek-webchat-ios-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "sestek-webchat-ios-umbrella.h"; sourceTree = "<group>"; };
+		A8B9A6728A280F935581DC2951E06472 /* sestek-webchat-ios-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "sestek-webchat-ios-Info.plist"; sourceTree = "<group>"; };
+		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA470ADC8E824D6C3F390B229C54E29E /* Pods-swift-sestek-webchat-exampleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-exampleTests-Info.plist"; sourceTree = "<group>"; };
+		AA4B74522135041E0DF1BF1033D9B174 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
+		AB51B9E4288F924F32E20CD8EB394615 /* Pods-swift-sestek-webchat-example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-example-Info.plist"; sourceTree = "<group>"; };
+		AE7A8BAEA08310718466A194312E933F /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
+		B200E3C399AB0ADB62E2A8FE2C06B299 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h"; sourceTree = "<group>"; };
+		B346026945FC77231454DF607F60F7B3 /* sestek-webchat-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "sestek-webchat-ios.release.xcconfig"; sourceTree = "<group>"; };
+		B448259DDF783866B707C90BBB300BA4 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
+		B5B2E5381440055F289913664F83A9C5 /* HubConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HubConnection.swift; sourceTree = "<group>"; };
+		B5EBA9FEBE826164DCAAAE7745567163 /* UICollectionView+register.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionView+register.swift"; sourceTree = "<group>"; };
+		B6D76EF06E4464FFC6A5C773DB0BBE58 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		B8145AD3BE9F314CC0E8B9790FE62A89 /* Pods-swift-sestek-webchat-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		B92D8D8706F51E47B27EDFEB3EE71008 /* CustomButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		BC29B2C035B69710F2C2670E12737F98 /* ChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BD3D8F7DAE330F20FDC55BA32290E6CB /* Pods-swift-sestek-webchat-example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-swift-sestek-webchat-example-frameworks.sh"; sourceTree = "<group>"; };
+		BD692A671370D0D3B7C1222F3ACF1B3E /* UICollectionViewCell+identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+identifier.swift"; sourceTree = "<group>"; };
+		C0B96331184A53C2F2FDBAD0FC41E449 /* UITableView+register.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+register.swift"; sourceTree = "<group>"; };
+		C2C4EF7887DE241A1959AD429EF5386D /* sestek-webchat-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "sestek-webchat-ios"; path = sestek_webchat_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3CF2A5CAEE3965380B78E407FF383E3 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		C49EDE0E9DC006D62038715F560C054B /* Bundle+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		C64596E6D2032A5270E6D8FB5437B373 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C736A8EA19A6E9D2259668E0F59AD05C /* NegotiationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NegotiationResponse.swift; sourceTree = "<group>"; };
+		C76605A972D65AC601C16EC38F52C52A /* ChatLeftTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ChatLeftTableViewCell.xib; sourceTree = "<group>"; };
+		CD4CC4AC1F74CA80E3E42E43685249B6 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CFB0D0DD1D590E7FDDA88BCDEF6F4DF5 /* UIViewController+loadNib.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadNib.swift"; sourceTree = "<group>"; };
+		D4F38298278DA6564A5853E702159B38 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
+		D74FA4F54F1DC2616F38D44D3CDC55DE /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
+		D8DFDFDD919FCB487E9D1690A5174E3A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		DA30101B5B5E098E3C8AF82705FC9153 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		DAB7ACF8FBA12D0AD1722254463EAE59 /* TransportType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		DAF7FE9F1447111EC4F646B5B5077B6A /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
+		DE6E5936B24E4E95E05733D307554FD8 /* Pods-swift-sestek-webchat-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-example-acknowledgements.plist"; sourceTree = "<group>"; };
+		DFE3C7006E1043354026C08854D14FA3 /* Date+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		E931F1A429D5B97021334DA6C940736E /* Pods-swift-sestek-webchat-exampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-sestek-webchat-exampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EA9719A0605C48BB20A8BFE2CFE9CE3A /* ChatRightTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatRightTableViewCell.swift; sourceTree = "<group>"; };
+		EAE39909F693C109DFA853A17EF88027 /* CodableHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodableHelpers.swift; sourceTree = "<group>"; };
+		EB3B2F9182997D98E6C6D2400BFB5B39 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		ECC720FD59DD3D8632004244CFC00BA0 /* SestekWebChat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SestekWebChat.swift; sourceTree = "<group>"; };
+		F07CB0C9E34991428942A3F370CD95D4 /* knovvu_logo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = knovvu_logo.png; sourceTree = "<group>"; };
+		F0EB244AD79873584DF5275A31D8E432 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
+		F5302BC304446E4375C06168EB0EAA1C /* DefaultHttpClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultHttpClient.swift; sourceTree = "<group>"; };
+		FAF5EF31EACEF4FF89DC1A0D34219E6C /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC83F56B592583443AE632A8A2A410FE /* ChatRightTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ChatRightTableViewCell.xib; sourceTree = "<group>"; };
+		FCFE3BBAB67A853B21025B246B315134 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
+		FD17814169851EC2009CF7B248086BBC /* UIView+makeShadow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+makeShadow.swift"; sourceTree = "<group>"; };
+		FD2C69CCD080DCE1292F31874E43B91D /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		FFF365463D9DD12F61F0E28945B82CC0 /* Pods-swift-sestek-webchat-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-swift-sestek-webchat-example.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		146D7288B5746C69EE3264F8FA35E773 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280BE4B55B9CC0A98256C4EEBE2205CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		190B6E5F25977517C476C1430DFC2C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31D66175916F1FF033D88EC90FFF49E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A91AFBF5C2EA29BD8A08BB3E2D6A158 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AB0DD9DC0A208977FF1B99083FE666 /* Foundation.framework in Frameworks */,
+				47A398CFC9B41728ECB9AE63A12C45A0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33519FAD7A727EB8D985260CFF578DC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F93449C8478FC40F58D2691001C2A32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3B77577C54970218F8F8340516D00F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */,
+				60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */,
+				B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */,
+				2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECEC255BF8E575219020E812399C3BF1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01536868C2B92DFE33B07BED2148F2A9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC29B2C035B69710F2C2670E12737F98 /* ChatViewController.swift */,
+				24C3C40644BFE49F8E34B433FA79DC00 /* ChatViewController.xib */,
+			);
+			name = ViewControllers;
+			path = "swift-sestek-webchat/ViewControllers";
+			sourceTree = "<group>";
+		};
+		032998A6B32761CE897A84E020AAF781 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE7A8BAEA08310718466A194312E933F /* IQKeyboardManagerSwift.modulemap */,
+				F0EB244AD79873584DF5275A31D8E432 /* IQKeyboardManagerSwift-dummy.m */,
+				B448259DDF783866B707C90BBB300BA4 /* IQKeyboardManagerSwift-Info.plist */,
+				2F52550AD1ACBAA22F54ABB6F6614A9F /* IQKeyboardManagerSwift-prefix.pch */,
+				A298EC196A378BD5C7FE4A436CBD1BB9 /* IQKeyboardManagerSwift-umbrella.h */,
+				DAF7FE9F1447111EC4F646B5B5077B6A /* IQKeyboardManagerSwift.debug.xcconfig */,
+				2DBB1613E5A0BC4CAF3DE161C1976D06 /* IQKeyboardManagerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IQKeyboardManagerSwift";
+			sourceTree = "<group>";
+		};
+		0A037B20CF6988C05E6B3B3C07399B01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
+				05722F804887EE820DA9A6F10834458A /* Pods-swift-sestek-webchat-example */,
+				622522F3D9942976E962F1137B3D6A60 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */,
+				06399801A796B608E6E42E80292C69D3 /* Pods-swift-sestek-webchat-exampleTests */,
+				C2C4EF7887DE241A1959AD429EF5386D /* sestek-webchat-ios */,
+				2AB626EA019304D01F19FC6AB8D6AE5C /* sestek-webchat-ios-SestekWebchatBundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2276EB770E01B540B3C11C8375D9234C /* IQKeyboardManagerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B6D76EF06E4464FFC6A5C773DB0BBE58 /* IQBarButtonItem.swift */,
+				D74FA4F54F1DC2616F38D44D3CDC55DE /* IQInvocation.swift */,
+				AA4B74522135041E0DF1BF1033D9B174 /* IQKeyboardManager.swift */,
+				293C7104272A3D4FF208B5743BAB1FD2 /* IQKeyboardManager+Debug.swift */,
+				3AAA271F3A9B93DF8620F90EF07D6566 /* IQKeyboardManager+Internal.swift */,
+				D4F38298278DA6564A5853E702159B38 /* IQKeyboardManager+OrientationNotification.swift */,
+				4EA75D03BE22858F15248EF62C270F15 /* IQKeyboardManager+Position.swift */,
+				72854F72E0889CC05AD906C479CBA47C /* IQKeyboardManager+Toolbar.swift */,
+				9A9AC1854EF5DFAE2B65F9F7F823EA27 /* IQKeyboardManager+UIKeyboardNotification.swift */,
+				9F6E6BC7C022A99DF59AD0ED4B5597B7 /* IQKeyboardManager+UITextFieldViewNotification.swift */,
+				63C7C8A5A21E510A303D762337DF7B23 /* IQKeyboardManagerConstants.swift */,
+				615AB13CC06C5DFC09B42ED8FC44B9CB /* IQKeyboardManagerConstantsInternal.swift */,
+				137093D8E49217C090D374983F152184 /* IQKeyboardReturnKeyHandler.swift */,
+				68B5A5E28C072A0624118F840538984D /* IQNSArray+Sort.swift */,
+				A44A1802E658439BC4380D98DB8DC5F3 /* IQPreviousNextView.swift */,
+				FCFE3BBAB67A853B21025B246B315134 /* IQTextView.swift */,
+				9FD7948F2836D6E5A2C382F373805A98 /* IQTitleBarButtonItem.swift */,
+				64B0F7BF78C1D89726BA66A586C2ADAA /* IQToolbar.swift */,
+				368438D51285F622AEC4CA45FB117A53 /* IQUIScrollView+Additions.swift */,
+				DA30101B5B5E098E3C8AF82705FC9153 /* IQUITextFieldView+Additions.swift */,
+				C3CF2A5CAEE3965380B78E407FF383E3 /* IQUIView+Hierarchy.swift */,
+				4280CDA65D22B3380E8F3793AD676448 /* IQUIView+IQKeyboardToolbar.swift */,
+				FD2C69CCD080DCE1292F31874E43B91D /* IQUIViewController+Additions.swift */,
+				032998A6B32761CE897A84E020AAF781 /* Support Files */,
+			);
+			name = IQKeyboardManagerSwift;
+			path = IQKeyboardManagerSwift;
+			sourceTree = "<group>";
+		};
+		2F7216DC4F3DBF5734E28DF18D18A29C /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D45573D38227F2755579F1388F93513 /* ConversationRequestModel.swift */,
+			);
+			name = RequestModels;
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		40B65C750805A44D13F18927ED0667A6 /* Pods-swift-sestek-webchat-exampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BB002435DC3C90726424E45694FDEEE /* Pods-swift-sestek-webchat-exampleTests.modulemap */,
+				E931F1A429D5B97021334DA6C940736E /* Pods-swift-sestek-webchat-exampleTests-acknowledgements.markdown */,
+				15E4538C69FCFCE8F18F606B5786728E /* Pods-swift-sestek-webchat-exampleTests-acknowledgements.plist */,
+				384067FEFCA8399A421A83A672C00AB0 /* Pods-swift-sestek-webchat-exampleTests-dummy.m */,
+				AA470ADC8E824D6C3F390B229C54E29E /* Pods-swift-sestek-webchat-exampleTests-Info.plist */,
+				3C93F3493B26E55C9F2389ABD75CEABE /* Pods-swift-sestek-webchat-exampleTests-umbrella.h */,
+				7F1C2871826F586F26E592D3B6FE71DF /* Pods-swift-sestek-webchat-exampleTests.debug.xcconfig */,
+				B8145AD3BE9F314CC0E8B9790FE62A89 /* Pods-swift-sestek-webchat-exampleTests.release.xcconfig */,
+			);
+			name = "Pods-swift-sestek-webchat-exampleTests";
+			path = "Target Support Files/Pods-swift-sestek-webchat-exampleTests";
+			sourceTree = "<group>";
+		};
+		425C98BD7414F0F55AEEF6496E2BBDD9 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				17593C7A58BDA80DECD799D0A2E0FD2D /* ImageCollectionViewCell.swift */,
+				799B934A9276AA57F23603ECDF7C7E51 /* ImageCollectionViewCell.xib */,
+			);
+			name = CollectionViewCells;
+			path = "swift-sestek-webchat/CollectionViewCells";
+			sourceTree = "<group>";
+		};
+		4B9FC1BC16CD50CCA09287AC2374220A /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				9280295988180D3AC4EA2930C5643F15 /* SignalRClient */,
+			);
+			name = Libraries;
+			path = "swift-sestek-webchat/Libraries";
+			sourceTree = "<group>";
+		};
+		4DCB0EA7BD00EC84DBADB5488807591C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2276EB770E01B540B3C11C8375D9234C /* IQKeyboardManagerSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5733209A1BE25CB3D9304D1B7D6CB8E3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C51534B68E44AEBD428E56D0DA424DF7 /* sestek-webchat-ios */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		632CDD799025AEA859C46E494CC894EE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				243B290EAF51BD4CE93308550FAD6603 /* Language.swift */,
+			);
+			name = Enums;
+			path = "swift-sestek-webchat/Enums";
+			sourceTree = "<group>";
+		};
+		649C942E0C948AF5B23643B99270BBC4 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				B92D8D8706F51E47B27EDFEB3EE71008 /* CustomButton.swift */,
+				3DAD0313C083DD2FDDEF6F48D2B69095 /* FloatingRoundedButton.swift */,
+			);
+			name = CustomViews;
+			path = "swift-sestek-webchat/CustomViews";
+			sourceTree = "<group>";
+		};
+		659039CEAF21013C42E500E0A48B0521 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F07CB0C9E34991428942A3F370CD95D4 /* knovvu_logo.png */,
+				73ED63C46798690F4223C829646609AC /* knovvu_logo@2x.png */,
+				65493BB0CC5DF454CC71EDF260C75385 /* knovvu_logo@3x.png */,
+			);
+			name = Resources;
+			path = "swift-sestek-webchat/Resources";
+			sourceTree = "<group>";
+		};
+		73705D2FD53F2A19152B7A271EFC006F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C70AF5BAA458EABC235ED6736B1EE55 /* ChatModel.swift */,
+				1AEFD15E5C14DB76C9D610C5B7A08BF7 /* ConnectionInfoModel.swift */,
+				2F7216DC4F3DBF5734E28DF18D18A29C /* RequestModels */,
+				A92CB5086D6ADD44861E65FEB048B6D6 /* ResponseModels */,
+			);
+			name = Models;
+			path = "swift-sestek-webchat/Models";
+			sourceTree = "<group>";
+		};
+		745FC194BD3D6BDAE588E82B37873C91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				96F435A00166626711367CE2DDF30E9C /* AlertUtil.swift */,
+				ECC720FD59DD3D8632004244CFC00BA0 /* SestekWebChat.swift */,
+				13C3F498846E13BF23250AB8664BCB80 /* SignalRConnectionManager.swift */,
+				0780DF3C6ED6BE6A25E3C4F4E68852A3 /* TextHelper.swift */,
+			);
+			name = Utils;
+			path = "swift-sestek-webchat/Utils";
+			sourceTree = "<group>";
+		};
+		7CCF350B856BDEAEFE6A51B003ED9C02 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9AE2900C2F02DCAC1954ACA47D294F0 /* Pods-swift-sestek-webchat-example */,
+				99E26B1F81F821F4E987D4DF03FFF4A2 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */,
+				40B65C750805A44D13F18927ED0667A6 /* Pods-swift-sestek-webchat-exampleTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		802F86CBDFCFDCB58B1DBEE68B6AE65F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A6DCD873D11B0F25BA7BFF48E9F89C3 /* ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist */,
+				3886E5DA241F77D543A8B1CD33312DDA /* sestek-webchat-ios.modulemap */,
+				67B07C81AEC8FB8213EE49815BEB882B /* sestek-webchat-ios-dummy.m */,
+				A8B9A6728A280F935581DC2951E06472 /* sestek-webchat-ios-Info.plist */,
+				6D11C768D9065710F81ADD1B2FE69158 /* sestek-webchat-ios-prefix.pch */,
+				A607FE31E567A3628B224C71EC4A2CD9 /* sestek-webchat-ios-umbrella.h */,
+				2D21D041F487DD329F4D7D37B0F0767B /* sestek-webchat-ios.debug.xcconfig */,
+				B346026945FC77231454DF607F60F7B3 /* sestek-webchat-ios.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Example/swift-sestek-webchat-example/Pods/Target Support Files/sestek-webchat-ios";
+			sourceTree = "<group>";
+		};
+		8D743C2F7733F2469EB51ABABB4F3B70 /* TableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				30A45757260BDDA26473B833096B2E22 /* ChatLeftTableViewCell.swift */,
+				C76605A972D65AC601C16EC38F52C52A /* ChatLeftTableViewCell.xib */,
+				EA9719A0605C48BB20A8BFE2CFE9CE3A /* ChatRightTableViewCell.swift */,
+				FC83F56B592583443AE632A8A2A410FE /* ChatRightTableViewCell.xib */,
+			);
+			name = TableviewCells;
+			path = "swift-sestek-webchat/TableviewCells";
+			sourceTree = "<group>";
+		};
+		9280295988180D3AC4EA2930C5643F15 /* SignalRClient */ = {
+			isa = PBXGroup;
+			children = (
+				EAE39909F693C109DFA853A17EF88027 /* CodableHelpers.swift */,
+				0C0D747652BAB7F92FFFAE137A8D5341 /* Connection.swift */,
+				4D96919C937F48DF0A4C6904C0DDABC8 /* ConnectionDelegate.swift */,
+				F5302BC304446E4375C06168EB0EAA1C /* DefaultHttpClient.swift */,
+				8FFA4F5DA3ADC794150495CF62B98D55 /* DefaultTransportFactory.swift */,
+				43ABF2BFA93C07226B5BB5719D5BCDCB /* HandshakeProtocol.swift */,
+				24BF9164FD100921EDD418D16727E5B7 /* HttpClientProtocol.swift */,
+				98812A3121E08C2FE387A3F5F21FCFFC /* HttpConnection.swift */,
+				2D22DDFC88B6C5C288B99FE19B78F74A /* HttpConnectionOptions.swift */,
+				525E6C22A07A3B2AEA70796B4E856A0C /* HttpResponse.swift */,
+				B5B2E5381440055F289913664F83A9C5 /* HubConnection.swift */,
+				7069C0BF2404B1F3E3FF41491DC2582E /* HubConnectionBuilder.swift */,
+				337BBF5FA9CB87C945B6D40D7521FF1E /* HubConnectionDelegate.swift */,
+				4C1502B5236E8D3A2ED2895380A78F8F /* HubConnectionExtensions.swift */,
+				284A0D3316B581EB41F95B6D01ED2430 /* HubConnectionOptions.swift */,
+				7013795E028422BBA1534B14023AEF34 /* HubProtocol.swift */,
+				7C1050F443115730F68D90AA1C60B895 /* JSONHubProtocol.swift */,
+				00FE2819641748A656DF95CD1DC37DC4 /* Logger.swift */,
+				8D89AE8A3BA07703EEE1AFC06D57D058 /* LongPollingTransport.swift */,
+				C736A8EA19A6E9D2259668E0F59AD05C /* NegotiationResponse.swift */,
+				5ABBCAFEF28380D73C216AE5F320EE70 /* ReconnectableConnection.swift */,
+				2DC1F1D90312E1DABF78A5423147D116 /* ReconnectPolicy.swift */,
+				40AFDB4EF4061494AEC6F884BC435E64 /* ServerInvocationHandler.swift */,
+				508E431A23A5BB262A9571F98194BF8D /* SignalRError.swift */,
+				87B59E1A01E2C7814C7D05BDB2028FCD /* StreamHandle.swift */,
+				4AA9E58371D49E6DDC0F89F2272C3360 /* TransferFormat.swift */,
+				36DD75498D1C36EC1441BCDCC45213D2 /* Transport.swift */,
+				7F6A10B9E8ACD8ED07B6247C8999DB15 /* TransportDelegate.swift */,
+				DAB7ACF8FBA12D0AD1722254463EAE59 /* TransportType.swift */,
+				7292A2086FD46B28F6C2D34289753C49 /* Util.swift */,
+				9343A49620E2686C4215F7C488702CFC /* WebsocketsTransport.swift */,
+			);
+			name = SignalRClient;
+			path = SignalRClient;
+			sourceTree = "<group>";
+		};
+		9653946363F8983C72BC4B1EFC99DE51 /* TableViewSources */ = {
+			isa = PBXGroup;
+			children = (
+				8116C405ACA9E4BC2E7C2D03F83D06A7 /* ChatTableViewSource.swift */,
+			);
+			name = TableViewSources;
+			path = "swift-sestek-webchat/TableViewSources";
+			sourceTree = "<group>";
+		};
+		99E26B1F81F821F4E987D4DF03FFF4A2 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				72A29E27B76562EEC91DB8DBB4181093 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.modulemap */,
+				FAF5EF31EACEF4FF89DC1A0D34219E6C /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.markdown */,
+				93A3935F165E9D6D2080618103130359 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-acknowledgements.plist */,
+				59778955F16DD75FBB5B6CE11506F893 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m */,
+				389E5D7CE2A343710E65ABDB8929D043 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-frameworks.sh */,
+				6A1E4870586DDF32DD9AA78CF4007928 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-Info.plist */,
+				B200E3C399AB0ADB62E2A8FE2C06B299 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h */,
+				4A776F7E4EA744380F7BC7B0B89091E0 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.debug.xcconfig */,
+				C64596E6D2032A5270E6D8FB5437B373 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.release.xcconfig */,
+			);
+			name = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests";
+			path = "Target Support Files/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests";
+			sourceTree = "<group>";
+		};
+		A92CB5086D6ADD44861E65FEB048B6D6 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				3D932F3EDBE566862782C3420E04A542 /* MessageDetailResponseModel.swift */,
+			);
+			name = ResponseModels;
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C183111668AC196AD497FA59CA2FECD5 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				73B785B630A512ED57988E8741826084 /* sestek-webchat-ios.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C24DF11B627D446C16B9318C47A998C6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C49EDE0E9DC006D62038715F560C054B /* Bundle+Extension.swift */,
+				DFE3C7006E1043354026C08854D14FA3 /* Date+Extensions.swift */,
+				0580994CC04E604D8AC445B69ED589AF /* DateFormatter+Extensions.swift */,
+				CD4CC4AC1F74CA80E3E42E43685249B6 /* String+Extensions.swift */,
+				B5EBA9FEBE826164DCAAAE7745567163 /* UICollectionView+register.swift */,
+				BD692A671370D0D3B7C1222F3ACF1B3E /* UICollectionViewCell+identifier.swift */,
+				0E4C25EB56992D3EBB1938E49272302F /* UIColor+Extension.swift */,
+				677FFFAB4C78DC09EC30A0BDB4BD1AB1 /* UIImage+Extension.swift */,
+				EB3B2F9182997D98E6C6D2400BFB5B39 /* UIImageView+Extensions.swift */,
+				C0B96331184A53C2F2FDBAD0FC41E449 /* UITableView+register.swift */,
+				5F8F34D1100C550EBF6CA041D162CA53 /* UITableViewCell+identifier.swift */,
+				FD17814169851EC2009CF7B248086BBC /* UIView+makeShadow.swift */,
+				D8DFDFDD919FCB487E9D1690A5174E3A /* UIViewController+Extensions.swift */,
+				CFB0D0DD1D590E7FDDA88BCDEF6F4DF5 /* UIViewController+loadNib.swift */,
+			);
+			name = Extensions;
+			path = "swift-sestek-webchat/Extensions";
+			sourceTree = "<group>";
+		};
+		C51534B68E44AEBD428E56D0DA424DF7 /* sestek-webchat-ios */ = {
+			isa = PBXGroup;
+			children = (
+				425C98BD7414F0F55AEEF6496E2BBDD9 /* CollectionViewCells */,
+				649C942E0C948AF5B23643B99270BBC4 /* CustomViews */,
+				632CDD799025AEA859C46E494CC894EE /* Enums */,
+				C24DF11B627D446C16B9318C47A998C6 /* Extensions */,
+				4B9FC1BC16CD50CCA09287AC2374220A /* Libraries */,
+				73705D2FD53F2A19152B7A271EFC006F /* Models */,
+				C183111668AC196AD497FA59CA2FECD5 /* Pod */,
+				659039CEAF21013C42E500E0A48B0521 /* Resources */,
+				802F86CBDFCFDCB58B1DBEE68B6AE65F /* Support Files */,
+				8D743C2F7733F2469EB51ABABB4F3B70 /* TableviewCells */,
+				9653946363F8983C72BC4B1EFC99DE51 /* TableViewSources */,
+				745FC194BD3D6BDAE588E82B37873C91 /* Utils */,
+				01536868C2B92DFE33B07BED2148F2A9 /* ViewControllers */,
+			);
+			name = "sestek-webchat-ios";
+			path = "/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib/Source";
+			sourceTree = "<absolute>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				5733209A1BE25CB3D9304D1B7D6CB8E3 /* Development Pods */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				4DCB0EA7BD00EC84DBADB5488807591C /* Pods */,
+				0A037B20CF6988C05E6B3B3C07399B01 /* Products */,
+				7CCF350B856BDEAEFE6A51B003ED9C02 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F9AE2900C2F02DCAC1954ACA47D294F0 /* Pods-swift-sestek-webchat-example */ = {
+			isa = PBXGroup;
+			children = (
+				680DF06913B1491940727EAE40E41754 /* Pods-swift-sestek-webchat-example.modulemap */,
+				7FE41C621985F24A1D72E9977B1163A2 /* Pods-swift-sestek-webchat-example-acknowledgements.markdown */,
+				DE6E5936B24E4E95E05733D307554FD8 /* Pods-swift-sestek-webchat-example-acknowledgements.plist */,
+				08BB7ACB6046C442FE3E108C2704910E /* Pods-swift-sestek-webchat-example-dummy.m */,
+				BD3D8F7DAE330F20FDC55BA32290E6CB /* Pods-swift-sestek-webchat-example-frameworks.sh */,
+				AB51B9E4288F924F32E20CD8EB394615 /* Pods-swift-sestek-webchat-example-Info.plist */,
+				9DD31CDC713251143E31D9A6F0A3DB2B /* Pods-swift-sestek-webchat-example-umbrella.h */,
+				64F364E1BCAB356A85F5CE407D245861 /* Pods-swift-sestek-webchat-example.debug.xcconfig */,
+				FFF365463D9DD12F61F0E28945B82CC0 /* Pods-swift-sestek-webchat-example.release.xcconfig */,
+			);
+			name = "Pods-swift-sestek-webchat-example";
+			path = "Target Support Files/Pods-swift-sestek-webchat-example";
+			sourceTree = "<group>";
+		};
+		F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */,
+				79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */,
+				A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */,
+				04D60AC13D33197690A05C641925DDDA /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F980D4A84A8936CAAA01029D23029D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB33B757206D3BAC0FF9BC3563DCF476 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		413A2DBE22E8AE618B9D72AC2E9FAFBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D88A4648D28666B731DDF41D1BF8BF25 /* Pods-swift-sestek-webchat-exampleTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46D21EC0B528BADBAC6F938C2FC06314 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1CACFF3CF40E3CBEF9ACA0785C02C99 /* Pods-swift-sestek-webchat-example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB0BEECB0220415EB8B6784F0337F255 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B9D94245B072E1FC38440B48DF6C79 /* sestek-webchat-ios-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCEEFAA8C63580C9CB8978EDA9312BDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		753921F0945FBA7ADC91AD7E03AA2F15 /* sestek-webchat-ios-SestekWebchatBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEB43C2BB553F6D4D3939FE55682FD48 /* Build configuration list for PBXNativeTarget "sestek-webchat-ios-SestekWebchatBundle" */;
+			buildPhases = (
+				08B2562C87B6D714D41C8E7D56BB7837 /* Sources */,
+				ECEC255BF8E575219020E812399C3BF1 /* Frameworks */,
+				51FD9F4DDB1B0AEBAA56DEF513002DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sestek-webchat-ios-SestekWebchatBundle";
+			productName = SestekWebchatBundle;
+			productReference = 2AB626EA019304D01F19FC6AB8D6AE5C /* sestek-webchat-ios-SestekWebchatBundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		7C758FE246D695F0CE93F68BCB3C3729 /* Pods-swift-sestek-webchat-example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 468E0F65573E1BC861E0BF290AE1B3A7 /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-example" */;
+			buildPhases = (
+				46D21EC0B528BADBAC6F938C2FC06314 /* Headers */,
+				357ECA0D2CF122AC0ACF7A716F870CF2 /* Sources */,
+				146D7288B5746C69EE3264F8FA35E773 /* Frameworks */,
+				028817F89CD7B0A7CBE660CE9F1CB091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEB2073EFEAE62CEBDA1E4EF1A059FD9 /* PBXTargetDependency */,
+				FE860CD57A7FD3FBDCC7DC809B647889 /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-sestek-webchat-example";
+			productName = Pods_swift_sestek_webchat_example;
+			productReference = 05722F804887EE820DA9A6F10834458A /* Pods-swift-sestek-webchat-example */;
+			productType = "com.apple.product-type.framework";
+		};
+		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F76AA8E84D32E2DED70BBA35321CB1 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
+			buildPhases = (
+				CCEEFAA8C63580C9CB8978EDA9312BDF /* Headers */,
+				AC7850B8AD058752CD0E80D5A5B07A42 /* Sources */,
+				A3B77577C54970218F8F8340516D00F2 /* Frameworks */,
+				DAEA1F953296419744C852BAA2739BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQKeyboardManagerSwift;
+			productName = IQKeyboardManagerSwift;
+			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
+			productType = "com.apple.product-type.framework";
+		};
+		B8889201AE4A88E63E0699479A4B3CC8 /* Pods-swift-sestek-webchat-exampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E38C2E7C85C13BE02EE97028E025E09D /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-exampleTests" */;
+			buildPhases = (
+				413A2DBE22E8AE618B9D72AC2E9FAFBB /* Headers */,
+				01D7A6F352CFEEA2BE391F9CDABF9884 /* Sources */,
+				33519FAD7A727EB8D985260CFF578DC0 /* Frameworks */,
+				04FC481797ACB24C0F3069E09AF6D145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA703A067CD26CB5667D77FFEDFB23E6 /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-sestek-webchat-exampleTests";
+			productName = Pods_swift_sestek_webchat_exampleTests;
+			productReference = 06399801A796B608E6E42E80292C69D3 /* Pods-swift-sestek-webchat-exampleTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3F6044BE41997CED4C640761B2682B9 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 902EAFA24EF74DDA6B79316F2E6C650C /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests" */;
+			buildPhases = (
+				2F980D4A84A8936CAAA01029D23029D7 /* Headers */,
+				9F0C6921CD75A5AAD1D78A31525E1F7E /* Sources */,
+				190B6E5F25977517C476C1430DFC2C31 /* Frameworks */,
+				5FCA8418982545B44F0FC1F172C9EF0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				170C886AB16DE0204DB681D9ACC60FA7 /* PBXTargetDependency */,
+				7CA51DF909FB138CF8E96870221BFB6D /* PBXTargetDependency */,
+			);
+			name = "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests";
+			productName = Pods_swift_sestek_webchat_example_swift_sestek_webchat_exampleUITests;
+			productReference = 622522F3D9942976E962F1137B3D6A60 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		FF2FD36C319F5D1A6096B84AE13DF7C4 /* sestek-webchat-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92E43A88E1576A2EDD55C84B033F91B9 /* Build configuration list for PBXNativeTarget "sestek-webchat-ios" */;
+			buildPhases = (
+				CB0BEECB0220415EB8B6784F0337F255 /* Headers */,
+				FA9E88465E4391EA11E27BD85E618D68 /* Sources */,
+				1A91AFBF5C2EA29BD8A08BB3E2D6A158 /* Frameworks */,
+				C00D748EB0766272DAABD260F0044A07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9186CA2FB194B45C3CCCD9B8400109E6 /* PBXTargetDependency */,
+				888FAF98833E16DFF2401BC4118FBBAF /* PBXTargetDependency */,
+			);
+			name = "sestek-webchat-ios";
+			productName = sestek_webchat_ios;
+			productReference = C2C4EF7887DE241A1959AD429EF5386D /* sestek-webchat-ios */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 0A037B20CF6988C05E6B3B3C07399B01 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */,
+				7C758FE246D695F0CE93F68BCB3C3729 /* Pods-swift-sestek-webchat-example */,
+				E3F6044BE41997CED4C640761B2682B9 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests */,
+				B8889201AE4A88E63E0699479A4B3CC8 /* Pods-swift-sestek-webchat-exampleTests */,
+				FF2FD36C319F5D1A6096B84AE13DF7C4 /* sestek-webchat-ios */,
+				753921F0945FBA7ADC91AD7E03AA2F15 /* sestek-webchat-ios-SestekWebchatBundle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		028817F89CD7B0A7CBE660CE9F1CB091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04FC481797ACB24C0F3069E09AF6D145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51FD9F4DDB1B0AEBAA56DEF513002DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				918C97838C106D47D4F666E2C1AB8AA6 /* knovvu_logo.png in Resources */,
+				237BC814BCA7285DA800432C29EA00C0 /* knovvu_logo@2x.png in Resources */,
+				331AFC68644B05C8666C54906C1E59D1 /* knovvu_logo@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FCA8418982545B44F0FC1F172C9EF0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C00D748EB0766272DAABD260F0044A07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8D331CA0306A7D5F39BFABBB30F7F1 /* ChatLeftTableViewCell.xib in Resources */,
+				4084EA3EE8EF71BD6130E0537ECE5673 /* ChatRightTableViewCell.xib in Resources */,
+				E401D9E576C44BD4D89F0B4E9D5E5885 /* ChatViewController.xib in Resources */,
+				593322CC25353B0EBC603EF2346E5A7D /* ImageCollectionViewCell.xib in Resources */,
+				26E9B876F2E542AE6AA6E45CBC1F832D /* knovvu_logo.png in Resources */,
+				1E9C41B95A08C30BFF3C195D8BFD0C56 /* knovvu_logo@2x.png in Resources */,
+				A60052698D928B7929BE47C644B846E7 /* knovvu_logo@3x.png in Resources */,
+				4B05DC97E038B312B9D53668CD5920FA /* sestek-webchat-ios-SestekWebchatBundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAEA1F953296419744C852BAA2739BA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01D7A6F352CFEEA2BE391F9CDABF9884 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A7DD2AB1A328B5CFFAD447D901F5D1 /* Pods-swift-sestek-webchat-exampleTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08B2562C87B6D714D41C8E7D56BB7837 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		357ECA0D2CF122AC0ACF7A716F870CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F4D694BD41EF761DE71BC367CDF8B84 /* Pods-swift-sestek-webchat-example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F0C6921CD75A5AAD1D78A31525E1F7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				828A161089B0841E89E32B230B5F375E /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7850B8AD058752CD0E80D5A5B07A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */,
+				041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */,
+				86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */,
+				2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */,
+				2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */,
+				08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */,
+				F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */,
+				1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */,
+				A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */,
+				D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
+				85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */,
+				0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */,
+				C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */,
+				24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */,
+				E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */,
+				20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */,
+				1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */,
+				DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */,
+				3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */,
+				04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */,
+				34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA9E88465E4391EA11E27BD85E618D68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79F164DDA7E30C08736705FE84FA5894 /* AlertUtil.swift in Sources */,
+				987E82CBDF475C4980B7C84ECDF15A4F /* Bundle+Extension.swift in Sources */,
+				6A259D8ECA0477FA4632BB2BECB79EFC /* ChatLeftTableViewCell.swift in Sources */,
+				D95D30568D480D85759896BB9BC6D571 /* ChatModel.swift in Sources */,
+				2C17A2C7C374299E9B4BDA03EA84AD12 /* ChatRightTableViewCell.swift in Sources */,
+				75AA5726EFAFF36CE30B5FBCFF2DD8CE /* ChatTableViewSource.swift in Sources */,
+				86E0C132853F9A4692AA5EE44D47B69D /* ChatViewController.swift in Sources */,
+				98C9BFA5C34197526BC2924A0893E7E7 /* CodableHelpers.swift in Sources */,
+				47E57F3114E203D881049C6D98255370 /* Connection.swift in Sources */,
+				9ED4672C705F6C5545A3740767533F9F /* ConnectionDelegate.swift in Sources */,
+				A5D4353F7C4BC22097108D527EAAF191 /* ConnectionInfoModel.swift in Sources */,
+				12BD65C39A91AFF00916C8A93DE023CC /* ConversationRequestModel.swift in Sources */,
+				2DC0E76AFB9228F093E36BD13602B093 /* CustomButton.swift in Sources */,
+				D6F941575608159FDCEE97F003E7D68C /* Date+Extensions.swift in Sources */,
+				98535A2CBCF7B46E748BFCC1B7D93978 /* DateFormatter+Extensions.swift in Sources */,
+				36E2A6F3AA1435612A6CF0200C41A22B /* DefaultHttpClient.swift in Sources */,
+				090A35C848A60590469311A8CB4AB778 /* DefaultTransportFactory.swift in Sources */,
+				F8EDE04A2E35616D781FEC1E8A34621B /* FloatingRoundedButton.swift in Sources */,
+				0774537562C1232AC7F5FD053D5BBF4B /* HandshakeProtocol.swift in Sources */,
+				0659019C70402430B4317FD0B224280F /* HttpClientProtocol.swift in Sources */,
+				538004233DE1AE3AD09BB6CE6E1EAEA9 /* HttpConnection.swift in Sources */,
+				90C03A726219CB6C45329C03D1A13292 /* HttpConnectionOptions.swift in Sources */,
+				DBCA67584B3DB0812631666CE9F80164 /* HttpResponse.swift in Sources */,
+				66282A986BA3CA74FFC84916BC05A526 /* HubConnection.swift in Sources */,
+				5F60800A3A84E074735ECBE5D6FD0D62 /* HubConnectionBuilder.swift in Sources */,
+				A8BDD84FCFC1EBFD28B68D5793CE997C /* HubConnectionDelegate.swift in Sources */,
+				28823008E6235407970062756B3403F2 /* HubConnectionExtensions.swift in Sources */,
+				9CE6544DE80F435CFD46EDB56A42E64A /* HubConnectionOptions.swift in Sources */,
+				AD8C9838D1C143307FD64BF03CDF4F25 /* HubProtocol.swift in Sources */,
+				6FB1C0663AB738F2CBBBC9A4E8D0494F /* ImageCollectionViewCell.swift in Sources */,
+				F72F76749582F767CA4FCD7CC1F936A4 /* JSONHubProtocol.swift in Sources */,
+				DC441995805193795D53D84EED323D8D /* Language.swift in Sources */,
+				C0AD263CF4825C902F6115D00894AE69 /* Logger.swift in Sources */,
+				C5A5AF099BB8D4C706C597E7707EE429 /* LongPollingTransport.swift in Sources */,
+				E470454599FABFD42598FCE8B55364C7 /* MessageDetailResponseModel.swift in Sources */,
+				648F7DFAEB9DD8C6B74494C0081D04AD /* NegotiationResponse.swift in Sources */,
+				70C2106425FD1D3A349039FE069DF236 /* ReconnectableConnection.swift in Sources */,
+				09C9F7F62B2C025E2027DFCE8BDBC666 /* ReconnectPolicy.swift in Sources */,
+				63CA991E63BFC677897DCAA64BCA15DB /* ServerInvocationHandler.swift in Sources */,
+				E7D21330E68B1B5070E79C9965FDB4E4 /* sestek-webchat-ios-dummy.m in Sources */,
+				2E4CD60085BF84BECF493987FA30958B /* SestekWebChat.swift in Sources */,
+				C9672F602A684509C450E73FE0AF2E91 /* SignalRConnectionManager.swift in Sources */,
+				20BB7935CE389E13DD6E553B248D9CAE /* SignalRError.swift in Sources */,
+				EE5B72D5E97C412D79302ECF8C0451FA /* StreamHandle.swift in Sources */,
+				BE962545E69E3CF4D22703F61C54C3C4 /* String+Extensions.swift in Sources */,
+				E6F7D0D4CED19EB6C792716DB749A829 /* TextHelper.swift in Sources */,
+				32F3597A56C5555A1CD187194DA1BAF3 /* TransferFormat.swift in Sources */,
+				7599192F2B2467FE62AE57DA9184C051 /* Transport.swift in Sources */,
+				6A32A3BC8EC33AD61F8065B26632F11D /* TransportDelegate.swift in Sources */,
+				6C6CF8AD83415B6B3806D57A29FFFA36 /* TransportType.swift in Sources */,
+				B5896F1B767C80DC1137675E7A9EC025 /* UICollectionView+register.swift in Sources */,
+				F6B3012A1472464C4CE35186565C82A5 /* UICollectionViewCell+identifier.swift in Sources */,
+				399F19E131F7E645D0DA4EB2276C0BEA /* UIColor+Extension.swift in Sources */,
+				79A420526A96B049B31164D23C21E975 /* UIImage+Extension.swift in Sources */,
+				7FC4AD80045FF8A86608DA257D689875 /* UIImageView+Extensions.swift in Sources */,
+				5F5574663D1EC777CA315A4B2CDC0D79 /* UITableView+register.swift in Sources */,
+				C3366791AA9408B74AE082D0DD3D6E4A /* UITableViewCell+identifier.swift in Sources */,
+				A520FE54A88AF88BEF7C0A758485EB0D /* UIView+makeShadow.swift in Sources */,
+				3550F992FDFBDD1F71C3CEB4FE5FC8D1 /* UIViewController+Extensions.swift in Sources */,
+				5657FA4086D3E0825B17BDA11A9D8E79 /* UIViewController+loadNib.swift in Sources */,
+				0178493C09B179043EEE5FBC04252444 /* Util.swift in Sources */,
+				7FF4BEA1B36CECEE26990325EE6F4A0F /* WebsocketsTransport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		170C886AB16DE0204DB681D9ACC60FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = 81E7FC501408AF49A3FBEFAD0891EA57 /* PBXContainerItemProxy */;
+		};
+		7CA51DF909FB138CF8E96870221BFB6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sestek-webchat-ios";
+			target = FF2FD36C319F5D1A6096B84AE13DF7C4 /* sestek-webchat-ios */;
+			targetProxy = 6E30F3F57FEC623A1833C8739F038E63 /* PBXContainerItemProxy */;
+		};
+		888FAF98833E16DFF2401BC4118FBBAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sestek-webchat-ios-SestekWebchatBundle";
+			target = 753921F0945FBA7ADC91AD7E03AA2F15 /* sestek-webchat-ios-SestekWebchatBundle */;
+			targetProxy = B2AF7F082BE2AB108EA8D87E5832EF8B /* PBXContainerItemProxy */;
+		};
+		9186CA2FB194B45C3CCCD9B8400109E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = 94A0450840549CEA00D84F9BE49D563E /* PBXContainerItemProxy */;
+		};
+		AA703A067CD26CB5667D77FFEDFB23E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-swift-sestek-webchat-example";
+			target = 7C758FE246D695F0CE93F68BCB3C3729 /* Pods-swift-sestek-webchat-example */;
+			targetProxy = FF4E296D5BCDC681D0B0CAFC61286C7E /* PBXContainerItemProxy */;
+		};
+		EEB2073EFEAE62CEBDA1E4EF1A059FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = A6B791331C955272FD63D274CB1B91F8 /* PBXContainerItemProxy */;
+		};
+		FE860CD57A7FD3FBDCC7DC809B647889 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sestek-webchat-ios";
+			target = FF2FD36C319F5D1A6096B84AE13DF7C4 /* sestek-webchat-ios */;
+			targetProxy = 8A07562EED3C8FDA361F896DCD666BC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		065D56369D4D562445BB7CCDA7481BA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B346026945FC77231454DF607F60F7B3 /* sestek-webchat-ios.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios.modulemap";
+				PRODUCT_MODULE_NAME = sestek_webchat_ios;
+				PRODUCT_NAME = sestek_webchat_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		41BED894735D51C36FDBDAE4FA9F3F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFF365463D9DD12F61F0E28945B82CC0 /* Pods-swift-sestek-webchat-example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-example/Pods-swift-sestek-webchat-example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-example/Pods-swift-sestek-webchat-example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		62A24329FF948A574FA26E5644B685B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F364E1BCAB356A85F5CE407D245861 /* Pods-swift-sestek-webchat-example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-example/Pods-swift-sestek-webchat-example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-example/Pods-swift-sestek-webchat-example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7420F24E0EF52F0C2F7B658C341FDD2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B346026945FC77231454DF607F60F7B3 /* sestek-webchat-ios.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/sestek-webchat-ios";
+				IBSC_MODULE = sestek_webchat_ios;
+				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = SestekWebchatBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		810DCD21915BDAC36A34B23DFAD9CC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D21D041F487DD329F4D7D37B0F0767B /* sestek-webchat-ios.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/sestek-webchat-ios";
+				IBSC_MODULE = sestek_webchat_ios;
+				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = SestekWebchatBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9D8C08F259B4E57381CFE8BC28467628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DBB1613E5A0BC4CAF3DE161C1976D06 /* IQKeyboardManagerSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BA77B19151276233777CDDD5082EE4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A776F7E4EA744380F7BC7B0B89091E0 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D69A4629D093E351E604F3A182B43819 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8145AD3BE9F314CC0E8B9790FE62A89 /* Pods-swift-sestek-webchat-exampleTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-exampleTests/Pods-swift-sestek-webchat-exampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-exampleTests/Pods-swift-sestek-webchat-exampleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4FC030ADD1E9BE27757CCE9437731B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D21D041F487DD329F4D7D37B0F0767B /* sestek-webchat-ios.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/sestek-webchat-ios/sestek-webchat-ios.modulemap";
+				PRODUCT_MODULE_NAME = sestek_webchat_ios;
+				PRODUCT_NAME = sestek_webchat_ios;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8C8506781621955EA010A422900BE7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F1C2871826F586F26E592D3B6FE71DF /* Pods-swift-sestek-webchat-exampleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-exampleTests/Pods-swift-sestek-webchat-exampleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-exampleTests/Pods-swift-sestek-webchat-exampleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EACBC8A29990E83D58DA75B7615DCC97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C64596E6D2032A5270E6D8FB5437B373 /* Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests/Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0377F003E77F0F91AC8FEE0F297E927 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF7FE9F1447111EC4F646B5B5077B6A /* IQKeyboardManagerSwift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42F76AA8E84D32E2DED70BBA35321CB1 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0377F003E77F0F91AC8FEE0F297E927 /* Debug */,
+				9D8C08F259B4E57381CFE8BC28467628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		468E0F65573E1BC861E0BF290AE1B3A7 /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62A24329FF948A574FA26E5644B685B3 /* Debug */,
+				41BED894735D51C36FDBDAE4FA9F3F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		902EAFA24EF74DDA6B79316F2E6C650C /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-example-swift-sestek-webchat-exampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA77B19151276233777CDDD5082EE4C6 /* Debug */,
+				EACBC8A29990E83D58DA75B7615DCC97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92E43A88E1576A2EDD55C84B033F91B9 /* Build configuration list for PBXNativeTarget "sestek-webchat-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4FC030ADD1E9BE27757CCE9437731B2 /* Debug */,
+				065D56369D4D562445BB7CCDA7481BA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEB43C2BB553F6D4D3939FE55682FD48 /* Build configuration list for PBXNativeTarget "sestek-webchat-ios-SestekWebchatBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				810DCD21915BDAC36A34B23DFAD9CC3A /* Debug */,
+				7420F24E0EF52F0C2F7B658C341FDD2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E38C2E7C85C13BE02EE97028E025E09D /* Build configuration list for PBXNativeTarget "Pods-swift-sestek-webchat-exampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8C8506781621955EA010A422900BE7E /* Debug */,
+				D69A4629D093E351E604F3A182B43819 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

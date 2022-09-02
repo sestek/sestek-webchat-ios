@@ -1,0 +1,950 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		496B061428C0D9F80016B8F1 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B061328C0D9F80016B8F1 /* AlertUtil.swift */; };
+		496F31D628B3899B00AABF47 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31D428B3899B00AABF47 /* ImageCollectionViewCell.swift */; };
+		496F31D728B3899B00AABF47 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496F31D528B3899B00AABF47 /* ImageCollectionViewCell.xib */; };
+		496F31D928B389A300AABF47 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31D828B389A300AABF47 /* CustomButton.swift */; };
+		496F31DF28B38AAA00AABF47 /* FloatingRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31DE28B38AAA00AABF47 /* FloatingRoundedButton.swift */; };
+		496F31E128B38B2700AABF47 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31E028B38B2700AABF47 /* UIImage+Extension.swift */; };
+		496F31E328B38CDE00AABF47 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31E228B38CDE00AABF47 /* UIColor+Extension.swift */; };
+		4987F4B2289EA4A500EB65CC /* ChatLeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4987F4AC289EA4A400EB65CC /* ChatLeftTableViewCell.xib */; };
+		4987F4B3289EA4A500EB65CC /* ChatLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4AD289EA4A400EB65CC /* ChatLeftTableViewCell.swift */; };
+		4987F4B5289EA4A500EB65CC /* ChatRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4AF289EA4A400EB65CC /* ChatRightTableViewCell.swift */; };
+		4987F4B6289EA4A500EB65CC /* ChatRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4987F4B0289EA4A500EB65CC /* ChatRightTableViewCell.xib */; };
+		4987F4B9289EA4BC00EB65CC /* ChatTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4B7289EA4BC00EB65CC /* ChatTableViewSource.swift */; };
+		4987F4BD289EA4C700EB65CC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4BB289EA4C700EB65CC /* ChatViewController.swift */; };
+		4987F4BE289EA4C700EB65CC /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4987F4BC289EA4C700EB65CC /* ChatViewController.xib */; };
+		4987F4C0289EA4CD00EB65CC /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4BF289EA4CD00EB65CC /* ChatModel.swift */; };
+		4987F4C2289EA4D500EB65CC /* SestekWebChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4C1289EA4D500EB65CC /* SestekWebChat.swift */; };
+		49AEDB0228A8EFD80041DA42 /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE328A8EFD70041DA42 /* StreamHandle.swift */; };
+		49AEDB0328A8EFD80041DA42 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE428A8EFD80041DA42 /* TransferFormat.swift */; };
+		49AEDB0428A8EFD80041DA42 /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE528A8EFD80041DA42 /* HubConnectionBuilder.swift */; };
+		49AEDB0528A8EFD80041DA42 /* ReconnectableConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE628A8EFD80041DA42 /* ReconnectableConnection.swift */; };
+		49AEDB0628A8EFD80041DA42 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE728A8EFD80041DA42 /* Connection.swift */; };
+		49AEDB0728A8EFD80041DA42 /* HubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE828A8EFD80041DA42 /* HubProtocol.swift */; };
+		49AEDB0828A8EFD80041DA42 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE928A8EFD80041DA42 /* HttpConnection.swift */; };
+		49AEDB0928A8EFD80041DA42 /* HubConnectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAEA28A8EFD80041DA42 /* HubConnectionExtensions.swift */; };
+		49AEDB0A28A8EFD80041DA42 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAEB28A8EFD80041DA42 /* HttpResponse.swift */; };
+		49AEDB0B28A8EFD80041DA42 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAEC28A8EFD80041DA42 /* Util.swift */; };
+		49AEDB0C28A8EFD80041DA42 /* HttpConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAED28A8EFD80041DA42 /* HttpConnectionOptions.swift */; };
+		49AEDB0D28A8EFD80041DA42 /* HubConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAEE28A8EFD80041DA42 /* HubConnectionDelegate.swift */; };
+		49AEDB0E28A8EFD80041DA42 /* HandshakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAEF28A8EFD80041DA42 /* HandshakeProtocol.swift */; };
+		49AEDB0F28A8EFD80041DA42 /* DefaultHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF028A8EFD80041DA42 /* DefaultHttpClient.swift */; };
+		49AEDB1028A8EFD80041DA42 /* WebsocketsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF128A8EFD80041DA42 /* WebsocketsTransport.swift */; };
+		49AEDB1128A8EFD80041DA42 /* JSONHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF228A8EFD80041DA42 /* JSONHubProtocol.swift */; };
+		49AEDB1228A8EFD80041DA42 /* CodableHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF328A8EFD80041DA42 /* CodableHelpers.swift */; };
+		49AEDB1328A8EFD80041DA42 /* HubConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF428A8EFD80041DA42 /* HubConnectionOptions.swift */; };
+		49AEDB1428A8EFD80041DA42 /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF528A8EFD80041DA42 /* ConnectionDelegate.swift */; };
+		49AEDB1528A8EFD80041DA42 /* ServerInvocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF628A8EFD80041DA42 /* ServerInvocationHandler.swift */; };
+		49AEDB1628A8EFD80041DA42 /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF728A8EFD80041DA42 /* TransportDelegate.swift */; };
+		49AEDB1728A8EFD80041DA42 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF828A8EFD80041DA42 /* Transport.swift */; };
+		49AEDB1828A8EFD80041DA42 /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAF928A8EFD80041DA42 /* SignalRError.swift */; };
+		49AEDB1928A8EFD80041DA42 /* ReconnectPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFA28A8EFD80041DA42 /* ReconnectPolicy.swift */; };
+		49AEDB1A28A8EFD80041DA42 /* HttpClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFB28A8EFD80041DA42 /* HttpClientProtocol.swift */; };
+		49AEDB1B28A8EFD80041DA42 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFC28A8EFD80041DA42 /* Logger.swift */; };
+		49AEDB1C28A8EFD80041DA42 /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFD28A8EFD80041DA42 /* NegotiationResponse.swift */; };
+		49AEDB1D28A8EFD80041DA42 /* LongPollingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFE28A8EFD80041DA42 /* LongPollingTransport.swift */; };
+		49AEDB1E28A8EFD80041DA42 /* DefaultTransportFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAFF28A8EFD80041DA42 /* DefaultTransportFactory.swift */; };
+		49AEDB1F28A8EFD80041DA42 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDB0028A8EFD80041DA42 /* TransportType.swift */; };
+		49AEDB2028A8EFD80041DA42 /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDB0128A8EFD80041DA42 /* HubConnection.swift */; };
+		49AEDB2328A8F3330041DA42 /* MessageDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDB2228A8F3330041DA42 /* MessageDetailResponseModel.swift */; };
+		49BA7EBB289EACED00B15E8A /* SignalRConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA7EBA289EACED00B15E8A /* SignalRConnectionManager.swift */; };
+		49BA7EBE289EEACF00B15E8A /* ConversationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA7EBD289EEACF00B15E8A /* ConversationRequestModel.swift */; };
+		49BA7EC0289EF04400B15E8A /* ConnectionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA7EBF289EF04400B15E8A /* ConnectionInfoModel.swift */; };
+		49CA022228980786005A5BA0 /* swift_sestek_webchat.docc in Sources */ = {isa = PBXBuildFile; fileRef = 49CA022128980786005A5BA0 /* swift_sestek_webchat.docc */; };
+		49CA022828980786005A5BA0 /* swift_sestek_webchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CA021D28980786005A5BA0 /* swift_sestek_webchat.framework */; };
+		49CA022D28980786005A5BA0 /* swift_sestek_webchatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CA022C28980786005A5BA0 /* swift_sestek_webchatTests.swift */; };
+		49CA022E28980786005A5BA0 /* swift_sestek_webchat.h in Headers */ = {isa = PBXBuildFile; fileRef = 49CA022028980786005A5BA0 /* swift_sestek_webchat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49D4CD5728B388B700F84A8B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD4D28B388B700F84A8B /* String+Extensions.swift */; };
+		49D4CD5828B388B700F84A8B /* UICollectionView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD4E28B388B700F84A8B /* UICollectionView+register.swift */; };
+		49D4CD5928B388B700F84A8B /* UITableView+register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD4F28B388B700F84A8B /* UITableView+register.swift */; };
+		49D4CD5A28B388B700F84A8B /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5028B388B700F84A8B /* UIImageView+Extensions.swift */; };
+		49D4CD5B28B388B700F84A8B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5128B388B700F84A8B /* Date+Extensions.swift */; };
+		49D4CD5C28B388B700F84A8B /* UIViewController+loadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5228B388B700F84A8B /* UIViewController+loadNib.swift */; };
+		49D4CD5D28B388B700F84A8B /* UICollectionViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5328B388B700F84A8B /* UICollectionViewCell+identifier.swift */; };
+		49D4CD5E28B388B700F84A8B /* UIView+makeShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5428B388B700F84A8B /* UIView+makeShadow.swift */; };
+		49D4CD5F28B388B700F84A8B /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5528B388B700F84A8B /* DateFormatter+Extensions.swift */; };
+		49D4CD6028B388B700F84A8B /* UITableViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5628B388B700F84A8B /* UITableViewCell+identifier.swift */; };
+		49EFED6F28B39DCD00112186 /* knovvu_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EFED6C28B39DCD00112186 /* knovvu_logo@2x.png */; };
+		49EFED7028B39DCD00112186 /* knovvu_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EFED6D28B39DCD00112186 /* knovvu_logo.png */; };
+		49EFED7128B39DCD00112186 /* knovvu_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EFED6E28B39DCD00112186 /* knovvu_logo@3x.png */; };
+		49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFED7228B39E1E00112186 /* Bundle+Extension.swift */; };
+		49F1B80728BF70FA005EA7C4 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80628BF70FA005EA7C4 /* TextHelper.swift */; };
+		49F1B80A28BF71CD005EA7C4 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80928BF71CD005EA7C4 /* Language.swift */; };
+		49F1B80C28BF903F005EA7C4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */; };
+		5F995F7646690461AB74498C /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB685516BC5526A3A5C6712 /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework */; };
+		871745710C8A3F620669A53C /* Pods_swift_sestek_webchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB77BA60E632E65A3A8A1726 /* Pods_swift_sestek_webchat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49CA022928980786005A5BA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49CA021428980786005A5BA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49CA021C28980786005A5BA0;
+			remoteInfo = "swift-sestek-webchat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EC202284CCF0B700BD39455 /* Pods-swift-sestek-webchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat.release.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat/Pods-swift-sestek-webchat.release.xcconfig"; sourceTree = "<group>"; };
+		496B061328C0D9F80016B8F1 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
+		496F31D428B3899B00AABF47 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		496F31D528B3899B00AABF47 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		496F31D828B389A300AABF47 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		496F31DE28B38AAA00AABF47 /* FloatingRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingRoundedButton.swift; sourceTree = "<group>"; };
+		496F31E028B38B2700AABF47 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		496F31E228B38CDE00AABF47 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4987F4AC289EA4A400EB65CC /* ChatLeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatLeftTableViewCell.xib; sourceTree = "<group>"; };
+		4987F4AD289EA4A400EB65CC /* ChatLeftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLeftTableViewCell.swift; sourceTree = "<group>"; };
+		4987F4AF289EA4A400EB65CC /* ChatRightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRightTableViewCell.swift; sourceTree = "<group>"; };
+		4987F4B0289EA4A500EB65CC /* ChatRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatRightTableViewCell.xib; sourceTree = "<group>"; };
+		4987F4B7289EA4BC00EB65CC /* ChatTableViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewSource.swift; sourceTree = "<group>"; };
+		4987F4BB289EA4C700EB65CC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4987F4BC289EA4C700EB65CC /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		4987F4BF289EA4CD00EB65CC /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		4987F4C1289EA4D500EB65CC /* SestekWebChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SestekWebChat.swift; sourceTree = "<group>"; };
+		49AEDAE328A8EFD70041DA42 /* StreamHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamHandle.swift; sourceTree = "<group>"; };
+		49AEDAE428A8EFD80041DA42 /* TransferFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferFormat.swift; sourceTree = "<group>"; };
+		49AEDAE528A8EFD80041DA42 /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnectionBuilder.swift; sourceTree = "<group>"; };
+		49AEDAE628A8EFD80041DA42 /* ReconnectableConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconnectableConnection.swift; sourceTree = "<group>"; };
+		49AEDAE728A8EFD80041DA42 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		49AEDAE828A8EFD80041DA42 /* HubProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubProtocol.swift; sourceTree = "<group>"; };
+		49AEDAE928A8EFD80041DA42 /* HttpConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnection.swift; sourceTree = "<group>"; };
+		49AEDAEA28A8EFD80041DA42 /* HubConnectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnectionExtensions.swift; sourceTree = "<group>"; };
+		49AEDAEB28A8EFD80041DA42 /* HttpResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponse.swift; sourceTree = "<group>"; };
+		49AEDAEC28A8EFD80041DA42 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		49AEDAED28A8EFD80041DA42 /* HttpConnectionOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpConnectionOptions.swift; sourceTree = "<group>"; };
+		49AEDAEE28A8EFD80041DA42 /* HubConnectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnectionDelegate.swift; sourceTree = "<group>"; };
+		49AEDAEF28A8EFD80041DA42 /* HandshakeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandshakeProtocol.swift; sourceTree = "<group>"; };
+		49AEDAF028A8EFD80041DA42 /* DefaultHttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHttpClient.swift; sourceTree = "<group>"; };
+		49AEDAF128A8EFD80041DA42 /* WebsocketsTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketsTransport.swift; sourceTree = "<group>"; };
+		49AEDAF228A8EFD80041DA42 /* JSONHubProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHubProtocol.swift; sourceTree = "<group>"; };
+		49AEDAF328A8EFD80041DA42 /* CodableHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelpers.swift; sourceTree = "<group>"; };
+		49AEDAF428A8EFD80041DA42 /* HubConnectionOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnectionOptions.swift; sourceTree = "<group>"; };
+		49AEDAF528A8EFD80041DA42 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
+		49AEDAF628A8EFD80041DA42 /* ServerInvocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerInvocationHandler.swift; sourceTree = "<group>"; };
+		49AEDAF728A8EFD80041DA42 /* TransportDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportDelegate.swift; sourceTree = "<group>"; };
+		49AEDAF828A8EFD80041DA42 /* Transport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		49AEDAF928A8EFD80041DA42 /* SignalRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalRError.swift; sourceTree = "<group>"; };
+		49AEDAFA28A8EFD80041DA42 /* ReconnectPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReconnectPolicy.swift; sourceTree = "<group>"; };
+		49AEDAFB28A8EFD80041DA42 /* HttpClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClientProtocol.swift; sourceTree = "<group>"; };
+		49AEDAFC28A8EFD80041DA42 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		49AEDAFD28A8EFD80041DA42 /* NegotiationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NegotiationResponse.swift; sourceTree = "<group>"; };
+		49AEDAFE28A8EFD80041DA42 /* LongPollingTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPollingTransport.swift; sourceTree = "<group>"; };
+		49AEDAFF28A8EFD80041DA42 /* DefaultTransportFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTransportFactory.swift; sourceTree = "<group>"; };
+		49AEDB0028A8EFD80041DA42 /* TransportType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		49AEDB0128A8EFD80041DA42 /* HubConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnection.swift; sourceTree = "<group>"; };
+		49AEDB2228A8F3330041DA42 /* MessageDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailResponseModel.swift; sourceTree = "<group>"; };
+		49BA7EBA289EACED00B15E8A /* SignalRConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRConnectionManager.swift; sourceTree = "<group>"; };
+		49BA7EBD289EEACF00B15E8A /* ConversationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRequestModel.swift; sourceTree = "<group>"; };
+		49BA7EBF289EF04400B15E8A /* ConnectionInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoModel.swift; sourceTree = "<group>"; };
+		49CA021D28980786005A5BA0 /* swift_sestek_webchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = swift_sestek_webchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CA022028980786005A5BA0 /* swift_sestek_webchat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swift_sestek_webchat.h; sourceTree = "<group>"; };
+		49CA022128980786005A5BA0 /* swift_sestek_webchat.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = swift_sestek_webchat.docc; sourceTree = "<group>"; };
+		49CA022728980786005A5BA0 /* swift-sestek-webchatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-sestek-webchatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49CA022C28980786005A5BA0 /* swift_sestek_webchatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_sestek_webchatTests.swift; sourceTree = "<group>"; };
+		49D4CD4D28B388B700F84A8B /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		49D4CD4E28B388B700F84A8B /* UICollectionView+register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+register.swift"; sourceTree = "<group>"; };
+		49D4CD4F28B388B700F84A8B /* UITableView+register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+register.swift"; sourceTree = "<group>"; };
+		49D4CD5028B388B700F84A8B /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		49D4CD5128B388B700F84A8B /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		49D4CD5228B388B700F84A8B /* UIViewController+loadNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+loadNib.swift"; sourceTree = "<group>"; };
+		49D4CD5328B388B700F84A8B /* UICollectionViewCell+identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+identifier.swift"; sourceTree = "<group>"; };
+		49D4CD5428B388B700F84A8B /* UIView+makeShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+makeShadow.swift"; sourceTree = "<group>"; };
+		49D4CD5528B388B700F84A8B /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		49D4CD5628B388B700F84A8B /* UITableViewCell+identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+identifier.swift"; sourceTree = "<group>"; };
+		49EFED6C28B39DCD00112186 /* knovvu_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knovvu_logo@2x.png"; sourceTree = "<group>"; };
+		49EFED6D28B39DCD00112186 /* knovvu_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knovvu_logo.png; sourceTree = "<group>"; };
+		49EFED6E28B39DCD00112186 /* knovvu_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "knovvu_logo@3x.png"; sourceTree = "<group>"; };
+		49EFED7228B39E1E00112186 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		49F1B80628BF70FA005EA7C4 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		49F1B80928BF71CD005EA7C4 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		5AB685516BC5526A3A5C6712 /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D93B39E028809EB130A2612 /* Pods-swift-sestek-webchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat.debug.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat/Pods-swift-sestek-webchat.debug.xcconfig"; sourceTree = "<group>"; };
+		6FA992DE212DEA43F9B0ECB9 /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig"; sourceTree = "<group>"; };
+		948628E976857DEFC40614AB /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB77BA60E632E65A3A8A1726 /* Pods_swift_sestek_webchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_sestek_webchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49CA021A28980786005A5BA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871745710C8A3F620669A53C /* Pods_swift_sestek_webchat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CA022428980786005A5BA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CA022828980786005A5BA0 /* swift_sestek_webchat.framework in Frameworks */,
+				5F995F7646690461AB74498C /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		496F31D228B3894000AABF47 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				496F31D828B389A300AABF47 /* CustomButton.swift */,
+				496F31DE28B38AAA00AABF47 /* FloatingRoundedButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		496F31D328B3897300AABF47 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				496F31D428B3899B00AABF47 /* ImageCollectionViewCell.swift */,
+				496F31D528B3899B00AABF47 /* ImageCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		496F31DB28B38A7200AABF47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49EFED6D28B39DCD00112186 /* knovvu_logo.png */,
+				49EFED6C28B39DCD00112186 /* knovvu_logo@2x.png */,
+				49EFED6E28B39DCD00112186 /* knovvu_logo@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4987F4A5289EA46A00EB65CC /* TableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4987F4AD289EA4A400EB65CC /* ChatLeftTableViewCell.swift */,
+				4987F4AC289EA4A400EB65CC /* ChatLeftTableViewCell.xib */,
+				4987F4AF289EA4A400EB65CC /* ChatRightTableViewCell.swift */,
+				4987F4B0289EA4A500EB65CC /* ChatRightTableViewCell.xib */,
+			);
+			path = TableviewCells;
+			sourceTree = "<group>";
+		};
+		4987F4A6289EA47200EB65CC /* TableViewSources */ = {
+			isa = PBXGroup;
+			children = (
+				4987F4B7289EA4BC00EB65CC /* ChatTableViewSource.swift */,
+			);
+			path = TableViewSources;
+			sourceTree = "<group>";
+		};
+		4987F4A7289EA47900EB65CC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4987F4BB289EA4C700EB65CC /* ChatViewController.swift */,
+				4987F4BC289EA4C700EB65CC /* ChatViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4987F4A8289EA47E00EB65CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49AEDB2128A8F22D0041DA42 /* ResponseModels */,
+				49BA7EBC289EEAC200B15E8A /* RequestModels */,
+				4987F4BF289EA4CD00EB65CC /* ChatModel.swift */,
+				49BA7EBF289EF04400B15E8A /* ConnectionInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4987F4A9289EA48300EB65CC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4987F4C1289EA4D500EB65CC /* SestekWebChat.swift */,
+				49BA7EBA289EACED00B15E8A /* SignalRConnectionManager.swift */,
+				49F1B80628BF70FA005EA7C4 /* TextHelper.swift */,
+				496B061328C0D9F80016B8F1 /* AlertUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4987F4AA289EA48900EB65CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49D4CD5128B388B700F84A8B /* Date+Extensions.swift */,
+				49D4CD5528B388B700F84A8B /* DateFormatter+Extensions.swift */,
+				49D4CD4D28B388B700F84A8B /* String+Extensions.swift */,
+				49D4CD4E28B388B700F84A8B /* UICollectionView+register.swift */,
+				49D4CD5328B388B700F84A8B /* UICollectionViewCell+identifier.swift */,
+				49D4CD5028B388B700F84A8B /* UIImageView+Extensions.swift */,
+				49D4CD4F28B388B700F84A8B /* UITableView+register.swift */,
+				49D4CD5628B388B700F84A8B /* UITableViewCell+identifier.swift */,
+				49D4CD5428B388B700F84A8B /* UIView+makeShadow.swift */,
+				49D4CD5228B388B700F84A8B /* UIViewController+loadNib.swift */,
+				496F31E028B38B2700AABF47 /* UIImage+Extension.swift */,
+				496F31E228B38CDE00AABF47 /* UIColor+Extension.swift */,
+				49EFED7228B39E1E00112186 /* Bundle+Extension.swift */,
+				49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49AEDAA328A8EE8C0041DA42 /* SignalRClient */ = {
+			isa = PBXGroup;
+			children = (
+				49AEDAF328A8EFD80041DA42 /* CodableHelpers.swift */,
+				49AEDAE728A8EFD80041DA42 /* Connection.swift */,
+				49AEDAF528A8EFD80041DA42 /* ConnectionDelegate.swift */,
+				49AEDAF028A8EFD80041DA42 /* DefaultHttpClient.swift */,
+				49AEDAFF28A8EFD80041DA42 /* DefaultTransportFactory.swift */,
+				49AEDAEF28A8EFD80041DA42 /* HandshakeProtocol.swift */,
+				49AEDAFB28A8EFD80041DA42 /* HttpClientProtocol.swift */,
+				49AEDAE928A8EFD80041DA42 /* HttpConnection.swift */,
+				49AEDAED28A8EFD80041DA42 /* HttpConnectionOptions.swift */,
+				49AEDAEB28A8EFD80041DA42 /* HttpResponse.swift */,
+				49AEDB0128A8EFD80041DA42 /* HubConnection.swift */,
+				49AEDAE528A8EFD80041DA42 /* HubConnectionBuilder.swift */,
+				49AEDAEE28A8EFD80041DA42 /* HubConnectionDelegate.swift */,
+				49AEDAEA28A8EFD80041DA42 /* HubConnectionExtensions.swift */,
+				49AEDAF428A8EFD80041DA42 /* HubConnectionOptions.swift */,
+				49AEDAE828A8EFD80041DA42 /* HubProtocol.swift */,
+				49AEDAF228A8EFD80041DA42 /* JSONHubProtocol.swift */,
+				49AEDAFC28A8EFD80041DA42 /* Logger.swift */,
+				49AEDAFE28A8EFD80041DA42 /* LongPollingTransport.swift */,
+				49AEDAFD28A8EFD80041DA42 /* NegotiationResponse.swift */,
+				49AEDAE628A8EFD80041DA42 /* ReconnectableConnection.swift */,
+				49AEDAFA28A8EFD80041DA42 /* ReconnectPolicy.swift */,
+				49AEDAF628A8EFD80041DA42 /* ServerInvocationHandler.swift */,
+				49AEDAF928A8EFD80041DA42 /* SignalRError.swift */,
+				49AEDAE328A8EFD70041DA42 /* StreamHandle.swift */,
+				49AEDAE428A8EFD80041DA42 /* TransferFormat.swift */,
+				49AEDAF828A8EFD80041DA42 /* Transport.swift */,
+				49AEDAF728A8EFD80041DA42 /* TransportDelegate.swift */,
+				49AEDB0028A8EFD80041DA42 /* TransportType.swift */,
+				49AEDAEC28A8EFD80041DA42 /* Util.swift */,
+				49AEDAF128A8EFD80041DA42 /* WebsocketsTransport.swift */,
+			);
+			path = SignalRClient;
+			sourceTree = "<group>";
+		};
+		49AEDAA428A8EF140041DA42 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				49AEDAA328A8EE8C0041DA42 /* SignalRClient */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		49AEDB2128A8F22D0041DA42 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				49AEDB2228A8F3330041DA42 /* MessageDetailResponseModel.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		49BA7EBC289EEAC200B15E8A /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				49BA7EBD289EEACF00B15E8A /* ConversationRequestModel.swift */,
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		49CA021328980786005A5BA0 = {
+			isa = PBXGroup;
+			children = (
+				49CA021F28980786005A5BA0 /* swift-sestek-webchat */,
+				49CA022B28980786005A5BA0 /* swift-sestek-webchatTests */,
+				49CA021E28980786005A5BA0 /* Products */,
+				AE8489E1ACE0EC17DE19A764 /* Pods */,
+				E18FD9250ADA45175C0D5372 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49CA021E28980786005A5BA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49CA021D28980786005A5BA0 /* swift_sestek_webchat.framework */,
+				49CA022728980786005A5BA0 /* swift-sestek-webchatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49CA021F28980786005A5BA0 /* swift-sestek-webchat */ = {
+			isa = PBXGroup;
+			children = (
+				49F1B80828BF71C5005EA7C4 /* Enums */,
+				496F31DB28B38A7200AABF47 /* Resources */,
+				496F31D228B3894000AABF47 /* CustomViews */,
+				49AEDAA428A8EF140041DA42 /* Libraries */,
+				4987F4AA289EA48900EB65CC /* Extensions */,
+				4987F4A9289EA48300EB65CC /* Utils */,
+				4987F4A8289EA47E00EB65CC /* Models */,
+				4987F4A7289EA47900EB65CC /* ViewControllers */,
+				496F31D328B3897300AABF47 /* CollectionViewCells */,
+				4987F4A6289EA47200EB65CC /* TableViewSources */,
+				4987F4A5289EA46A00EB65CC /* TableviewCells */,
+				49CA022028980786005A5BA0 /* swift_sestek_webchat.h */,
+				49CA022128980786005A5BA0 /* swift_sestek_webchat.docc */,
+			);
+			path = "swift-sestek-webchat";
+			sourceTree = "<group>";
+		};
+		49CA022B28980786005A5BA0 /* swift-sestek-webchatTests */ = {
+			isa = PBXGroup;
+			children = (
+				49CA022C28980786005A5BA0 /* swift_sestek_webchatTests.swift */,
+			);
+			path = "swift-sestek-webchatTests";
+			sourceTree = "<group>";
+		};
+		49F1B80828BF71C5005EA7C4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				49F1B80928BF71CD005EA7C4 /* Language.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		AE8489E1ACE0EC17DE19A764 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D93B39E028809EB130A2612 /* Pods-swift-sestek-webchat.debug.xcconfig */,
+				0EC202284CCF0B700BD39455 /* Pods-swift-sestek-webchat.release.xcconfig */,
+				948628E976857DEFC40614AB /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig */,
+				6FA992DE212DEA43F9B0ECB9 /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E18FD9250ADA45175C0D5372 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB77BA60E632E65A3A8A1726 /* Pods_swift_sestek_webchat.framework */,
+				5AB685516BC5526A3A5C6712 /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		49CA021828980786005A5BA0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CA022E28980786005A5BA0 /* swift_sestek_webchat.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		49CA021C28980786005A5BA0 /* swift-sestek-webchat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CA023128980786005A5BA0 /* Build configuration list for PBXNativeTarget "swift-sestek-webchat" */;
+			buildPhases = (
+				4BA34C712B39691B856A632F /* [CP] Check Pods Manifest.lock */,
+				49CA021828980786005A5BA0 /* Headers */,
+				49CA021928980786005A5BA0 /* Sources */,
+				49CA021A28980786005A5BA0 /* Frameworks */,
+				49CA021B28980786005A5BA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "swift-sestek-webchat";
+			productName = "swift-sestek-webchat";
+			productReference = 49CA021D28980786005A5BA0 /* swift_sestek_webchat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		49CA022628980786005A5BA0 /* swift-sestek-webchatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49CA023428980786005A5BA0 /* Build configuration list for PBXNativeTarget "swift-sestek-webchatTests" */;
+			buildPhases = (
+				3047B47C2750161927A68313 /* [CP] Check Pods Manifest.lock */,
+				49CA022328980786005A5BA0 /* Sources */,
+				49CA022428980786005A5BA0 /* Frameworks */,
+				49CA022528980786005A5BA0 /* Resources */,
+				0F58788DDCD57E076BD57E02 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49CA022A28980786005A5BA0 /* PBXTargetDependency */,
+			);
+			name = "swift-sestek-webchatTests";
+			productName = "swift-sestek-webchatTests";
+			productReference = 49CA022728980786005A5BA0 /* swift-sestek-webchatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49CA021428980786005A5BA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					49CA021C28980786005A5BA0 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					49CA022628980786005A5BA0 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 49CA021728980786005A5BA0 /* Build configuration list for PBXProject "swift-sestek-webchat" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49CA021328980786005A5BA0;
+			productRefGroup = 49CA021E28980786005A5BA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49CA021C28980786005A5BA0 /* swift-sestek-webchat */,
+				49CA022628980786005A5BA0 /* swift-sestek-webchatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49CA021B28980786005A5BA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4987F4B6289EA4A500EB65CC /* ChatRightTableViewCell.xib in Resources */,
+				4987F4BE289EA4C700EB65CC /* ChatViewController.xib in Resources */,
+				4987F4B2289EA4A500EB65CC /* ChatLeftTableViewCell.xib in Resources */,
+				49EFED6F28B39DCD00112186 /* knovvu_logo@2x.png in Resources */,
+				49EFED7128B39DCD00112186 /* knovvu_logo@3x.png in Resources */,
+				496F31D728B3899B00AABF47 /* ImageCollectionViewCell.xib in Resources */,
+				49EFED7028B39DCD00112186 /* knovvu_logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CA022528980786005A5BA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F58788DDCD57E076BD57E02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3047B47C2750161927A68313 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-sestek-webchat-swift-sestek-webchatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BA34C712B39691B856A632F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swift-sestek-webchat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49CA021928980786005A5BA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496F31D628B3899B00AABF47 /* ImageCollectionViewCell.swift in Sources */,
+				49AEDB2328A8F3330041DA42 /* MessageDetailResponseModel.swift in Sources */,
+				49D4CD5D28B388B700F84A8B /* UICollectionViewCell+identifier.swift in Sources */,
+				49D4CD5B28B388B700F84A8B /* Date+Extensions.swift in Sources */,
+				49AEDB1C28A8EFD80041DA42 /* NegotiationResponse.swift in Sources */,
+				49AEDB1228A8EFD80041DA42 /* CodableHelpers.swift in Sources */,
+				496F31DF28B38AAA00AABF47 /* FloatingRoundedButton.swift in Sources */,
+				49D4CD5E28B388B700F84A8B /* UIView+makeShadow.swift in Sources */,
+				49AEDB1528A8EFD80041DA42 /* ServerInvocationHandler.swift in Sources */,
+				49AEDB0D28A8EFD80041DA42 /* HubConnectionDelegate.swift in Sources */,
+				4987F4C2289EA4D500EB65CC /* SestekWebChat.swift in Sources */,
+				49AEDB0228A8EFD80041DA42 /* StreamHandle.swift in Sources */,
+				49AEDB1A28A8EFD80041DA42 /* HttpClientProtocol.swift in Sources */,
+				49BA7EC0289EF04400B15E8A /* ConnectionInfoModel.swift in Sources */,
+				49AEDB0628A8EFD80041DA42 /* Connection.swift in Sources */,
+				49AEDB1728A8EFD80041DA42 /* Transport.swift in Sources */,
+				4987F4B5289EA4A500EB65CC /* ChatRightTableViewCell.swift in Sources */,
+				49D4CD6028B388B700F84A8B /* UITableViewCell+identifier.swift in Sources */,
+				49AEDB0728A8EFD80041DA42 /* HubProtocol.swift in Sources */,
+				49AEDB0E28A8EFD80041DA42 /* HandshakeProtocol.swift in Sources */,
+				49D4CD5828B388B700F84A8B /* UICollectionView+register.swift in Sources */,
+				49AEDB1028A8EFD80041DA42 /* WebsocketsTransport.swift in Sources */,
+				49AEDB0928A8EFD80041DA42 /* HubConnectionExtensions.swift in Sources */,
+				49AEDB1D28A8EFD80041DA42 /* LongPollingTransport.swift in Sources */,
+				49AEDB1628A8EFD80041DA42 /* TransportDelegate.swift in Sources */,
+				49AEDB1428A8EFD80041DA42 /* ConnectionDelegate.swift in Sources */,
+				49AEDB1128A8EFD80041DA42 /* JSONHubProtocol.swift in Sources */,
+				4987F4C0289EA4CD00EB65CC /* ChatModel.swift in Sources */,
+				49AEDB1328A8EFD80041DA42 /* HubConnectionOptions.swift in Sources */,
+				496F31D928B389A300AABF47 /* CustomButton.swift in Sources */,
+				49AEDB0B28A8EFD80041DA42 /* Util.swift in Sources */,
+				49D4CD5C28B388B700F84A8B /* UIViewController+loadNib.swift in Sources */,
+				49AEDB1B28A8EFD80041DA42 /* Logger.swift in Sources */,
+				49D4CD5F28B388B700F84A8B /* DateFormatter+Extensions.swift in Sources */,
+				49F1B80A28BF71CD005EA7C4 /* Language.swift in Sources */,
+				49AEDB1E28A8EFD80041DA42 /* DefaultTransportFactory.swift in Sources */,
+				4987F4BD289EA4C700EB65CC /* ChatViewController.swift in Sources */,
+				49F1B80C28BF903F005EA7C4 /* UIViewController+Extensions.swift in Sources */,
+				49AEDB0428A8EFD80041DA42 /* HubConnectionBuilder.swift in Sources */,
+				49F1B80728BF70FA005EA7C4 /* TextHelper.swift in Sources */,
+				49CA022228980786005A5BA0 /* swift_sestek_webchat.docc in Sources */,
+				49D4CD5A28B388B700F84A8B /* UIImageView+Extensions.swift in Sources */,
+				496B061428C0D9F80016B8F1 /* AlertUtil.swift in Sources */,
+				496F31E328B38CDE00AABF47 /* UIColor+Extension.swift in Sources */,
+				49AEDB0528A8EFD80041DA42 /* ReconnectableConnection.swift in Sources */,
+				49AEDB0C28A8EFD80041DA42 /* HttpConnectionOptions.swift in Sources */,
+				49AEDB0828A8EFD80041DA42 /* HttpConnection.swift in Sources */,
+				49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */,
+				4987F4B9289EA4BC00EB65CC /* ChatTableViewSource.swift in Sources */,
+				496F31E128B38B2700AABF47 /* UIImage+Extension.swift in Sources */,
+				4987F4B3289EA4A500EB65CC /* ChatLeftTableViewCell.swift in Sources */,
+				49AEDB0F28A8EFD80041DA42 /* DefaultHttpClient.swift in Sources */,
+				49BA7EBE289EEACF00B15E8A /* ConversationRequestModel.swift in Sources */,
+				49AEDB1928A8EFD80041DA42 /* ReconnectPolicy.swift in Sources */,
+				49BA7EBB289EACED00B15E8A /* SignalRConnectionManager.swift in Sources */,
+				49AEDB1828A8EFD80041DA42 /* SignalRError.swift in Sources */,
+				49D4CD5728B388B700F84A8B /* String+Extensions.swift in Sources */,
+				49AEDB0328A8EFD80041DA42 /* TransferFormat.swift in Sources */,
+				49AEDB0A28A8EFD80041DA42 /* HttpResponse.swift in Sources */,
+				49D4CD5928B388B700F84A8B /* UITableView+register.swift in Sources */,
+				49AEDB1F28A8EFD80041DA42 /* TransportType.swift in Sources */,
+				49AEDB2028A8EFD80041DA42 /* HubConnection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49CA022328980786005A5BA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49CA022D28980786005A5BA0 /* swift_sestek_webchatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49CA022A28980786005A5BA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49CA021C28980786005A5BA0 /* swift-sestek-webchat */;
+			targetProxy = 49CA022928980786005A5BA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49CA022F28980786005A5BA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		49CA023028980786005A5BA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		49CA023228980786005A5BA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D93B39E028809EB130A2612 /* Pods-swift-sestek-webchat.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LUQZLRGR39;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sezeromer.swift-sestek-webchat";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49CA023328980786005A5BA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC202284CCF0B700BD39455 /* Pods-swift-sestek-webchat.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LUQZLRGR39;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sezeromer.swift-sestek-webchat";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49CA023528980786005A5BA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948628E976857DEFC40614AB /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUQZLRGR39;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sezeromer.swift-sestek-webchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49CA023628980786005A5BA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FA992DE212DEA43F9B0ECB9 /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUQZLRGR39;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sezeromer.swift-sestek-webchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49CA021728980786005A5BA0 /* Build configuration list for PBXProject "swift-sestek-webchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CA022F28980786005A5BA0 /* Debug */,
+				49CA023028980786005A5BA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49CA023128980786005A5BA0 /* Build configuration list for PBXNativeTarget "swift-sestek-webchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CA023228980786005A5BA0 /* Debug */,
+				49CA023328980786005A5BA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49CA023428980786005A5BA0 /* Build configuration list for PBXNativeTarget "swift-sestek-webchatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49CA023528980786005A5BA0 /* Debug */,
+				49CA023628980786005A5BA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49CA021428980786005A5BA0 /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_swift_sestek_webchat {
+  umbrella header "Pods-swift-sestek-webchat-umbrella.h"
+
+  export *
+  module * { export * }
+}
