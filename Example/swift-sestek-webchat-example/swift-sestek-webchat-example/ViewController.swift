@@ -15,10 +15,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapBtnStartConversation(_ sender: Any) {
-        SestekWebChat.sharedInstance.startConversation(clientId: "mobile-testing", tenant: "ArabBank", channel: "NdaInfoBip", project: "ArabBank", fullName: "Ömer Sezer", self)
+        SestekWebChat.shared.startConversation()
     }
     
     @IBAction func didTapBtnEndConversation(_ sender: Any) {
-        SestekWebChat.sharedInstance.endConversation()
+        SestekWebChat.shared.endConversation()
+    }
+    
+    @IBAction func didTapBtnTriggerVisible(_ sender: Any) {
+        SestekWebChat.shared.triggerVisible(self)
     }
 }

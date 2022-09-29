@@ -2,13 +2,15 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="swift_sestek_webchat" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="sestek_webchat_ios" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImage" destination="y2d-sV-ZyA" id="x2R-99-NvD"/>
                 <outlet property="btnSend" destination="Bk7-Uh-GiP" id="sLG-ka-dx9"/>
                 <outlet property="tableView" destination="6w9-l6-BJt" id="evI-VV-Shq"/>
                 <outlet property="tfMessage" destination="B3R-pJ-RlF" id="b1f-cJ-W94"/>
@@ -21,6 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y2d-sV-ZyA">
+                    <rect key="frame" x="0.0" y="44" width="414" height="758"/>
+                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6w9-l6-BJt">
                     <rect key="frame" x="0.0" y="44" width="414" height="758"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,11 +90,15 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Uut-J7-soY" secondAttribute="bottom" id="13h-pu-UWp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Uut-J7-soY" secondAttribute="trailing" id="D8g-2A-Fz3"/>
+                <constraint firstItem="y2d-sV-ZyA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HhL-iH-3Zz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B3R-pJ-RlF" secondAttribute="bottom" constant="10" id="IfX-7H-aza"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2d-sV-ZyA" secondAttribute="trailing" id="VVJ-MB-sGC"/>
                 <constraint firstItem="Uut-J7-soY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bhD-3e-7Qy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6w9-l6-BJt" secondAttribute="trailing" id="cFt-Cc-N6m"/>
                 <constraint firstItem="6w9-l6-BJt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dfN-oa-XTx"/>
                 <constraint firstItem="6w9-l6-BJt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gK7-kj-O2j"/>
+                <constraint firstItem="y2d-sV-ZyA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nsz-VF-Vh0"/>
+                <constraint firstItem="Uut-J7-soY" firstAttribute="top" secondItem="y2d-sV-ZyA" secondAttribute="bottom" id="tgb-KJ-PUs"/>
                 <constraint firstItem="Uut-J7-soY" firstAttribute="top" secondItem="6w9-l6-BJt" secondAttribute="bottom" id="zO1-v9-kxE"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>

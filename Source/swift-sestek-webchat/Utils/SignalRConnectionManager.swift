@@ -17,55 +17,81 @@ protocol SignalRConnectionManagerOpeartionsDelegate: AnyObject {
 }
 
 final internal class SignalRConnectionManager {
+    struct Settings {
+        let url: String
+        let defaultConfiguration: DefaultConfiguration
+        let customConfiguration: CustomConfiguration
+    }
     
-    internal static let sharedInstance = SignalRConnectionManager(with: URL(string: "https://nd-test-webchat.sestek.com/chathub")!)
+    internal static let shared = SignalRConnectionManager()
+    private static var settings: Settings?
     
     weak var messagingDelegate: SignalRConnectionManagerMessagingDelegate?
     weak var operationsDelegate: SignalRConnectionManagerOpeartionsDelegate?
-    private var connection: HubConnection
+    
+    private var connection: HubConnection?
     var isConnected: Bool = false
-    var connectionInfo: ConnectionInfoModel?
+    var conversationId: String?
     var chat: [ChatModel] = []
     var customActionData: String?
     
-    public init(with url: URL) {
+    class func setup(with configuration: Settings) {
+        self.settings = configuration
+        CustomConfiguration.config = configuration.customConfiguration
+    }
+    
+    public init() {
+        guard let url = URL(string: SignalRConnectionManager.settings?.url ?? "")  else {
+            print("URL is not valid")
+            return
+        }
         connection = HubConnectionBuilder(url: url)
             .withLogging(minLogLevel: .error)
             .withAutoReconnect()
             .build()
         
-        connection.on(method: "ReceiveMessage", callback: { [weak self] (id: String, message: String) in
+        connection?.on(method: "ReceiveMessage", callback: { [weak self] (id: String, message: String) in
             if let data = message.data(using: .utf8), let model = try? JSONDecoder().decode(MessageDetailResponseModel.self, from: data) {
-                self?.connectionInfo?.sessionId = model.id
                 self?.messagingDelegate?.onNewMessageReceived(messageDetail: model)
             }
             return
         })
         
-        connection.on(method: "ChatMessageStatusChangeEvent") { message in
+        connection?.on(method: "ChatMessageStatusChangeEvent") { message in
             print("ChatMessageStatusChangeEvent: \(message)")
         }
         
-        connection.start()
+        connection?.start()
     }
     
-    func startConversation(clientId: String, tenant: String, channel: String, project: String, fullName: String, onConversationStartingProcessStarted: @escaping (() -> Void), onConversationStarted: @escaping (() -> Void), onError: @escaping ((_ error: String?) -> Void))  {
-        if SignalRConnectionManager.sharedInstance.chat.count > 0 {
+    func startConversation(onConversationStartingProcessStarted: @escaping (() -> Void), onConversationStarted: @escaping (() -> Void), onError: @escaping ((_ error: String?) -> Void))  {
+        if SignalRConnectionManager.shared.chat.count > 0 {
             onConversationStartingProcessStarted()
             return
         }
         onConversationStartingProcessStarted()
-        let conversationRequestModel = ConversationRequestModel(clientId: clientId, tenant: tenant, channel: channel, project: project, fullName: fullName)
+        guard let settings = SignalRConnectionManager.settings else {
+            print("Default configuration is nil")
+            return
+        }
+        let conversationRequestModel = ConversationRequestModel(clientId: settings.defaultConfiguration.clientId, tenant: settings.defaultConfiguration.tenant, channel: settings.defaultConfiguration.channel, project: settings.defaultConfiguration.project, fullName: settings.defaultConfiguration.fullName)
         if let jsonData = try? JSONEncoder().encode(conversationRequestModel), let jsonString = String(data: jsonData, encoding: .utf8) {
-            connection.invoke(method: "StartConversation", jsonString) { error in
+            connection?.invoke(method: "StartConversation", jsonString) { error in
                 if let error = error {
                     onError(error.localizedDescription)
                     return
                 }
-                self.connectionInfo = ConnectionInfoModel(clientId: clientId, tenant: tenant, channel: channel, project: project, conversationId: conversationRequestModel.conversationId, fullName: conversationRequestModel.fullName)
+                self.conversationId = conversationRequestModel.conversationId
                 self.isConnected = true
                 onConversationStarted()
             }
+        }
+    }
+    
+    func triggerVisible(onCoversationExists: (() -> Void)) {
+        if SignalRConnectionManager.shared.chat.count > 0 {
+            onCoversationExists()
+            return
         }
     }
     
@@ -75,29 +101,22 @@ final internal class SignalRConnectionManager {
             return
         }
         
-        guard let info = connectionInfo else {
+        guard let settings = SignalRConnectionManager.settings else {
             messagingDelegate?.onError(error: "Connection info not found")
             return
         }
-        let conversationRequestModel = ConversationRequestModel(message: message, customAction: "sendMessage", customActionData: nil, clientId: info.clientId, tenant: info.tenant, channel: info.channel, project: info.project, conversationId: info.conversationId, fullName: info.fullName)
-        if let jsonData = try? JSONEncoder().encode(conversationRequestModel), let jsonString = String(data: jsonData, encoding: .utf8) {
-            connection.invoke(method: "SendMessage", arguments: [connectionInfo?.conversationId ?? "", message, "sendMessage", "", info.project, info.clientId, info.channel, info.tenant, info.fullName]) { error in
-                if let error = error {
-                    onError(error.localizedDescription)
-                    return
-                }
-                onMessageSent()
+        connection?.invoke(method: "SendMessage", arguments: [conversationId ?? "", message, "sendMessage", "", settings.defaultConfiguration.project, settings.defaultConfiguration.clientId, settings.defaultConfiguration.channel, settings.defaultConfiguration.tenant, settings.defaultConfiguration.fullName]) { error in
+            if let error = error {
+                onError(error.localizedDescription)
+                return
             }
+            onMessageSent()
         }
     }
     
-    func continueConversation(onConversationContinued: @escaping (() -> Void), onError: @escaping ((_ error: String) -> Void)) {
-        
-    }
-    
     func endConversation(onConversationEnded: @escaping (() -> Void), onError: @escaping ((_ error: String) -> Void)) {
-        connection.invoke(method: "EndConversation") { error in
-            SignalRConnectionManager.sharedInstance.chat = []
+        connection?.invoke(method: "EndConversation") { error in
+            SignalRConnectionManager.shared.chat = []
             onConversationEnded()
         }
     }

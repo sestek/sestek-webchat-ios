@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
   s.platform = :ios
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '11.0'
   s.name = "sestek-webchat-ios"
   s.summary = "sestek-webchat-ios summary"
   s.requires_arc = true
   
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   
   s.license = { :type => "MIT", :file => "LICENSE" }
   

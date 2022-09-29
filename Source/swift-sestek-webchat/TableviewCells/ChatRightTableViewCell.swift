@@ -9,28 +9,49 @@ import UIKit
 
 final class ChatRightTableViewCell: UITableViewCell {
 
-    @IBOutlet weak private var lblTitle: UILabel!
-    @IBOutlet weak var lblUser: UILabel!
-    @IBOutlet weak var lblTime: UILabel!
-    @IBOutlet weak private var viewContent: UIView!
+    @IBOutlet private weak var labelDescription: UILabel! {
+        didSet {
+            labelDescription.textColor = CustomConfiguration.config.messageColor
+        }
+    }
+    @IBOutlet private weak var labelUser: UILabel! {
+        didSet {
+            labelUser.text = CustomConfiguration.config.incomingText
+            labelUser.textColor = CustomConfiguration.config.incomingTextColor
+        }
+    }
+    @IBOutlet private weak var labelTime: UILabel!
+    @IBOutlet private weak var viewContent: UIView! {
+        didSet {
+            viewContent.clipsToBounds = true
+            viewContent.layer.cornerRadius = 10
+            viewContent.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
+            viewContent.makeShadow()
+            viewContent.backgroundColor = CustomConfiguration.config.messageBoxColor
+        }
+    }
+    @IBOutlet private weak var ivUser: UIImageView! {
+        didSet {
+            switch CustomConfiguration.config.incomingIcon {
+            case .image(let image):
+                ivUser.image = image
+            case .url(let url):
+                ivUser.setImage(with: url)
+            default:
+                break
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        viewContent.clipsToBounds = true
-        viewContent.layer.cornerRadius = 10
-        if #available(iOS 11.0, *) {
-            viewContent.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner, .layerMaxXMaxYCorner]
-        }
-        
-        viewContent.makeShadow()
     }
     
     func updateCell(data: ChatModel) {
         let textLanguage = TextHelper().getTextLanguage(data.text)
-        lblTitle.text = data.text
-        lblTitle.semanticContentAttribute = textLanguage?.semanticContentAttribute ?? .forceLeftToRight
-        lblUser.text = SignalRConnectionManager.sharedInstance.connectionInfo?.fullName ?? ""
-        lblTime.text = Date().getAsString(.yyyyMMddHHmm)
+        labelDescription.text = data.text
+        labelDescription.semanticContentAttribute = textLanguage?.semanticContentAttribute ?? .forceLeftToRight
+        labelUser.text = CustomConfiguration.config.incomingText
+        labelTime.text = Date().getAsString(.yyyyMMddHHmm)
     }
 }

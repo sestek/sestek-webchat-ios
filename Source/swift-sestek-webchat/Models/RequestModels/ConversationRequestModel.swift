@@ -8,7 +8,6 @@
 import Foundation
 
 class ConversationRequestModel: Encodable {
-    
     let timestamp: Date
     let message: String
     let customAction: String

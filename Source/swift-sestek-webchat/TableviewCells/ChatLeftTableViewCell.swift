@@ -14,27 +14,43 @@ protocol ChatTableViewCellDelegate: AnyObject {
 
 class ChatLeftTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var viewRoot: UIView! {
+    @IBOutlet private weak var viewRoot: UIView! {
         didSet {
             viewRoot.clipsToBounds = true
             viewRoot.layer.cornerRadius = 10
-            if #available(iOS 11.0, *) {
-                viewRoot.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-            }
+            viewRoot.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
             viewRoot.makeShadow()
+            viewRoot.backgroundColor = CustomConfiguration.config.messageBoxColor
         }
     }
-    @IBOutlet weak var labelSenderName: UILabel!
-    @IBOutlet weak var svRootDescriptions: UIStackView!
-    @IBOutlet weak var svRootButtons: UIStackView!
-    @IBOutlet weak var labelTime: UILabel!
-    @IBOutlet weak var svImages: UIStackView!
-    @IBOutlet weak var collectionViewImage: UICollectionView! {
+    @IBOutlet weak var ivSender: UIImageView! {
+        didSet {
+            switch CustomConfiguration.config.outgoingIcon {
+            case .image(let image):
+                ivSender.image = image
+            case .url(let url):
+                ivSender.setImage(with: url)
+            default:
+                break
+            }
+        }
+    }
+    @IBOutlet private weak var labelSenderName: UILabel! {
+        didSet {
+            labelSenderName.text = CustomConfiguration.config.outgoingText
+            labelSenderName.textColor = CustomConfiguration.config.outgoingTextColor
+        }
+    }
+    @IBOutlet private weak var svRootDescriptions: UIStackView!
+    @IBOutlet private weak var svRootButtons: UIStackView!
+    @IBOutlet private weak var labelTime: UILabel!
+    @IBOutlet private weak var svImages: UIStackView!
+    @IBOutlet private weak var collectionViewImage: UICollectionView! {
         didSet {
             collectionViewImage.register(cell: ImageCollectionViewCell.self)
         }
     }
-    @IBOutlet weak var pageControlImages: UIPageControl!
+    @IBOutlet private weak var pageControlImages: UIPageControl!
     
     private weak var delegate: ChatTableViewCellDelegate?
     private var chat: ChatModel?
@@ -84,7 +100,7 @@ class ChatLeftTableViewCell: UITableViewCell {
             textView.dataDetectorTypes = .all
             textView.text = text.text ?? ""
             textView.font = .systemFont(ofSize: 13, weight: .semibold)
-            textView.textColor = .black
+            textView.textColor = CustomConfiguration.config.messageColor
             textView.backgroundColor = .clear
             textView.isEditable = false
             textView.sizeToFit()

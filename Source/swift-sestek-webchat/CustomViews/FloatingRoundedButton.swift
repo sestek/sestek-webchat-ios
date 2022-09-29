@@ -7,16 +7,42 @@
 
 import UIKit
 
-protocol FloatingRoundedButtonDelegate: AnyObject {
-    func onButtonClicked()
-}
-
 class FloatingRoundedButtonController: UIViewController {
     
     static let sharedInstance = FloatingRoundedButtonController()
-    weak var delegate: FloatingRoundedButtonDelegate?
 
     private(set) var button: UIButton!
+    
+    private lazy var popoverWindow: UIWindow = {
+        var frame: CGRect = UIScreen.main.bounds
+        let popoverWindow = UIWindow(frame: .zero)
+
+        if #available(iOS 13.0, *), let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            frame = windowScene.coordinateSpace.bounds
+            popoverWindow.windowScene = windowScene
+        }
+        popoverWindow.windowLevel = UIWindow.Level.normal
+        popoverWindow.frame =  frame
+        
+        let navigationController = UINavigationController()
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = CustomConfiguration.config.headerColor
+            navigationController.navigationBar.standardAppearance = appearance
+            navigationController.navigationBar.scrollEdgeAppearance = appearance
+            navigationController.navigationBar.compactAppearance = appearance
+        } else {
+            navigationController.navigationBar.barTintColor = .barBackgroundColor
+        }
+        
+        navigationController.navigationBar.tintColor = .tintColor
+        let vc = ChatViewController.loadFromNib()
+        navigationController.viewControllers = [vc]
+        navigationController.modalPresentationStyle = .fullScreen
+        popoverWindow.rootViewController = navigationController
+
+        return popoverWindow
+    }()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError()
@@ -34,7 +60,7 @@ class FloatingRoundedButtonController: UIViewController {
     override func loadView() {
         let view = UIView()
         let button = UIButton(type: .custom)
-        button.setImage(UIImageView.imageWithBundle("knovvu_logo"), for: .normal)
+        button.setImage(.ic_button_knovvu_logo, for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.backgroundColor = UIColor.white
         button.layer.shadowColor = UIColor.black.cgColor
@@ -67,9 +93,27 @@ class FloatingRoundedButtonController: UIViewController {
     }
     
     @objc func onButtonClicked(_ sender: UIButton) {
-        delegate?.onButtonClicked()
+        SestekWebChat.shared.startConversation()
     }
+    
+    func updatePopoverVisibility(to state: PopoverVisibility) {
+        let openedFrame = UIScreen.main.bounds
+        var closedFrame = openedFrame
+        closedFrame.origin.y = closedFrame.size.height
 
+        popoverWindow.frame = state == .open ? closedFrame : openedFrame
+
+        popoverWindow.isHidden = false
+        window.isHidden = state == .open
+        view.window?.alpha = state == .closed ? 0 : 1
+
+        UIView.animateKeyframes(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState, .calculationModeCubicPaced] , animations: {
+            self.popoverWindow.frame = state == .open ? openedFrame : closedFrame
+            self.view.window?.alpha = state == .open ? 0 : 1
+        }, completion: { (finished: Bool) in
+            self.popoverWindow.isHidden = state == .closed
+        })
+    }
 }
 
 private class FloatingRoundedButtonWindow: UIWindow {

@@ -4,7 +4,7 @@ PODS:
     - IQKeyboardManagerSwift (~> 6.5.10)
 
 DEPENDENCIES:
-  - sestek-webchat-ios (from `/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib/Source`)
+  - sestek-webchat-ios (from `/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib`)
 
 SPEC REPOS:
   trunk:
@@ -12,12 +12,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   sestek-webchat-ios:
-    :path: "/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib/Source"
+    :path: "/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib"
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  sestek-webchat-ios: c51d28def01bb9cdb41d26fd077d45403f1972ee
+  sestek-webchat-ios: d95ad9aebcb2a6e28c4d998dafeebe11a3ee01ab
 
-PODFILE CHECKSUM: e61e2b9547f0980d1ad3a5cb5bffddf8e12120c3
+PODFILE CHECKSUM: ea3c2a9dbc91d208ae6372b855473018f8987a02
 
 COCOAPODS: 1.11.3

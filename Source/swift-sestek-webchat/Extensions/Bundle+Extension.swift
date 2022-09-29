@@ -11,7 +11,6 @@ private class BundleToken {}
 
 extension Bundle {
     static func sestekBundle() -> Bundle {
-
         let candidates = [
             Bundle.main.resourceURL,
             Bundle(for: BundleToken.self).resourceURL,

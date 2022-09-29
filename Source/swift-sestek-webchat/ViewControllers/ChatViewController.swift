@@ -13,9 +13,10 @@ class ChatViewController: UIViewController {
     @IBOutlet weak private var tfMessage: UITextField! {
         didSet {
             tfMessage.attributedPlaceholder = NSAttributedString(
-                string: "Write smt",
+                string: CustomConfiguration.config.bottomInputText,
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
             )
+            tfMessage.textColor = CustomConfiguration.config.bottomColor
         }
     }
     @IBOutlet weak private var viewBottom: UIView! {
@@ -30,22 +31,18 @@ class ChatViewController: UIViewController {
             setTableView()
         }
     }
+    @IBOutlet private weak var backgroundImage: UIImageView!
     
-    var bgColor: UIColor?
     private var tableViewSource: ChatTableViewSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SignalRConnectionManager.sharedInstance.messagingDelegate = self
+        SignalRConnectionManager.shared.messagingDelegate = self
         configure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        FloatingRoundedButtonController.sharedInstance.hideButton()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        FloatingRoundedButtonController.sharedInstance.showButton()
+        super.viewWillAppear(animated)
     }
     
     @IBAction private func onButtonSendClicked(_ sender: Any) {
@@ -54,24 +51,31 @@ class ChatViewController: UIViewController {
         }
     }
     
-    @IBAction func onButtonMicClicked(_ sender: Any) {
+    @IBAction private func onButtonMicClicked(_ sender: Any) {
     }
     
-    @objc private func didTapBtnClose() {
-        dismiss(animated: true)
+    @objc private func onButtonHideClicked(_ sender: Any) {
+        FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .closed)
+    }
+    
+    @objc private func onButtonCloseClicked(_ sender: Any) {
+        SignalRConnectionManager.shared.endConversation { [weak self] in
+            FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .closed)
+            self?.setTableView()
+        } onError: { [weak self] error in
+            self?.showStandardAlert(message: error)
+        }
     }
 }
 
 fileprivate extension ChatViewController {
     func configure() {
-        if let bgColor = bgColor {
-            view.backgroundColor = bgColor
-        }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(didTapBtnClose))
+        configureNavigationBar()
+        setBodyImage()
     }
     
     func setTableView() {
-        tableViewSource = ChatTableViewSource(items: SignalRConnectionManager.sharedInstance.chat, delegate: self)
+        tableViewSource = ChatTableViewSource(items: SignalRConnectionManager.shared.chat, delegate: self)
         tableView.dataSource = tableViewSource
         tableView.delegate = tableViewSource
         tableView.reloadData()
@@ -80,7 +84,7 @@ fileprivate extension ChatViewController {
     
     func sendMessage(message: String) {
         setOwnerMessage(message: message)
-        SignalRConnectionManager.sharedInstance.sendMessage(message: message) { [weak self] in
+        SignalRConnectionManager.shared.sendMessage(message: message) { [weak self] in
             guard let self = self else { return }
             self.tfMessage.text = ""
         } onError: { [weak self] error in
@@ -89,7 +93,7 @@ fileprivate extension ChatViewController {
     }
     
     func setOwnerMessage(message: String) {
-        SignalRConnectionManager.sharedInstance.chat.append(ChatModel(text: message, attachment: nil, isOwner: true, date: nil))
+        SignalRConnectionManager.shared.chat.append(ChatModel(text: message, attachment: nil, isOwner: true, date: nil))
         setTableView()
     }
     
@@ -101,8 +105,32 @@ fileprivate extension ChatViewController {
             tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
+    
+    func configureNavigationBar() {
+        let buttonTitle = UIBarButtonItem(title: CustomConfiguration.config.headerText, style: .plain, target: nil, action: nil)
+        let buttonHide = UIBarButtonItem.createNavigationBarButton(image: .ic_hide, target: self, action: #selector(onButtonHideClicked(_:)))
+        let buttonClose = UIBarButtonItem.createNavigationBarButton(image: .ic_close, target: self, action: #selector(onButtonCloseClicked(_:)))
+        navigationItem.leftBarButtonItem = buttonTitle
+        navigationItem.rightBarButtonItems = [buttonClose, buttonHide]
+    }
+    
+    func setBodyImage() {
+        switch CustomConfiguration.config.bodyColorOrImage {
+        case .image(let image):
+            backgroundImage.isHidden = false
+            backgroundImage.image = image
+        case .url(let url):
+            backgroundImage.isHidden = false
+            backgroundImage.setImage(with: url)
+        case .color(let color):
+            backgroundImage.isHidden = true
+            backgroundImage.image = UIImage()
+            view.backgroundColor = color
+        }
+    }
 }
 
+// MARK: - Messaging Delegate
 extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
     func onNewMessageReceived(messageDetail: MessageDetailResponseModel?) {
         if let attachments = messageDetail?.attachments, attachments.count > 0 {
@@ -117,15 +145,15 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
                         return attachment
                     }
                 if let attachment = tempAttachments.first {
-                    SignalRConnectionManager.sharedInstance.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
+                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
                 }
             } else { // for other layouts
                 attachments.forEach { attachment in
-                    SignalRConnectionManager.sharedInstance.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
+                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
                 }
             }
         } else {
-            SignalRConnectionManager.sharedInstance.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? ""))
+            SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? ""))
         }
         setTableView()
     }
@@ -135,6 +163,7 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
     }
 }
 
+// MARK: - TableViewCell Delegate
 extension ChatViewController: ChatTableViewCellDelegate {
     func onButtonClicked(value: String) {
         sendMessage(message: value)

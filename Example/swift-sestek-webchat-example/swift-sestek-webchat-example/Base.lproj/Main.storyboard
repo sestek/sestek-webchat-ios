@@ -60,6 +60,9 @@
                                                 <state key="normal" title="Trigger Visible">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTapBtnTriggerVisible:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YiS-wc-0DS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

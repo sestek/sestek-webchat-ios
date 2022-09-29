@@ -22,12 +22,12 @@ final class ChatTableViewSource: NSObject, UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if items[indexPath.row].isOwner {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRightTableViewCell", for: indexPath) as! ChatRightTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChatRightTableViewCell.identifier, for: indexPath) as! ChatRightTableViewCell
             cell.updateCell(data: items[indexPath.row])
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatLeftTableViewCell", for: indexPath) as! ChatLeftTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ChatLeftTableViewCell.identifier, for: indexPath) as! ChatLeftTableViewCell
             cell.updateCell(chat: items[indexPath.row], delegate: delegate)
             return cell
             

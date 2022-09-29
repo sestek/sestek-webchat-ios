@@ -14,9 +14,13 @@ extension String {
     }
     
     func getDetectedLanguage() -> String? {
-        let recognizer = NLLanguageRecognizer()
-        recognizer.processString(self)
-        guard let languageCode = recognizer.dominantLanguage?.rawValue else { return nil }
-        return languageCode
+        if #available(iOS 12.0, *) {
+            let recognizer = NLLanguageRecognizer()
+            recognizer.processString(self)
+            guard let languageCode = recognizer.dominantLanguage?.rawValue else { return nil }
+            return languageCode
+        } else {
+            return nil
+        }
     }
 }

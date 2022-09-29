@@ -17,11 +17,4 @@ extension UIImageView {
             }
         }.resume()
     }
-    
-    static func imageWithBundle(_ name: String) -> UIImage? {
-        if let image = UIImage(named: name, in: Bundle.sestekBundle(), compatibleWith: nil) {
-            return image
-        }
-        return UIImage()
-    }
 }

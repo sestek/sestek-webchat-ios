@@ -10,70 +10,51 @@ import IQKeyboardManagerSwift
 
 public class SestekWebChat {
     
-    public static let sharedInstance = SestekWebChat()
-    private var fromVC: UIViewController?
+    public static let shared = SestekWebChat()
     public var customActionData: String? {
         get {
-            SignalRConnectionManager.sharedInstance.customActionData
+            SignalRConnectionManager.shared.customActionData
         } set {
-            SignalRConnectionManager.sharedInstance.customActionData = newValue
+            SignalRConnectionManager.shared.customActionData = newValue
         }
     }
     
-    public func initLibrary() {
+    public func initLibrary(url: String = "https://nd-test-webchat.sestek.com/chathub", defaultConfiguration: DefaultConfiguration, customConfiguration: CustomConfiguration = CustomConfiguration.config) {
         IQKeyboardManager.shared.enable = true
-        SignalRConnectionManager.sharedInstance.operationsDelegate = self
-        FloatingRoundedButtonController.sharedInstance.delegate = self
+        SignalRConnectionManager.setup(with: SignalRConnectionManager.Settings(url: url, defaultConfiguration: defaultConfiguration, customConfiguration: customConfiguration))
+        SignalRConnectionManager.shared.operationsDelegate = self
         FloatingRoundedButtonController.sharedInstance.button.isHidden = false
     }
     
-    public func startConversation(clientId: String, tenant: String, channel: String, project: String, fullName: String, _ from: UIViewController) {
-        SignalRConnectionManager.sharedInstance.startConversation(clientId: clientId, tenant: tenant, channel: channel, project: project, fullName: fullName) { [weak self] in
-            self?.presentChat(from)
+    public func startConversation() {
+        SignalRConnectionManager.shared.startConversation() { [weak self] in
+            self?.presentChat()
         } onConversationStarted: { } onError: { error in
-            from.showStandardAlert(message: error)
+            print(error?.description ?? "")
         }
     }
     
     public func endConversation() {
-        SignalRConnectionManager.sharedInstance.endConversation { } onError: { error in }
+        SignalRConnectionManager.shared.endConversation { } onError: { error in }
+    }
+    
+    public func triggerVisible(_ from: UIViewController) {
+        SignalRConnectionManager.shared.triggerVisible { [weak self] in
+            self?.presentChat()
+        }
     }
     
     public func changeRoundedButtonVisibility(isVisible: Bool) {
         isVisible ? FloatingRoundedButtonController.sharedInstance.showButton() : FloatingRoundedButtonController.sharedInstance.hideButton()
     }
     
-    private func presentChat(_ from: UIViewController) {
-        self.fromVC = from
-        let navigationController = UINavigationController()
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = .barBackgroundColor
-            navigationController.navigationBar.standardAppearance = appearance
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-            navigationController.navigationBar.compactAppearance = appearance
-        } else {
-            navigationController.navigationBar.barTintColor = .barBackgroundColor
-        }
-        
-        navigationController.navigationBar.tintColor = .tintColor
-        
-        let vc = ChatViewController.loadFromNib()
-        vc.bgColor = .barBackgroundColor
-        
-        navigationController.viewControllers = [vc]
-        navigationController.modalPresentationStyle = .fullScreen
-        from.present(navigationController, animated: true)
+    private func presentChat() {
+        FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .open)
     }
 }
 
 extension SestekWebChat: SignalRConnectionManagerOpeartionsDelegate {
     func onError(error: String?) {
-        print(error)
-    }
-}
-
-extension SestekWebChat: FloatingRoundedButtonDelegate {
-    func onButtonClicked() {
+        print(error?.description ?? "")
     }
 }
