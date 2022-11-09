@@ -13,4 +13,5 @@ struct ChatModel {
     var isOwner: Bool
     var date: String?
     var layout: AttachmentLayoutEnums = .unknown
+    var location: GeoResponseModel?
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,7 +64,7 @@
                                                         </collectionViewFlowLayout>
                                                     </collectionView>
                                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-9W-T23">
-                                                        <rect key="frame" x="163" y="214" width="115.5" height="26"/>
+                                                        <rect key="frame" x="162.5" y="214" width="116.5" height="26"/>
                                                     </pageControl>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,7 +80,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PbO-Y4-2LG">
-                                        <rect key="frame" x="0.0" y="373" width="441" height="21"/>
+                                        <rect key="frame" x="0.0" y="373" width="441" height="11"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K38-Ak-rjF">
+                                        <rect key="frame" x="0.0" y="394" width="441" height="0.0"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just now" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-h2-3YF">
                                         <rect key="frame" x="0.0" y="404" width="441" height="0.0"/>
@@ -122,6 +125,7 @@
                 <outlet property="svImages" destination="eRW-Cq-524" id="iBx-K3-cLd"/>
                 <outlet property="svRootButtons" destination="PbO-Y4-2LG" id="UPZ-oR-Lb1"/>
                 <outlet property="svRootDescriptions" destination="zAU-fO-bWF" id="A5D-Je-SbE"/>
+                <outlet property="svRootLocations" destination="K38-Ak-rjF" id="mHG-N2-1PZ"/>
                 <outlet property="viewRoot" destination="zmv-FC-vXd" id="W4e-ZO-tor"/>
             </connections>
             <point key="canvasLocation" x="244.92753623188409" y="163.39285714285714"/>

@@ -59,5 +59,7 @@ For other additional information, we have created a document that you can use in
 | ------------------------------    | ---------- | -------------                                                                                                                |
 | startConversation                 | void       | Function that starts the chat for the user and automatically triggers the modal screen.                                      |
 | endConversation                   | void       | Function that ends the chat for the user and automatically closes the modal screen.                                          |
-| changeRoundedButtonVisibility     | void       | Function that changes visibility of rounded button. |
+| isRoundedButtonVisible            | bool       | Property that changes visibility of rounded button. |
 | triggerVisible                    | void       | Function that opens and closes the modal screen after the chat starts and continues the conversation from where it left off. |
+| messageList                       | []         | Returns the active chat history. |
+| conversationStatus                | bool       | Indicates whether there is an active conversation or not. |

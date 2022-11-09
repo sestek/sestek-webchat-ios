@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492800D72910031D00C322B1 /* MapUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492800D62910031D00C322B1 /* MapUtil.swift */; };
+		494BF31D28F453E900DEBCB6 /* PublicChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BF31C28F453E900DEBCB6 /* PublicChatModel.swift */; };
 		496B061428C0D9F80016B8F1 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B061328C0D9F80016B8F1 /* AlertUtil.swift */; };
 		496F31D628B3899B00AABF47 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F31D428B3899B00AABF47 /* ImageCollectionViewCell.swift */; };
 		496F31D728B3899B00AABF47 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496F31D528B3899B00AABF47 /* ImageCollectionViewCell.xib */; };
@@ -23,13 +25,22 @@
 		4987F4BE289EA4C700EB65CC /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4987F4BC289EA4C700EB65CC /* ChatViewController.xib */; };
 		4987F4C0289EA4CD00EB65CC /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4BF289EA4CD00EB65CC /* ChatModel.swift */; };
 		4987F4C2289EA4D500EB65CC /* SestekWebChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987F4C1289EA4D500EB65CC /* SestekWebChat.swift */; };
+		49A3CAF028F4347E00FBE46F /* SwiftyLineProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAE628F4347E00FBE46F /* SwiftyLineProcessor.swift */; };
+		49A3CAF128F4347E00FBE46F /* SwiftyMarkdown+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAE728F4347E00FBE46F /* SwiftyMarkdown+iOS.swift */; };
+		49A3CAF228F4347E00FBE46F /* SwiftyScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAE828F4347E00FBE46F /* SwiftyScanner.swift */; };
+		49A3CAF328F4347E00FBE46F /* PerfomanceLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAE928F4347E00FBE46F /* PerfomanceLog.swift */; };
+		49A3CAF428F4347E00FBE46F /* SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAEA28F4347E00FBE46F /* SwiftyMarkdown.swift */; };
+		49A3CAF528F4347E00FBE46F /* SwiftyMarkdown+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAEB28F4347E00FBE46F /* SwiftyMarkdown+macOS.swift */; };
+		49A3CAF628F4347E00FBE46F /* String+SwiftyMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAEC28F4347E00FBE46F /* String+SwiftyMarkdown.swift */; };
+		49A3CAF728F4347E00FBE46F /* SwiftyTokeniser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAED28F4347E00FBE46F /* SwiftyTokeniser.swift */; };
+		49A3CAF828F4347E00FBE46F /* CharacterRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAEE28F4347E00FBE46F /* CharacterRule.swift */; };
+		49A3CAF928F4347E00FBE46F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3CAEF28F4347E00FBE46F /* Token.swift */; };
 		49A88AC328D985AD0097B85E /* ic_hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88ABD28D985AD0097B85E /* ic_hide@2x.png */; };
 		49A88AC428D985AD0097B85E /* ic_hide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88ABE28D985AD0097B85E /* ic_hide@3x.png */; };
 		49A88AC528D985AD0097B85E /* ic_hide.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88ABF28D985AD0097B85E /* ic_hide.png */; };
 		49A88AC628D985AD0097B85E /* ic_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88AC028D985AD0097B85E /* ic_close@2x.png */; };
 		49A88AC728D985AD0097B85E /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88AC128D985AD0097B85E /* ic_close.png */; };
 		49A88AC828D985AD0097B85E /* ic_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49A88AC228D985AD0097B85E /* ic_close@3x.png */; };
-		49A88ACA28D9889C0097B85E /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A88AC928D9889C0097B85E /* UIBarButtonItem+Extensions.swift */; };
 		49AEDB0228A8EFD80041DA42 /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE328A8EFD70041DA42 /* StreamHandle.swift */; };
 		49AEDB0328A8EFD80041DA42 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE428A8EFD80041DA42 /* TransferFormat.swift */; };
 		49AEDB0428A8EFD80041DA42 /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AEDAE528A8EFD80041DA42 /* HubConnectionBuilder.swift */; };
@@ -108,6 +119,8 @@
 
 /* Begin PBXFileReference section */
 		0EC202284CCF0B700BD39455 /* Pods-swift-sestek-webchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat.release.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat/Pods-swift-sestek-webchat.release.xcconfig"; sourceTree = "<group>"; };
+		492800D62910031D00C322B1 /* MapUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUtil.swift; sourceTree = "<group>"; };
+		494BF31C28F453E900DEBCB6 /* PublicChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicChatModel.swift; sourceTree = "<group>"; };
 		496B061328C0D9F80016B8F1 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		496F31D428B3899B00AABF47 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		496F31D528B3899B00AABF47 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -124,13 +137,22 @@
 		4987F4BC289EA4C700EB65CC /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		4987F4BF289EA4CD00EB65CC /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		4987F4C1289EA4D500EB65CC /* SestekWebChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SestekWebChat.swift; sourceTree = "<group>"; };
+		49A3CAE628F4347E00FBE46F /* SwiftyLineProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyLineProcessor.swift; sourceTree = "<group>"; };
+		49A3CAE728F4347E00FBE46F /* SwiftyMarkdown+iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyMarkdown+iOS.swift"; sourceTree = "<group>"; };
+		49A3CAE828F4347E00FBE46F /* SwiftyScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyScanner.swift; sourceTree = "<group>"; };
+		49A3CAE928F4347E00FBE46F /* PerfomanceLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfomanceLog.swift; sourceTree = "<group>"; };
+		49A3CAEA28F4347E00FBE46F /* SwiftyMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyMarkdown.swift; sourceTree = "<group>"; };
+		49A3CAEB28F4347E00FBE46F /* SwiftyMarkdown+macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyMarkdown+macOS.swift"; sourceTree = "<group>"; };
+		49A3CAEC28F4347E00FBE46F /* String+SwiftyMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SwiftyMarkdown.swift"; sourceTree = "<group>"; };
+		49A3CAED28F4347E00FBE46F /* SwiftyTokeniser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTokeniser.swift; sourceTree = "<group>"; };
+		49A3CAEE28F4347E00FBE46F /* CharacterRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRule.swift; sourceTree = "<group>"; };
+		49A3CAEF28F4347E00FBE46F /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		49A88ABD28D985AD0097B85E /* ic_hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_hide@2x.png"; sourceTree = "<group>"; };
 		49A88ABE28D985AD0097B85E /* ic_hide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_hide@3x.png"; sourceTree = "<group>"; };
 		49A88ABF28D985AD0097B85E /* ic_hide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_hide.png; sourceTree = "<group>"; };
 		49A88AC028D985AD0097B85E /* ic_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close@2x.png"; sourceTree = "<group>"; };
 		49A88AC128D985AD0097B85E /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
 		49A88AC228D985AD0097B85E /* ic_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close@3x.png"; sourceTree = "<group>"; };
-		49A88AC928D9889C0097B85E /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		49AEDAE328A8EFD70041DA42 /* StreamHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamHandle.swift; sourceTree = "<group>"; };
 		49AEDAE428A8EFD80041DA42 /* TransferFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferFormat.swift; sourceTree = "<group>"; };
 		49AEDAE528A8EFD80041DA42 /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HubConnectionBuilder.swift; sourceTree = "<group>"; };
@@ -295,6 +317,7 @@
 				4987F4BF289EA4CD00EB65CC /* ChatModel.swift */,
 				49E79A4228DB1E370033986D /* DefaultConfiguration.swift */,
 				49C6C85B28E4297A00D46D91 /* CustomConfiguration.swift */,
+				494BF31C28F453E900DEBCB6 /* PublicChatModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +329,7 @@
 				49BA7EBA289EACED00B15E8A /* SignalRConnectionManager.swift */,
 				49F1B80628BF70FA005EA7C4 /* TextHelper.swift */,
 				496B061328C0D9F80016B8F1 /* AlertUtil.swift */,
+				492800D62910031D00C322B1 /* MapUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -327,9 +351,25 @@
 				496F31E228B38CDE00AABF47 /* UIColor+Extension.swift */,
 				49EFED7228B39E1E00112186 /* Bundle+Extension.swift */,
 				49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */,
-				49A88AC928D9889C0097B85E /* UIBarButtonItem+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49A3CAE528F4345600FBE46F /* SwiftyMarkdown */ = {
+			isa = PBXGroup;
+			children = (
+				49A3CAEE28F4347E00FBE46F /* CharacterRule.swift */,
+				49A3CAE928F4347E00FBE46F /* PerfomanceLog.swift */,
+				49A3CAEC28F4347E00FBE46F /* String+SwiftyMarkdown.swift */,
+				49A3CAE628F4347E00FBE46F /* SwiftyLineProcessor.swift */,
+				49A3CAEA28F4347E00FBE46F /* SwiftyMarkdown.swift */,
+				49A3CAE728F4347E00FBE46F /* SwiftyMarkdown+iOS.swift */,
+				49A3CAEB28F4347E00FBE46F /* SwiftyMarkdown+macOS.swift */,
+				49A3CAE828F4347E00FBE46F /* SwiftyScanner.swift */,
+				49A3CAED28F4347E00FBE46F /* SwiftyTokeniser.swift */,
+				49A3CAEF28F4347E00FBE46F /* Token.swift */,
+			);
+			path = SwiftyMarkdown;
 			sourceTree = "<group>";
 		};
 		49AEDAA328A8EE8C0041DA42 /* SignalRClient */ = {
@@ -373,6 +413,7 @@
 		49AEDAA428A8EF140041DA42 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				49A3CAE528F4345600FBE46F /* SwiftyMarkdown */,
 				49AEDAA328A8EE8C0041DA42 /* SignalRClient */,
 			);
 			path = Libraries;
@@ -666,31 +707,39 @@
 			files = (
 				496F31D628B3899B00AABF47 /* ImageCollectionViewCell.swift in Sources */,
 				49AEDB2328A8F3330041DA42 /* MessageDetailResponseModel.swift in Sources */,
+				494BF31D28F453E900DEBCB6 /* PublicChatModel.swift in Sources */,
 				49D4CD5D28B388B700F84A8B /* UICollectionViewCell+identifier.swift in Sources */,
 				49D4CD5B28B388B700F84A8B /* Date+Extensions.swift in Sources */,
 				49AEDB1C28A8EFD80041DA42 /* NegotiationResponse.swift in Sources */,
 				49AEDB1228A8EFD80041DA42 /* CodableHelpers.swift in Sources */,
 				496F31DF28B38AAA00AABF47 /* FloatingRoundedButton.swift in Sources */,
+				49A3CAF728F4347E00FBE46F /* SwiftyTokeniser.swift in Sources */,
 				49D4CD5E28B388B700F84A8B /* UIView+makeShadow.swift in Sources */,
+				49A3CAF428F4347E00FBE46F /* SwiftyMarkdown.swift in Sources */,
 				49AEDB1528A8EFD80041DA42 /* ServerInvocationHandler.swift in Sources */,
 				49AEDB0D28A8EFD80041DA42 /* HubConnectionDelegate.swift in Sources */,
 				4987F4C2289EA4D500EB65CC /* SestekWebChat.swift in Sources */,
 				49AEDB0228A8EFD80041DA42 /* StreamHandle.swift in Sources */,
 				49AEDB1A28A8EFD80041DA42 /* HttpClientProtocol.swift in Sources */,
 				49AEDB0628A8EFD80041DA42 /* Connection.swift in Sources */,
+				49A3CAF228F4347E00FBE46F /* SwiftyScanner.swift in Sources */,
 				49C6C85C28E4297A00D46D91 /* CustomConfiguration.swift in Sources */,
 				49AEDB1728A8EFD80041DA42 /* Transport.swift in Sources */,
+				49A3CAF928F4347E00FBE46F /* Token.swift in Sources */,
 				4987F4B5289EA4A500EB65CC /* ChatRightTableViewCell.swift in Sources */,
 				49D4CD6028B388B700F84A8B /* UITableViewCell+identifier.swift in Sources */,
 				49E79A4328DB1E370033986D /* DefaultConfiguration.swift in Sources */,
 				49AEDB0728A8EFD80041DA42 /* HubProtocol.swift in Sources */,
 				49AEDB0E28A8EFD80041DA42 /* HandshakeProtocol.swift in Sources */,
 				49D4CD5828B388B700F84A8B /* UICollectionView+register.swift in Sources */,
+				49A3CAF828F4347E00FBE46F /* CharacterRule.swift in Sources */,
+				49A3CAF328F4347E00FBE46F /* PerfomanceLog.swift in Sources */,
 				49AEDB1028A8EFD80041DA42 /* WebsocketsTransport.swift in Sources */,
 				49AEDB0928A8EFD80041DA42 /* HubConnectionExtensions.swift in Sources */,
 				49AEDB1D28A8EFD80041DA42 /* LongPollingTransport.swift in Sources */,
 				49AEDB1628A8EFD80041DA42 /* TransportDelegate.swift in Sources */,
 				49AEDB1428A8EFD80041DA42 /* ConnectionDelegate.swift in Sources */,
+				492800D72910031D00C322B1 /* MapUtil.swift in Sources */,
 				49AEDB1128A8EFD80041DA42 /* JSONHubProtocol.swift in Sources */,
 				4987F4C0289EA4CD00EB65CC /* ChatModel.swift in Sources */,
 				49AEDB1328A8EFD80041DA42 /* HubConnectionOptions.swift in Sources */,
@@ -702,9 +751,9 @@
 				49C6C85E28E4881A00D46D91 /* PopoverVisibility.swift in Sources */,
 				49F1B80A28BF71CD005EA7C4 /* Language.swift in Sources */,
 				49AEDB1E28A8EFD80041DA42 /* DefaultTransportFactory.swift in Sources */,
-				49A88ACA28D9889C0097B85E /* UIBarButtonItem+Extensions.swift in Sources */,
 				4987F4BD289EA4C700EB65CC /* ChatViewController.swift in Sources */,
 				49F1B80C28BF903F005EA7C4 /* UIViewController+Extensions.swift in Sources */,
+				49A3CAF628F4347E00FBE46F /* String+SwiftyMarkdown.swift in Sources */,
 				49AEDB0428A8EFD80041DA42 /* HubConnectionBuilder.swift in Sources */,
 				49F1B80728BF70FA005EA7C4 /* TextHelper.swift in Sources */,
 				49CA022228980786005A5BA0 /* swift_sestek_webchat.docc in Sources */,
@@ -716,9 +765,12 @@
 				49AEDB0828A8EFD80041DA42 /* HttpConnection.swift in Sources */,
 				49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */,
 				4987F4B9289EA4BC00EB65CC /* ChatTableViewSource.swift in Sources */,
+				49A3CAF028F4347E00FBE46F /* SwiftyLineProcessor.swift in Sources */,
 				496F31E128B38B2700AABF47 /* UIImage+Extension.swift in Sources */,
 				49C6C86028E4883200D46D91 /* ResourceType.swift in Sources */,
+				49A3CAF528F4347E00FBE46F /* SwiftyMarkdown+macOS.swift in Sources */,
 				4987F4B3289EA4A500EB65CC /* ChatLeftTableViewCell.swift in Sources */,
+				49A3CAF128F4347E00FBE46F /* SwiftyMarkdown+iOS.swift in Sources */,
 				49AEDB0F28A8EFD80041DA42 /* DefaultHttpClient.swift in Sources */,
 				49BA7EBE289EEACF00B15E8A /* ConversationRequestModel.swift in Sources */,
 				49AEDB1928A8EFD80041DA42 /* ReconnectPolicy.swift in Sources */,
@@ -891,7 +943,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sestek.sestek-webchat-ios";
 				PRODUCT_NAME = "sestek-webchat-ios";
 				SKIP_INSTALL = YES;
@@ -920,7 +972,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sestek.sestek-webchat-ios";
 				PRODUCT_NAME = "sestek-webchat-ios";
 				SKIP_INSTALL = YES;

@@ -18,9 +18,26 @@ public class SestekWebChat {
             SignalRConnectionManager.shared.customActionData = newValue
         }
     }
+    public var messageList: [PublicChatModel?]? {
+        get {
+            SignalRConnectionManager.shared.chat.map { PublicChatModel(text: $0.text, isOwnerSystem: $0.isOwner, date: $0.date) }
+        }
+    }
+    public var conversationStatus: Bool {
+        get {
+            SignalRConnectionManager.shared.chat.count > 0
+        }
+    }
+    public var isRoundedButtonVisible: Bool {
+        get {
+            FloatingRoundedButtonController.sharedInstance.isRoundedButtonVisible
+        } set {
+            FloatingRoundedButtonController.sharedInstance.isRoundedButtonVisible = newValue
+        }
+    }
     
     public func initLibrary(url: String = "https://nd-test-webchat.sestek.com/chathub", defaultConfiguration: DefaultConfiguration, customConfiguration: CustomConfiguration = CustomConfiguration.config) {
-        IQKeyboardManager.shared.enable = true
+        configureIQKeyboardManager()
         SignalRConnectionManager.setup(with: SignalRConnectionManager.Settings(url: url, defaultConfiguration: defaultConfiguration, customConfiguration: customConfiguration))
         SignalRConnectionManager.shared.operationsDelegate = self
         FloatingRoundedButtonController.sharedInstance.button.isHidden = false
@@ -44,12 +61,14 @@ public class SestekWebChat {
         }
     }
     
-    public func changeRoundedButtonVisibility(isVisible: Bool) {
-        isVisible ? FloatingRoundedButtonController.sharedInstance.showButton() : FloatingRoundedButtonController.sharedInstance.hideButton()
-    }
-    
     private func presentChat() {
         FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .open)
+    }
+    
+    private func configureIQKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
 }
 

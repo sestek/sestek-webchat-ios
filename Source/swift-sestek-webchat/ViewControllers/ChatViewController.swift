@@ -22,6 +22,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak private var viewBottom: UIView! {
         didSet {
             viewBottom.makeShadow()
+            viewBottom.layer.cornerRadius = 12
         }
     }
     @IBOutlet weak private var tableView: UITableView! {
@@ -31,7 +32,17 @@ class ChatViewController: UIViewController {
             setTableView()
         }
     }
-    @IBOutlet private weak var backgroundImage: UIImageView!
+    @IBOutlet private weak var backgroundImage: UIImageView! {
+        didSet {
+            backgroundImage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            backgroundImage.layer.cornerRadius = 12
+        }
+    }
+    @IBOutlet weak var labelTitle: UILabel! {
+        didSet {
+            labelTitle.text = CustomConfiguration.config.headerText
+        }
+    }
     
     private var tableViewSource: ChatTableViewSource?
     
@@ -51,14 +62,11 @@ class ChatViewController: UIViewController {
         }
     }
     
-    @IBAction private func onButtonMicClicked(_ sender: Any) {
-    }
-    
-    @objc private func onButtonHideClicked(_ sender: Any) {
+    @IBAction private func onButtonHideClicked(_ sender: Any) {
         FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .closed)
     }
     
-    @objc private func onButtonCloseClicked(_ sender: Any) {
+    @IBAction private func onButtonCloseClicked(_ sender: Any) {
         SignalRConnectionManager.shared.endConversation { [weak self] in
             FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .closed)
             self?.setTableView()
@@ -70,7 +78,6 @@ class ChatViewController: UIViewController {
 
 fileprivate extension ChatViewController {
     func configure() {
-        configureNavigationBar()
         setBodyImage()
     }
     
@@ -106,26 +113,15 @@ fileprivate extension ChatViewController {
         }
     }
     
-    func configureNavigationBar() {
-        let buttonTitle = UIBarButtonItem(title: CustomConfiguration.config.headerText, style: .plain, target: nil, action: nil)
-        let buttonHide = UIBarButtonItem.createNavigationBarButton(image: .ic_hide, target: self, action: #selector(onButtonHideClicked(_:)))
-        let buttonClose = UIBarButtonItem.createNavigationBarButton(image: .ic_close, target: self, action: #selector(onButtonCloseClicked(_:)))
-        navigationItem.leftBarButtonItem = buttonTitle
-        navigationItem.rightBarButtonItems = [buttonClose, buttonHide]
-    }
-    
     func setBodyImage() {
         switch CustomConfiguration.config.bodyColorOrImage {
         case .image(let image):
-            backgroundImage.isHidden = false
             backgroundImage.image = image
         case .url(let url):
-            backgroundImage.isHidden = false
             backgroundImage.setImage(with: url)
         case .color(let color):
-            backgroundImage.isHidden = true
             backgroundImage.image = UIImage()
-            view.backgroundColor = color
+            backgroundImage.backgroundColor = color
         }
     }
 }
@@ -133,6 +129,7 @@ fileprivate extension ChatViewController {
 // MARK: - Messaging Delegate
 extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
     func onNewMessageReceived(messageDetail: MessageDetailResponseModel?) {
+        let geoModel = messageDetail?.entities?.first??.geo ?? nil
         if let attachments = messageDetail?.attachments, attachments.count > 0 {
             // for carousel layouts
             if messageDetail?.attachmentLayout == .carousel {
@@ -145,20 +142,21 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
                         return attachment
                     }
                 if let attachment = tempAttachments.first {
-                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
+                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
                 }
             } else { // for other layouts
                 attachments.forEach { attachment in
-                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? ""))
+                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
                 }
             }
         } else {
-            SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? ""))
+            SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
         }
         setTableView()
     }
     
     func onError(error: String?) {
+        tfMessage.text = ""
         showStandardAlert(message: error)
     }
 }
@@ -171,5 +169,17 @@ extension ChatViewController: ChatTableViewCellDelegate {
     
     func onLinkClicked(with url: URL) {
         openSFSafariViewController(with: url)
+    }
+    
+    func onMapCliked(latitude: Double, longitude: Double) {
+        let installedMaps = MapUtil.shared.getInstalledMaps()
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        installedMaps.forEach { item in
+            alert.addAction(UIAlertAction(title: item.mapName, style: .default, handler: { _ in
+                MapUtil.shared.onMapSelected(selectedMap: item, latitude: latitude, longitude: longitude)
+            }))
+        }
+        alert.addAction(UIAlertAction(title: "Vazgeç", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }

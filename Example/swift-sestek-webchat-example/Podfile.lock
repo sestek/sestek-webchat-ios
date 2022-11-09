@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.10)
-  - sestek-webchat-ios (0.0.1):
+  - sestek-webchat-ios (0.0.3):
     - IQKeyboardManagerSwift (~> 6.5.10)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  sestek-webchat-ios: d95ad9aebcb2a6e28c4d998dafeebe11a3ee01ab
+  sestek-webchat-ios: af54bf37709ae798811f90e6b087d96a4da26765
 
 PODFILE CHECKSUM: ea3c2a9dbc91d208ae6372b855473018f8987a02
 

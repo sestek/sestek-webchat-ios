@@ -12,6 +12,13 @@ class FloatingRoundedButtonController: UIViewController {
     static let sharedInstance = FloatingRoundedButtonController()
 
     private(set) var button: UIButton!
+    public var isRoundedButtonVisible: Bool {
+        get {
+            window.isHidden
+        } set {
+            window.isHidden = !newValue
+        }
+    }
     
     private lazy var popoverWindow: UIWindow = {
         var frame: CGRect = UIScreen.main.bounds
@@ -23,23 +30,9 @@ class FloatingRoundedButtonController: UIViewController {
         }
         popoverWindow.windowLevel = UIWindow.Level.normal
         popoverWindow.frame =  frame
-        
-        let navigationController = UINavigationController()
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = CustomConfiguration.config.headerColor
-            navigationController.navigationBar.standardAppearance = appearance
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-            navigationController.navigationBar.compactAppearance = appearance
-        } else {
-            navigationController.navigationBar.barTintColor = .barBackgroundColor
-        }
-        
-        navigationController.navigationBar.tintColor = .tintColor
         let vc = ChatViewController.loadFromNib()
-        navigationController.viewControllers = [vc]
-        navigationController.modalPresentationStyle = .fullScreen
-        popoverWindow.rootViewController = navigationController
+        vc.modalPresentationStyle = .overCurrentContext
+        popoverWindow.rootViewController = vc
 
         return popoverWindow
     }()
@@ -82,14 +75,6 @@ class FloatingRoundedButtonController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    }
-    
-    func hideButton() {
-        window.isHidden = true
-    }
-    
-    func showButton() {
-        window.isHidden = false
     }
     
     @objc func onButtonClicked(_ sender: UIButton) {
