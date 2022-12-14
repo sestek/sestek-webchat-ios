@@ -27,6 +27,7 @@ public enum CharacterStyle : CharacterStyling {
 	case referencedLink
 	case referencedImage
 	case strikethrough
+    case underline
 	
 	public func isEqualTo(_ other: CharacterStyling) -> Bool {
 		guard let other = other as? CharacterStyle else {
@@ -65,6 +66,7 @@ enum MarkdownLineStyle : LineStyling {
 	case orderedListIndentFirstOrder
 	case orderedListIndentSecondOrder
 	case referencedLink
+    case table
 	
     func styleIfFoundStyleAffectsPreviousLine() -> LineStyling? {
         switch self {
@@ -121,7 +123,7 @@ If that is not set, then the system default will be used.
 	#else
 	public var color = CustomConfiguration.config.messageColor
 	#endif
-	public var fontSize : CGFloat = 0.0
+	public var fontSize : CGFloat = 13.0
 	public var fontStyle : FontStyle = .normal
 }
 
@@ -132,7 +134,7 @@ If that is not set, then the system default will be used.
 	#else
 	public var color = CustomConfiguration.config.messageColor
 	#endif
-	public var fontSize : CGFloat = 0.0
+	public var fontSize : CGFloat = 13.0
 	public var fontStyle : FontStyle = .normal
 	public var alignment: NSTextAlignment = .left
     public var lineSpacing : CGFloat = 0.0
@@ -160,22 +162,24 @@ If that is not set, then the system default will be used.
 		LineRule(token: "-", type: MarkdownLineStyle.previousH2, removeFrom: .entireLine, changeAppliesTo: .previous),
 		LineRule(token: "\t\t- ", type: MarkdownLineStyle.unorderedListIndentSecondOrder, removeFrom: .leading, shouldTrim: false),
 		LineRule(token: "\t- ", type: MarkdownLineStyle.unorderedListIndentFirstOrder, removeFrom: .leading, shouldTrim: false),
-		LineRule(token: "- ",type : MarkdownLineStyle.unorderedList, removeFrom: .leading),
+		LineRule(token: "- ", type: MarkdownLineStyle.unorderedList, removeFrom: .leading),
 		LineRule(token: "\t\t* ", type: MarkdownLineStyle.unorderedListIndentSecondOrder, removeFrom: .leading, shouldTrim: false),
 		LineRule(token: "\t* ", type: MarkdownLineStyle.unorderedListIndentFirstOrder, removeFrom: .leading, shouldTrim: false),
 		LineRule(token: "\t\t1. ", type: MarkdownLineStyle.orderedListIndentSecondOrder, removeFrom: .leading, shouldTrim: false),
 		LineRule(token: "\t1. ", type: MarkdownLineStyle.orderedListIndentFirstOrder, removeFrom: .leading, shouldTrim: false),
-		LineRule(token: "1. ",type : MarkdownLineStyle.orderedList, removeFrom: .leading),
-		LineRule(token: "* ",type : MarkdownLineStyle.unorderedList, removeFrom: .leading),
+		LineRule(token: "1. ", type: MarkdownLineStyle.orderedList, removeFrom: .leading),
+		LineRule(token: "* ", type: MarkdownLineStyle.unorderedList, removeFrom: .leading),
 		LineRule(token: "    ", type: MarkdownLineStyle.codeblock, removeFrom: .leading, shouldTrim: false),
 		LineRule(token: "\t", type: MarkdownLineStyle.codeblock, removeFrom: .leading, shouldTrim: false),
-		LineRule(token: ">",type : MarkdownLineStyle.blockquote, removeFrom: .leading),
-		LineRule(token: "###### ",type : MarkdownLineStyle.h6, removeFrom: .both),
-		LineRule(token: "##### ",type : MarkdownLineStyle.h5, removeFrom: .both),
-		LineRule(token: "#### ",type : MarkdownLineStyle.h4, removeFrom: .both),
-		LineRule(token: "### ",type : MarkdownLineStyle.h3, removeFrom: .both),
-		LineRule(token: "## ",type : MarkdownLineStyle.h2, removeFrom: .both),
-		LineRule(token: "# ",type : MarkdownLineStyle.h1, removeFrom: .both)
+		LineRule(token: ">", type: MarkdownLineStyle.blockquote, removeFrom: .leading),
+		LineRule(token: "###### ", type: MarkdownLineStyle.h6, removeFrom: .both),
+		LineRule(token: "##### ", type: MarkdownLineStyle.h5, removeFrom: .both),
+		LineRule(token: "#### ", type: MarkdownLineStyle.h4, removeFrom: .both),
+		LineRule(token: "### ", type: MarkdownLineStyle.h3, removeFrom: .both),
+		LineRule(token: "## ", type: MarkdownLineStyle.h2, removeFrom: .both),
+		LineRule(token: "# ", type: MarkdownLineStyle.h1, removeFrom: .both),
+        LineRule(token: "---", type: MarkdownLineStyle.h1, removeFrom: .both),
+        LineRule(token: "| # |", type: MarkdownLineStyle.table, removeFrom: .none)
 	]
 	
 	static public var characterRules = [
@@ -200,9 +204,10 @@ If that is not set, then the system default will be used.
 				CharacterRuleTag(tag: ")", type: .metadataClose)
 		], styles: [1 : CharacterStyle.link], metadataLookup: false, definesBoundary: true),
 		CharacterRule(primaryTag: CharacterRuleTag(tag: "`", type: .repeating), otherTags: [], styles: [1 : CharacterStyle.code], shouldCancelRemainingRules: true, balancedTags: true),
-		CharacterRule(primaryTag:CharacterRuleTag(tag: "~", type: .repeating), otherTags : [], styles: [2 : CharacterStyle.strikethrough], minTags:2 , maxTags:2),
+		CharacterRule(primaryTag: CharacterRuleTag(tag: "~", type: .repeating), otherTags: [], styles: [2 : CharacterStyle.strikethrough], minTags:2 , maxTags:2),
 		CharacterRule(primaryTag: CharacterRuleTag(tag: "*", type: .repeating), otherTags: [], styles: [1 : CharacterStyle.italic, 2 : CharacterStyle.bold], minTags:1 , maxTags:2),
-		CharacterRule(primaryTag: CharacterRuleTag(tag: "_", type: .repeating), otherTags: [], styles: [1 : CharacterStyle.italic, 2 : CharacterStyle.bold], minTags:1 , maxTags:2)
+		CharacterRule(primaryTag: CharacterRuleTag(tag: "_", type: .repeating), otherTags: [], styles: [1 : CharacterStyle.italic, 2 : CharacterStyle.bold], minTags:1 , maxTags:2),
+        CharacterRule(primaryTag: CharacterRuleTag(tag: "-", type: .repeating), otherTags: [], styles: [3 : CharacterStyle.underline], minTags: 3 , maxTags: 3),
 	]
 	
 	let lineProcessor = SwiftyLineProcessor(rules: SwiftyMarkdown.lineRules, defaultRule: MarkdownLineStyle.body, frontMatterRules: SwiftyMarkdown.frontMatterRules)
@@ -245,6 +250,8 @@ If that is not set, then the system default will be used.
 	open var code = BasicStyles()
 	
 	open var strikethrough = BasicStyles()
+    
+    open var underline = BasicStyles()
 	
 	public var bullet : String = "・"
 	
@@ -331,6 +338,7 @@ If that is not set, then the system default will be used.
 		link.fontSize = size
 		link.fontSize = size
 		strikethrough.fontSize = size
+        underline.fontSize = size
 	}
 	
 	#if os(macOS)
@@ -348,6 +356,7 @@ If that is not set, then the system default will be used.
 		link.color = color
 		blockquotes.color = color
 		strikethrough.color = color
+        underline.color = color
 	}
 	#else
 	open func setFontColorForAllStyles(with color: UIColor) {
@@ -364,6 +373,7 @@ If that is not set, then the system default will be used.
 		link.color = color
 		blockquotes.color = color
 		strikethrough.color = color
+        underline.color = color
 	}
 	#endif
 	
@@ -381,6 +391,7 @@ If that is not set, then the system default will be used.
 		link.fontName = name
 		blockquotes.fontName = name
 		strikethrough.fontName = name
+        underline.fontName = name
 	}
 	
 	
@@ -496,8 +507,9 @@ extension SwiftyMarkdown {
 		case .codeblock:
 			lineProperties = body
 			let paragraphStyle = NSMutableParagraphStyle()
-			paragraphStyle.firstLineHeadIndent = 20.0
+			paragraphStyle.firstLineHeadIndent = 0.0
 			attributes[.paragraphStyle] = paragraphStyle
+            attributes[.backgroundColor] = UIColor(red: 221/255, green: 220/255, blue: 221/255, alpha: 1.0)
 		case .blockquote:
 			lineProperties = self.blockquotes
 			let paragraphStyle = NSMutableParagraphStyle()
@@ -509,7 +521,7 @@ extension SwiftyMarkdown {
 			let interval : CGFloat = 30
 			var addition = interval
 			var indent = ""
-			switch line.lineStyle as! MarkdownLineStyle {
+            switch line.lineStyle as! MarkdownLineStyle {
 			case .unorderedListIndentFirstOrder, .orderedListIndentFirstOrder:
 				addition = interval * 2
 				indent = "\t"
@@ -528,7 +540,7 @@ extension SwiftyMarkdown {
 			paragraphStyle.headIndent = addition
 
 			attributes[.paragraphStyle] = paragraphStyle
-			finalTokens.insert(Token(type: .string, inputString: "\(indent)\(listItem)\t"), at: 0)
+			finalTokens.insert(Token(type: .string, inputString: "\(indent)\(listItem) "), at: 0)
 			
 		case .yaml:
 			lineProperties = body
@@ -540,6 +552,8 @@ extension SwiftyMarkdown {
 			lineProperties = body
 		case .referencedLink:
 			lineProperties = body
+        case .table:
+            lineProperties = body
 		}
 		
         let paragraphStyle = attributes[.paragraphStyle] as? NSMutableParagraphStyle ?? NSMutableParagraphStyle()
@@ -585,6 +599,12 @@ extension SwiftyMarkdown {
 				attributes[.strikethroughStyle] = NSUnderlineStyle.single.rawValue as AnyObject
 				attributes[.foregroundColor] = self.strikethrough.color
 			}
+            
+            if styles.contains(.underline) {
+                attributes[.font] = self.font(for: line, characterOverride: .strikethrough)
+                attributes[.underlineStyle] = NSUnderlineStyle.single.rawValue as AnyObject
+                attributes[.foregroundColor] = self.strikethrough.color
+            }
 			
 			#if !os(watchOS)
 			if let imgIdx = styles.firstIndex(of: .image), imgIdx < token.metadataStrings.count {
@@ -593,7 +613,12 @@ extension SwiftyMarkdown {
 				}
 				#if !os(macOS)
 				let image1Attachment = NSTextAttachment()
-				image1Attachment.image = UIImage(named: token.metadataStrings[imgIdx])
+                if let imageUrl = URL(string: token.metadataStrings[imgIdx]) {
+                    image1Attachment.image = UIImage(url: imageUrl)
+                } else {
+                    image1Attachment.image = UIImage(named: token.metadataStrings[imgIdx])
+                }
+                image1Attachment.setImageWidth(width: UIScreen.main.bounds.width - 120)
 				let str = NSAttributedString(attachment: image1Attachment)
 				finalAttributedString.append(str)
 				#elseif !os(watchOS)

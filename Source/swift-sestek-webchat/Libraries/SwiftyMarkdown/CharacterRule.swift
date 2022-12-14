@@ -78,8 +78,6 @@ public struct CharacterRule : CustomStringConvertible {
 	}
 }
 
-
-
 enum ElementType {
 	case tag
 	case escape

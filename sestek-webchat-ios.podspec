@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary = "sestek-webchat-ios summary"
   s.requires_arc = true
   
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   
   s.license = { :type => "MIT", :file => "LICENSE" }
   
@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   
   s.framework = "UIKit"
   s.dependency 'IQKeyboardManagerSwift', '~> 6.5.10'
+  s.dependency 'Alamofire', '~> 4.9.1'
   
   s.source_files = "Source/swift-sestek-webchat/**/*.{swift}"
   

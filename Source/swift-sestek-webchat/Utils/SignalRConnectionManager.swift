@@ -25,6 +25,11 @@ final internal class SignalRConnectionManager {
     
     internal static let shared = SignalRConnectionManager()
     private static var settings: Settings?
+    var isVoiceRecordingEnabled: Bool {
+        get {
+            DefaultConfiguration.config?.isVoiceRecordingEnabled ?? false
+        }
+    }
     
     weak var messagingDelegate: SignalRConnectionManagerMessagingDelegate?
     weak var operationsDelegate: SignalRConnectionManagerOpeartionsDelegate?
@@ -38,6 +43,7 @@ final internal class SignalRConnectionManager {
     class func setup(with configuration: Settings) {
         self.settings = configuration
         CustomConfiguration.config = configuration.customConfiguration
+        DefaultConfiguration.config = configuration.defaultConfiguration
     }
     
     public init() {
@@ -120,5 +126,4 @@ final internal class SignalRConnectionManager {
             onConversationEnded()
         }
     }
-    
 }

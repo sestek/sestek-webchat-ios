@@ -5,11 +5,17 @@
 //  Created by Kagan Girgin on 19.07.2022.
 //
 
+import AVKit
 import UIKit
 
 class ChatViewController: UIViewController {
     
     @IBOutlet weak private var btnSend: UIButton!
+    @IBOutlet weak private var btnMic: UIButton! {
+        didSet {
+            btnMic.isHidden = !SignalRConnectionManager.shared.isVoiceRecordingEnabled
+        }
+    }
     @IBOutlet weak private var tfMessage: UITextField! {
         didSet {
             tfMessage.attributedPlaceholder = NSAttributedString(
@@ -45,6 +51,9 @@ class ChatViewController: UIViewController {
     }
     
     private var tableViewSource: ChatTableViewSource?
+    private var isVoiceRecording: Bool = false
+    private var recordedFileURL: URL?
+    private var audioRecorder: AVAudioRecorder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +69,12 @@ class ChatViewController: UIViewController {
         if !(tfMessage.text?.replacingOccurrences(of: " ", with: "").isEmpty ?? false) {
             sendMessage(message: tfMessage.text ?? "")
         }
+    }
+    
+    @IBAction private func onButtonMicClicked(_ sender: Any) {
+        isVoiceRecording.toggle()
+        btnMic.tintColor = isVoiceRecording ? .red : .black
+        isVoiceRecording ? startRecorder() : stopRecorder()
     }
     
     @IBAction private func onButtonHideClicked(_ sender: Any) {
@@ -89,8 +104,10 @@ fileprivate extension ChatViewController {
         scrollToBottom()
     }
     
-    func sendMessage(message: String) {
-        setOwnerMessage(message: message)
+    func sendMessage(message: String, isSoundMessage: Bool = false) {
+        if !isSoundMessage {
+            setOwnerMessage(message: message)
+        }
         SignalRConnectionManager.shared.sendMessage(message: message) { [weak self] in
             guard let self = self else { return }
             self.tfMessage.text = ""
@@ -101,6 +118,11 @@ fileprivate extension ChatViewController {
     
     func setOwnerMessage(message: String) {
         SignalRConnectionManager.shared.chat.append(ChatModel(text: message, attachment: nil, isOwner: true, date: nil))
+        setTableView()
+    }
+    
+    func setOwnerMessage(recordedFileUrl: URL?) {
+        SignalRConnectionManager.shared.chat.append(ChatModel(text: "", isOwner: true, recordedFileURL: recordedFileUrl))
         setTableView()
     }
     
@@ -181,5 +203,74 @@ extension ChatViewController: ChatTableViewCellDelegate {
         }
         alert.addAction(UIAlertAction(title: "Vazgeç", style: .cancel, handler: nil))
         self.present(alert, animated: true)
+    }
+}
+
+// MARK: - Voice Recorder
+fileprivate extension ChatViewController {
+    func startRecorder() {
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        session.requestRecordPermission { hasPermission in
+            if hasPermission {
+                self.recordedFileURL = self.getDirectory().appendingPathComponent("\(UUID().uuidString).m4a")
+                guard let fileURL = self.recordedFileURL else {
+                    print("File URL is not correct")
+                    return
+                }
+                let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                                AVSampleRateKey: 12000,
+                                AVNumberOfChannelsKey: 1,
+                                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
+                
+                do {
+                    self.audioRecorder = try AVAudioRecorder(url: fileURL, settings: settings)
+                    self.audioRecorder?.delegate = self
+                    self.audioRecorder?.record()
+                } catch {
+                    print("Recording failed")
+                }
+                
+            } else {
+                print("No permission")
+            }
+        }
+    }
+    
+    func stopRecorder() {
+        guard let _ = self.audioRecorder else {
+            print("Recorder not found")
+            return
+        }
+        audioRecorder?.stop()
+        audioRecorder = nil
+        setOwnerMessage(recordedFileUrl: recordedFileURL)
+        uploadVoice(recordedFileUrl: recordedFileURL)
+    }
+    
+    func getDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func uploadVoice(recordedFileUrl: URL?) {
+        Services.shared.uploadVoice(recordedFileURL: recordedFileUrl, sessionId: SignalRConnectionManager.shared.conversationId, project: DefaultConfiguration.config?.project, clientId: DefaultConfiguration.config?.clientId, tenant: DefaultConfiguration.config?.tenant, fullName: DefaultConfiguration.config?.fullName, customAction: "startOfConversation", customActionData: "startOfConversation") { jsonObject in
+            self.sendMessage(message: jsonObject ?? "", isSoundMessage: true)
+        } onError: { error in
+            self.showStandardAlert(message: error)
+        }
+    }
+}
+
+extension ChatViewController: AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            self.showStandardAlert(message: "Recording is stoppped")
+        }
     }
 }

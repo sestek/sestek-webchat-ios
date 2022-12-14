@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="sestek_webchat_ios" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImage" destination="y2d-sV-ZyA" id="x2R-99-NvD"/>
+                <outlet property="btnMic" destination="D7Z-0R-dUv" id="S42-C4-gQI"/>
                 <outlet property="btnSend" destination="Bk7-Uh-GiP" id="sLG-ka-dx9"/>
                 <outlet property="labelTitle" destination="phw-Ib-s8m" id="dvk-qD-Ohg"/>
                 <outlet property="tableView" destination="6w9-l6-BJt" id="evI-VV-Shq"/>
@@ -104,7 +105,7 @@
                                             <rect key="frame" x="4" y="0.0" width="390" height="40"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write smt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B3R-pJ-RlF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="WHD-Ry-U9u"/>
@@ -113,6 +114,20 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7Z-0R-dUv">
+                                                    <rect key="frame" x="310" y="0.0" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="ZnT-2m-8KA"/>
+                                                        <constraint firstAttribute="width" secondItem="D7Z-0R-dUv" secondAttribute="height" multiplier="1:1" id="da9-jx-NX0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="mic.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="onButtonMicClicked:" destination="-1" eventType="touchUpInside" id="ztY-RW-C5Q"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk7-Uh-GiP">
                                                     <rect key="frame" x="350" y="0.0" width="40" height="40"/>
                                                     <constraints>
@@ -129,6 +144,9 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="D7Z-0R-dUv" firstAttribute="width" secondItem="D7Z-0R-dUv" secondAttribute="height" multiplier="1:1" id="izM-DK-ZfP"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,6 +200,7 @@
     <resources>
         <image name="ic_close.png" width="170.5" height="170.5"/>
         <image name="ic_hide.png" width="170.5" height="170.5"/>
+        <image name="mic.fill" catalog="system" width="110" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="119"/>
     </resources>
 </document>

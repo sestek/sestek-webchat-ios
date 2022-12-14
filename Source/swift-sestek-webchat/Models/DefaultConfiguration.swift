@@ -13,12 +13,16 @@ public struct DefaultConfiguration {
     let channel: String
     let project: String
     let fullName: String
+    let isVoiceRecordingEnabled: Bool
     
-    public init(clientId: String, tenant: String, channel: String, project: String, fullName: String) {
+    public init(clientId: String, tenant: String, channel: String, project: String, fullName: String, isVoiceRecordingEnabled: Bool = false) {
         self.clientId = clientId
         self.tenant = tenant
         self.channel = channel
         self.project = project
         self.fullName = fullName
+        self.isVoiceRecordingEnabled = isVoiceRecordingEnabled
     }
+    
+    public static var config: DefaultConfiguration?
 }

@@ -14,4 +14,5 @@ struct ChatModel {
     var date: String?
     var layout: AttachmentLayoutEnums = .unknown
     var location: GeoResponseModel?
+    var recordedFileURL: URL?
 }

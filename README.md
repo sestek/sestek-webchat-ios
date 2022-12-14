@@ -14,6 +14,24 @@ pod 'sestek-webchat-ios'
 ```
 
 ## Usage
+
+If the voice message feature is supported, the following lines should be added to Info.Plist file else
+your application will crash.
+
+```
+<key>NSMicrophoneUsageDescription</key>
+<string>Microphone permission text</string>
+```
+
+When clicking on the location information, the following lines should be added to the Info.Plist file so that the user can select one of the maps installed on the phone.
+
+```
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>comgooglemaps</string>
+  <string>yandexnavi</string>
+</array>
+```
 In AppDelegate.swift, just import sestek_webchat_ios framework and initialize SestekWebChat.
 
 ```swift
@@ -26,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       let url = "https://nd-test-webchat.sestek.com/chathub"
-        let defaultConfiguration = DefaultConfiguration(clientId: "mobile-testing", tenant: "ArabBank", channel: "NdaInfoBip", project: "ArabBank", fullName: "Ömer Sezer")
+        let defaultConfiguration = DefaultConfiguration(clientId: "mobile-testing", tenant: "ArabBank", channel: "NdaInfoBip", project: "ArabBank", fullName: "Ömer Sezer", isVoiceRecordingEnabled: true)
         let customConfiguration = CustomConfiguration(headerColor: .purple,
                                                       headerText: "Knovvu",
                                                       bottomColor: .black,

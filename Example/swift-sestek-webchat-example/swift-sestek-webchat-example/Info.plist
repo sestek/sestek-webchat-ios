@@ -7,5 +7,7 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Microphone permission text</string>
 </dict>
 </plist>

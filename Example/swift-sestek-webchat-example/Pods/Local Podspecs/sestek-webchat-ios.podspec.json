@@ -5,7 +5,7 @@
   },
   "summary": "sestek-webchat-ios summary",
   "requires_arc": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -16,12 +16,15 @@
   "homepage": "https://github.com/sestek/sestek-webchat-ios",
   "source": {
     "git": "https://github.com/sestek/sestek-webchat-ios.git",
-    "tag": "0.0.3"
+    "tag": "0.0.4"
   },
   "frameworks": "UIKit",
   "dependencies": {
     "IQKeyboardManagerSwift": [
       "~> 6.5.10"
+    ],
+    "Alamofire": [
+      "~> 4.9.1"
     ]
   },
   "source_files": "Source/swift-sestek-webchat/**/*.{swift}",

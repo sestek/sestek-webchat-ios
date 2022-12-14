@@ -98,7 +98,9 @@
 		49D4CD5E28B388B700F84A8B /* UIView+makeShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5428B388B700F84A8B /* UIView+makeShadow.swift */; };
 		49D4CD5F28B388B700F84A8B /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5528B388B700F84A8B /* DateFormatter+Extensions.swift */; };
 		49D4CD6028B388B700F84A8B /* UITableViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4CD5628B388B700F84A8B /* UITableViewCell+identifier.swift */; };
+		49E29CE4292BBA9700845358 /* NSTextAttachment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E29CE3292BBA9700845358 /* NSTextAttachment+Extensions.swift */; };
 		49E79A4328DB1E370033986D /* DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E79A4228DB1E370033986D /* DefaultConfiguration.swift */; };
+		49E90A0C2947AE83006787CE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E90A0B2947AE83006787CE /* Services.swift */; };
 		49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFED7228B39E1E00112186 /* Bundle+Extension.swift */; };
 		49F1B80728BF70FA005EA7C4 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80628BF70FA005EA7C4 /* TextHelper.swift */; };
 		49F1B80A28BF71CD005EA7C4 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80928BF71CD005EA7C4 /* Language.swift */; };
@@ -211,7 +213,9 @@
 		49D4CD5428B388B700F84A8B /* UIView+makeShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+makeShadow.swift"; sourceTree = "<group>"; };
 		49D4CD5528B388B700F84A8B /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		49D4CD5628B388B700F84A8B /* UITableViewCell+identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+identifier.swift"; sourceTree = "<group>"; };
+		49E29CE3292BBA9700845358 /* NSTextAttachment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment+Extensions.swift"; sourceTree = "<group>"; };
 		49E79A4228DB1E370033986D /* DefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConfiguration.swift; sourceTree = "<group>"; };
+		49E90A0B2947AE83006787CE /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		49EFED7228B39E1E00112186 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		49F1B80628BF70FA005EA7C4 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		49F1B80928BF71CD005EA7C4 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 				496F31E228B38CDE00AABF47 /* UIColor+Extension.swift */,
 				49EFED7228B39E1E00112186 /* Bundle+Extension.swift */,
 				49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */,
+				49E29CE3292BBA9700845358 /* NSTextAttachment+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 				49AEDAA428A8EF140041DA42 /* Libraries */,
 				4987F4AA289EA48900EB65CC /* Extensions */,
 				4987F4A9289EA48300EB65CC /* Utils */,
+				49E90A072947AD3D006787CE /* Services */,
 				4987F4A8289EA47E00EB65CC /* Models */,
 				4987F4A7289EA47900EB65CC /* ViewControllers */,
 				496F31D328B3897300AABF47 /* CollectionViewCells */,
@@ -481,6 +487,14 @@
 				49CA022C28980786005A5BA0 /* swift_sestek_webchatTests.swift */,
 			);
 			path = "swift-sestek-webchatTests";
+			sourceTree = "<group>";
+		};
+		49E90A072947AD3D006787CE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				49E90A0B2947AE83006787CE /* Services.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		49F1B80828BF71C5005EA7C4 /* Enums */ = {
@@ -725,6 +739,7 @@
 				49A3CAF228F4347E00FBE46F /* SwiftyScanner.swift in Sources */,
 				49C6C85C28E4297A00D46D91 /* CustomConfiguration.swift in Sources */,
 				49AEDB1728A8EFD80041DA42 /* Transport.swift in Sources */,
+				49E29CE4292BBA9700845358 /* NSTextAttachment+Extensions.swift in Sources */,
 				49A3CAF928F4347E00FBE46F /* Token.swift in Sources */,
 				4987F4B5289EA4A500EB65CC /* ChatRightTableViewCell.swift in Sources */,
 				49D4CD6028B388B700F84A8B /* UITableViewCell+identifier.swift in Sources */,
@@ -762,6 +777,7 @@
 				496F31E328B38CDE00AABF47 /* UIColor+Extension.swift in Sources */,
 				49AEDB0528A8EFD80041DA42 /* ReconnectableConnection.swift in Sources */,
 				49AEDB0C28A8EFD80041DA42 /* HttpConnectionOptions.swift in Sources */,
+				49E90A0C2947AE83006787CE /* Services.swift in Sources */,
 				49AEDB0828A8EFD80041DA42 /* HttpConnection.swift in Sources */,
 				49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */,
 				4987F4B9289EA4BC00EB65CC /* ChatTableViewSource.swift in Sources */,
@@ -943,7 +959,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sestek.sestek-webchat-ios";
 				PRODUCT_NAME = "sestek-webchat-ios";
 				SKIP_INSTALL = YES;
@@ -972,7 +988,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.3;
+				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sestek.sestek-webchat-ios";
 				PRODUCT_NAME = "sestek-webchat-ios";
 				SKIP_INSTALL = YES;

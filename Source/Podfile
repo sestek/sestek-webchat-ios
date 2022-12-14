@@ -3,6 +3,7 @@ platform :ios, '12.0'
 
 def app_pods
   pod 'IQKeyboardManagerSwift'
+  pod 'Alamofire', '~> 4.9.1'
 end
 
 target 'swift-sestek-webchat' do
