@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 public class SestekWebChat {
     
@@ -37,7 +36,6 @@ public class SestekWebChat {
     }
     
     public func initLibrary(url: String = "https://nd-test-webchat.sestek.com/chathub", defaultConfiguration: DefaultConfiguration, customConfiguration: CustomConfiguration = CustomConfiguration.config) {
-        configureIQKeyboardManager()
         SignalRConnectionManager.setup(with: SignalRConnectionManager.Settings(url: url, defaultConfiguration: defaultConfiguration, customConfiguration: customConfiguration))
         SignalRConnectionManager.shared.operationsDelegate = self
         FloatingRoundedButtonController.sharedInstance.button.isHidden = false
@@ -63,12 +61,6 @@ public class SestekWebChat {
     
     private func presentChat() {
         FloatingRoundedButtonController.sharedInstance.updatePopoverVisibility(to: .open)
-    }
-    
-    private func configureIQKeyboardManager() {
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
 }
 

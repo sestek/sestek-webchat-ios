@@ -8,6 +8,7 @@
 import Foundation
 
 struct ChatModel {
+    var id: String = UUID().uuidString
     var text: String
     var attachment: AttachmentResponseModel?
     var isOwner: Bool

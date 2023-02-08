@@ -36,6 +36,7 @@ class ChatViewController: UIViewController {
             tableView.register(cell: ChatLeftTableViewCell.self)
             tableView.register(cell: ChatRightTableViewCell.self)
             setTableView()
+            tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTableViewClicked(_:))))
         }
     }
     @IBOutlet private weak var backgroundImage: UIImageView! {
@@ -49,6 +50,7 @@ class ChatViewController: UIViewController {
             labelTitle.text = CustomConfiguration.config.headerText
         }
     }
+    @IBOutlet weak var constraintBottom: NSLayoutConstraint!
     
     private var tableViewSource: ChatTableViewSource?
     private var isVoiceRecording: Bool = false
@@ -59,10 +61,16 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         SignalRConnectionManager.shared.messagingDelegate = self
         configure()
+        observeKeyboardEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardEvents()
     }
     
     @IBAction private func onButtonSendClicked(_ sender: Any) {
@@ -96,10 +104,16 @@ fileprivate extension ChatViewController {
         setBodyImage()
     }
     
+    
     func setTableView() {
-        tableViewSource = ChatTableViewSource(items: SignalRConnectionManager.shared.chat, delegate: self)
-        tableView.dataSource = tableViewSource
-        tableView.delegate = tableViewSource
+        if tableViewSource == nil {
+            tableViewSource = ChatTableViewSource(items: SignalRConnectionManager.shared.chat, delegate: self, sourceDelegate: self)
+            tableView.dataSource = tableViewSource
+            tableView.delegate = tableViewSource
+        } else {
+            tableViewSource?.items = SignalRConnectionManager.shared.chat
+        }
+        
         tableView.reloadData()
         scrollToBottom()
     }
@@ -146,12 +160,17 @@ fileprivate extension ChatViewController {
             backgroundImage.backgroundColor = color
         }
     }
+    
+    @objc func onTableViewClicked(_ sender: UITapGestureRecognizer?) {
+        tfMessage.endEditing(true)
+    }
 }
 
 // MARK: - Messaging Delegate
 extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
     func onNewMessageReceived(messageDetail: MessageDetailResponseModel?) {
         let geoModel = messageDetail?.entities?.first??.geo ?? nil
+        var model: ChatModel!
         if let attachments = messageDetail?.attachments, attachments.count > 0 {
             // for carousel layouts
             if messageDetail?.attachmentLayout == .carousel {
@@ -164,17 +183,32 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
                         return attachment
                     }
                 if let attachment = tempAttachments.first {
-                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
+                    model = ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
+                    SignalRConnectionManager.shared.chat.append(model)
                 }
             } else { // for other layouts
                 attachments.forEach { attachment in
-                    SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
+                    model = ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
+                    SignalRConnectionManager.shared.chat.append(model)
                 }
             }
         } else {
-            SignalRConnectionManager.shared.chat.append(ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel))
+            model = ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
+            SignalRConnectionManager.shared.chat.append(model)
         }
-        setTableView()
+        setChatbotText(model)
+    }
+    
+    func setChatbotText(_ model: ChatModel) {
+        if tableViewSource == nil {
+            tableViewSource = ChatTableViewSource(items: SignalRConnectionManager.shared.chat,
+                                                  delegate: self, sourceDelegate: self)
+            tableView.dataSource = tableViewSource
+            tableView.delegate = tableViewSource
+            tableViewSource?.loadChatbotContents()
+        } else {
+            tableViewSource?.append(chat: model)
+        }
     }
     
     func onError(error: String?) {
@@ -224,9 +258,9 @@ fileprivate extension ChatViewController {
                     return
                 }
                 let settings = [AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                                AVSampleRateKey: 12000,
-                                AVNumberOfChannelsKey: 1,
-                                AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
+                              AVSampleRateKey: 12000,
+                        AVNumberOfChannelsKey: 1,
+                     AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
                 
                 do {
                     self.audioRecorder = try AVAudioRecorder(url: fileURL, settings: settings)
@@ -272,5 +306,47 @@ extension ChatViewController: AVAudioRecorderDelegate {
         if !flag {
             self.showStandardAlert(message: "Recording is stoppped")
         }
+    }
+}
+
+extension ChatViewController: ChatTableViewSourceDelegate {
+    func reloadTableView() {
+        tableView.reloadData()
+        self.scrollToBottom()
+    }
+}
+
+fileprivate extension ChatViewController {
+    func observeKeyboardEvents() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { [weak self] (notification) in
+            guard let keyboardHeight = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+            let duration: TimeInterval = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            let bottomSafeArea = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self?.constraintBottom.constant = keyboardHeight.height - bottomSafeArea },
+                           completion: nil)
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { [weak self] (notification) in
+            let duration: TimeInterval = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self?.constraintBottom.constant = 0 },
+                           completion: nil)
+        }
+    }
+    
+    func removeKeyboardEvents() {
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillHideNotification)
     }
 }

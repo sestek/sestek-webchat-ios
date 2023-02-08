@@ -41,11 +41,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iru-JH-AUj">
                                 <rect key="frame" x="10" y="44" width="441" height="404"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-fO-bWF">
-                                        <rect key="frame" x="0.0" y="0.0" width="441" height="105"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-fO-bWF">
+                                        <rect key="frame" x="0.0" y="0.0" width="441" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="1" id="JIU-2h-Jvt"/>
+                                        </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eRW-Cq-524">
-                                        <rect key="frame" x="0.0" y="115" width="441" height="248"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eRW-Cq-524">
+                                        <rect key="frame" x="0.0" y="11" width="441" height="248"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="365-ch-spb">
                                                 <rect key="frame" x="0.0" y="0.0" width="441" height="248"/>
@@ -80,13 +83,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PbO-Y4-2LG">
-                                        <rect key="frame" x="0.0" y="373" width="441" height="11"/>
+                                        <rect key="frame" x="0.0" y="269" width="441" height="50.5"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K38-Ak-rjF">
-                                        <rect key="frame" x="0.0" y="394" width="441" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="329.5" width="441" height="50"/>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just now" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-h2-3YF">
-                                        <rect key="frame" x="0.0" y="404" width="441" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="389.5" width="441" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -118,6 +121,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="collectionViewImage" destination="zpJ-nN-Sqa" id="XWc-uP-z4T"/>
+                <outlet property="contentHeightConstraint" destination="JIU-2h-Jvt" id="5Kr-0H-EMo"/>
                 <outlet property="ivSender" destination="4fb-FC-Ggs" id="lqo-2g-U0C"/>
                 <outlet property="labelSenderName" destination="6Mp-nd-VZX" id="nRm-kJ-U6D"/>
                 <outlet property="labelTime" destination="2YZ-h2-3YF" id="nMB-qj-fJ2"/>

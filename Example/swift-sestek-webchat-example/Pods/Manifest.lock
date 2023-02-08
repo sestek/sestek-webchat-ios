@@ -1,27 +1,27 @@
 PODS:
   - Alamofire (4.9.1)
-  - IQKeyboardManagerSwift (6.5.10)
+  - Down (0.11.0)
   - sestek-webchat-ios (0.0.4):
     - Alamofire (~> 4.9.1)
-    - IQKeyboardManagerSwift (~> 6.5.10)
+    - Down
 
 DEPENDENCIES:
-  - sestek-webchat-ios (from `/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib`)
+  - sestek-webchat-ios (from `../../`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - IQKeyboardManagerSwift
+    - Down
 
 EXTERNAL SOURCES:
   sestek-webchat-ios:
-    :path: "/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib"
+    :path: "../../"
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
-  sestek-webchat-ios: 619623c8eed95d403c9b780f4f7a55e2df987053
+  Down: b6ba1bc985c9d2f4e15e3b293d2207766fa12612
+  sestek-webchat-ios: 8c4e7c44f24b4fc8c920fadb42c0561ca7f5437a
 
-PODFILE CHECKSUM: ea3c2a9dbc91d208ae6372b855473018f8987a02
+PODFILE CHECKSUM: dee70ff9a3bfe05bef83802cafb4e5de4e73fb57
 
 COCOAPODS: 1.11.3

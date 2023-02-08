@@ -20,11 +20,11 @@
   },
   "frameworks": "UIKit",
   "dependencies": {
-    "IQKeyboardManagerSwift": [
-      "~> 6.5.10"
-    ],
     "Alamofire": [
       "~> 4.9.1"
+    ],
+    "Down": [
+
     ]
   },
   "source_files": "Source/swift-sestek-webchat/**/*.{swift}",

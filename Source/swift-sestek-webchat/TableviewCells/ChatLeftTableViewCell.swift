@@ -16,6 +16,7 @@ protocol ChatTableViewCellDelegate: AnyObject {
 
 class ChatLeftTableViewCell: UITableViewCell {
     
+    @IBOutlet private weak var contentHeightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var viewRoot: UIView! {
         didSet {
             viewRoot.clipsToBounds = true
@@ -62,11 +63,11 @@ class ChatLeftTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func updateCell(chat: ChatModel?, delegate: ChatTableViewCellDelegate?) {
+    func updateCell(chat: ChatModel?, delegate: ChatTableViewCellDelegate?, content: ChatbotView) {
         self.delegate = delegate
         self.chat = chat
         setDefaultUI()
-        setLabels(texts: TextHelper().getTextsWithAttributes(chat?.text))
+        setLabels(texts: TextHelper().getTextsWithAttributes(chat?.text), content: content)
         labelTime.text = (chat?.date ?? "").getDate(formatter: .yyyyMMddTHHmmssSSSSSSSZ)?.getAsString(.yyyyMMddHHmm)
         svRootLocations.isHidden = true
         if let buttons = (chat?.attachment?.content?.buttons), buttons.count > 0 {
@@ -101,23 +102,11 @@ class ChatLeftTableViewCell: UITableViewCell {
         })
     }
     
-    private func setLabels(texts: [CustomText]) {
+    private func setLabels(texts: [CustomText], content: ChatbotView) {
         svRootDescriptions.subviews.forEach { $0.removeFromSuperview() }
-        texts.forEach { text in
-            let textView = UITextView()
-            textView.dataDetectorTypes = .all
-            textView.font = .systemFont(ofSize: 13, weight: .regular)
-            textView.textColor = CustomConfiguration.config.messageColor
-            textView.backgroundColor = .clear
-            textView.isEditable = false
-            textView.sizeToFit()
-            textView.isScrollEnabled = false
-            textView.attributedText = SwiftyMarkdown(string: text.text ?? "").attributedString()
-            textView.textAlignment = text.language.textAlignment
-            textView.semanticContentAttribute = text.language.semanticContentAttribute
-            textView.delegate = self
-            svRootDescriptions.addArrangedSubview(textView)
-        }
+       contentHeightConstraint.constant = content.height
+       content.webView.textColor = CustomConfiguration.config.messageColor
+       svRootDescriptions.addArrangedSubview(content)
     }
     
     private func setLocation(location: GeoResponseModel) {

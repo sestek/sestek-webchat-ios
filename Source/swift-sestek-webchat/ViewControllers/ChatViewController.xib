@@ -13,6 +13,7 @@
                 <outlet property="backgroundImage" destination="y2d-sV-ZyA" id="x2R-99-NvD"/>
                 <outlet property="btnMic" destination="D7Z-0R-dUv" id="S42-C4-gQI"/>
                 <outlet property="btnSend" destination="Bk7-Uh-GiP" id="sLG-ka-dx9"/>
+                <outlet property="constraintBottom" destination="H5q-u5-WvO" id="yrJ-ZJ-bCL"/>
                 <outlet property="labelTitle" destination="phw-Ib-s8m" id="dvk-qD-Ohg"/>
                 <outlet property="tableView" destination="6w9-l6-BJt" id="evI-VV-Shq"/>
                 <outlet property="tfMessage" destination="B3R-pJ-RlF" id="b1f-cJ-W94"/>

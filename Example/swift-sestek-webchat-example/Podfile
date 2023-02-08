@@ -4,7 +4,7 @@
 target 'swift-sestek-webchat-example' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'sestek-webchat-ios', :path => '/Users/omersezer/Desktop/github-projects/sestek-chatbot-lib'
+  pod 'sestek-webchat-ios', :path => '../../'
 
   # Pods for swift-sestek-webchat-example
 

@@ -23,4 +23,41 @@ extension String {
             return nil
         }
     }
+
+    func setURLTag() -> String {
+        var mutableString: String = self
+        let regex = #"((https?|ftps?):\/\/[^"<\s]+)(?![^<>]*>|[^"]*?<\/a)"#
+        let urlWithoutHTMLTagRegex: NSRegularExpression = try! NSRegularExpression(pattern:
+                                                                                regex, options: .caseInsensitive)
+    
+        let tagMatches = urlWithoutHTMLTagRegex.matches(in: mutableString,
+                                       options: .reportProgress,
+                                       range: NSRange(startIndex..., in: mutableString))
+        tagMatches.forEach { match in
+            if let range = Range(match.range, in: mutableString) {
+                mutableString = mutableString.replacingOccurrences(of: self[range], with: "<a href=\(self[range])>\(self[range])</a>")
+            }
+        }
+        return mutableString
+    }
+    
+    private func slice(from: String, to: String) -> String? {
+        guard let rangeFrom = range(of: from)?.upperBound else { return nil }
+        guard let rangeTo = self[rangeFrom...].range(of: to)?.lowerBound else { return nil }
+        return String(self[rangeFrom..<rangeTo])
+    }
+    
+    func convertStrikethrough() -> String {
+        do {
+            var mutableString = self
+            let regex = try NSRegularExpression(pattern:"~~(.*)~~")
+            let matches = regex.matches(in: self, options: [], range: NSMakeRange(0, mutableString.count))
+            matches.forEach { match in
+                if let range = Range(match.range, in: mutableString), let slicedText = slice(from: "~~", to: "~~") {
+                    mutableString = mutableString.replacingOccurrences(of: mutableString[range], with: "<s>\(slicedText)</s>")
+                }
+            }
+            return mutableString
+        } catch { return self }
+    }
 }

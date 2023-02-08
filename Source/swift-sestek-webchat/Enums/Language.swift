@@ -25,11 +25,25 @@ enum Language: String {
         default: return .forceLeftToRight
         }
     }
-    
+    var semanticValue: String {
+        switch semanticContentAttribute {
+        case .forceRightToLeft: return "rtl"
+        default: return "ltr"
+        }
+    }
     var textAlignment: NSTextAlignment {
         switch self {
         case .arabic: return .right
         default: return .left
+        }
+    }
+    
+    var textAlignmentValue: String {
+        switch textAlignment {
+        case .left: return "left"
+        case .center: return "center"
+        case .right: return "right"
+        default: return "left"
         }
     }
 }
