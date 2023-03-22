@@ -106,6 +106,8 @@
 		49F1B80A28BF71CD005EA7C4 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80928BF71CD005EA7C4 /* Language.swift */; };
 		49F1B80C28BF903F005EA7C4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F1B80B28BF903F005EA7C4 /* UIViewController+Extensions.swift */; };
 		5F995F7646690461AB74498C /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB685516BC5526A3A5C6712 /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework */; };
+		71BA979329C9E11700F42D41 /* ChatbotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA979229C9E11600F42D41 /* ChatbotView.swift */; };
+		71BA979529C9E12300F42D41 /* ResizableWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BA979429C9E12300F42D41 /* ResizableWebView.swift */; };
 		871745710C8A3F620669A53C /* Pods_swift_sestek_webchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB77BA60E632E65A3A8A1726 /* Pods_swift_sestek_webchat.framework */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +225,8 @@
 		5AB685516BC5526A3A5C6712 /* Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_sestek_webchat_swift_sestek_webchatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D93B39E028809EB130A2612 /* Pods-swift-sestek-webchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat.debug.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat/Pods-swift-sestek-webchat.debug.xcconfig"; sourceTree = "<group>"; };
 		6FA992DE212DEA43F9B0ECB9 /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests.release.xcconfig"; sourceTree = "<group>"; };
+		71BA979229C9E11600F42D41 /* ChatbotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatbotView.swift; sourceTree = "<group>"; };
+		71BA979429C9E12300F42D41 /* ResizableWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizableWebView.swift; sourceTree = "<group>"; };
 		948628E976857DEFC40614AB /* Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig"; path = "Target Support Files/Pods-swift-sestek-webchat-swift-sestek-webchatTests/Pods-swift-sestek-webchat-swift-sestek-webchatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB77BA60E632E65A3A8A1726 /* Pods_swift_sestek_webchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_sestek_webchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -251,6 +255,8 @@
 		496F31D228B3894000AABF47 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				71BA979429C9E12300F42D41 /* ResizableWebView.swift */,
+				71BA979229C9E11600F42D41 /* ChatbotView.swift */,
 				496F31D828B389A300AABF47 /* CustomButton.swift */,
 				496F31DE28B38AAA00AABF47 /* FloatingRoundedButton.swift */,
 			);
@@ -779,6 +785,7 @@
 				49AEDB0C28A8EFD80041DA42 /* HttpConnectionOptions.swift in Sources */,
 				49E90A0C2947AE83006787CE /* Services.swift in Sources */,
 				49AEDB0828A8EFD80041DA42 /* HttpConnection.swift in Sources */,
+				71BA979329C9E11700F42D41 /* ChatbotView.swift in Sources */,
 				49EFED7328B39E1E00112186 /* Bundle+Extension.swift in Sources */,
 				4987F4B9289EA4BC00EB65CC /* ChatTableViewSource.swift in Sources */,
 				49A3CAF028F4347E00FBE46F /* SwiftyLineProcessor.swift in Sources */,
@@ -797,6 +804,7 @@
 				49AEDB0A28A8EFD80041DA42 /* HttpResponse.swift in Sources */,
 				49D4CD5928B388B700F84A8B /* UITableView+register.swift in Sources */,
 				49AEDB1F28A8EFD80041DA42 /* TransportType.swift in Sources */,
+				71BA979529C9E12300F42D41 /* ResizableWebView.swift in Sources */,
 				49AEDB2028A8EFD80041DA42 /* HubConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

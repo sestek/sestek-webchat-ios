@@ -14,14 +14,18 @@ public struct DefaultConfiguration {
     let project: String
     let fullName: String
     let isVoiceRecordingEnabled: Bool
+    let customAction: String
+    let customActionData: String
     
-    public init(clientId: String, tenant: String, channel: String, project: String, fullName: String, isVoiceRecordingEnabled: Bool = false) {
+    public init(clientId: String, tenant: String, channel: String, project: String, fullName: String, isVoiceRecordingEnabled: Bool = false, customAction: String = "",customActionData: String = "") {
         self.clientId = clientId
         self.tenant = tenant
         self.channel = channel
         self.project = project
         self.fullName = fullName
         self.isVoiceRecordingEnabled = isVoiceRecordingEnabled
+        self.customAction = customAction
+        self.customActionData = customActionData
     }
     
     public static var config: DefaultConfiguration?

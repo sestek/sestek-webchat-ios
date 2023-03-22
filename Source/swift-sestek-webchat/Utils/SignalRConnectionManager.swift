@@ -80,7 +80,7 @@ final internal class SignalRConnectionManager {
             print("Default configuration is nil")
             return
         }
-        let conversationRequestModel = ConversationRequestModel(clientId: settings.defaultConfiguration.clientId, tenant: settings.defaultConfiguration.tenant, channel: settings.defaultConfiguration.channel, project: settings.defaultConfiguration.project, fullName: settings.defaultConfiguration.fullName)
+        let conversationRequestModel = ConversationRequestModel(customActionData:settings.defaultConfiguration.customActionData,clientId: settings.defaultConfiguration.clientId, tenant: settings.defaultConfiguration.tenant, channel: settings.defaultConfiguration.channel, project: settings.defaultConfiguration.project, fullName: settings.defaultConfiguration.fullName)
         if let jsonData = try? JSONEncoder().encode(conversationRequestModel), let jsonString = String(data: jsonData, encoding: .utf8) {
             connection?.invoke(method: "StartConversation", jsonString) { error in
                 if let error = error {
@@ -111,7 +111,7 @@ final internal class SignalRConnectionManager {
             messagingDelegate?.onError(error: "Connection info not found")
             return
         }
-        connection?.invoke(method: "SendMessage", arguments: [conversationId ?? "", message, "sendMessage", "", settings.defaultConfiguration.project, settings.defaultConfiguration.clientId, settings.defaultConfiguration.channel, settings.defaultConfiguration.tenant, settings.defaultConfiguration.fullName]) { error in
+        connection?.invoke(method: "SendMessage", arguments: [conversationId ?? "", message, settings.defaultConfiguration.customAction, settings.defaultConfiguration.customActionData, settings.defaultConfiguration.project, settings.defaultConfiguration.clientId, settings.defaultConfiguration.channel, settings.defaultConfiguration.tenant, settings.defaultConfiguration.fullName]) { error in
             if let error = error {
                 onError(error.localizedDescription)
                 return
