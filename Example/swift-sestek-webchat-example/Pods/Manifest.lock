@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - Down (0.11.0)
-  - sestek-webchat-ios (0.0.4):
+  - sestek-webchat-ios (0.0.6):
     - Alamofire (~> 4.9.1)
     - Down
 
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Down: b6ba1bc985c9d2f4e15e3b293d2207766fa12612
-  sestek-webchat-ios: 8c4e7c44f24b4fc8c920fadb42c0561ca7f5437a
+  sestek-webchat-ios: e351593984dcefeae3439afc7ea7e5ea563f4ae5
 
 PODFILE CHECKSUM: dee70ff9a3bfe05bef83802cafb4e5de4e73fb57
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

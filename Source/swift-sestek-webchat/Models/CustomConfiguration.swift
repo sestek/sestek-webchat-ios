@@ -24,7 +24,6 @@ public struct CustomConfiguration {
     let firstIcon: ResourceType
     let firstColor: UIColor
     let firstSize: Double
-    
     public init(headerColor: UIColor,
                 headerText: String,
                 bottomColor: UIColor,
@@ -72,7 +71,7 @@ public struct CustomConfiguration {
                                                       messageColor: .black,
                                                       messageBoxColor: .white,
                                                       bodyColorOrImage: .color(color: .barBackgroundColor),
-                                                      firstIcon: .image(image: .ic_logo ?? UIImage()),
+                                                      firstIcon: .image(image: .ic_button_knovvu_logo ?? UIImage()),
                                                       firstColor: .white,
-                                                      firstSize: 70)
+                                                      firstSize: 60)
 }

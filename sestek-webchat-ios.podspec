@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary = "sestek-webchat-ios summary"
   s.requires_arc = true
   
-  s.version = "0.0.6"
+  s.version = "0.0.7"
   
   s.license = { :type => "MIT", :file => "LICENSE" }
   

@@ -1451,8 +1451,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1901,22 +1901,6 @@
 			};
 			name = Release;
 		};
-		5B9E610CA3B472F4E35B939F3EFE7DFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1811F9958F96771EDB5FB4BDD52C185E /* sestek-webchat-ios.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/sestek-webchat-ios";
-				IBSC_MODULE = sestek_webchat_ios;
-				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = SestekWebchatBundle;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		68B1AE02C35B3BF9B0A358B7D7F26055 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EAB13C3935BC0D8CCE6BC4803510D80 /* Alamofire.release.xcconfig */;
@@ -2090,10 +2074,11 @@
 			};
 			name = Debug;
 		};
-		97616D4D21E2F480901C0C527A44D8AE /* Release */ = {
+		9C09F4F7DBC6E937D5BAE13AB7C227F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7017AB66C735B2F9E77BA61ACF0269D /* sestek-webchat-ios.release.xcconfig */;
+			baseConfigurationReference = 1811F9958F96771EDB5FB4BDD52C185E /* sestek-webchat-ios.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/sestek-webchat-ios";
 				IBSC_MODULE = sestek_webchat_ios;
 				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist";
@@ -2104,7 +2089,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Release;
+			name = Debug;
 		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2165,6 +2150,23 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A90914299EAF86D19842AB0927900631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7017AB66C735B2F9E77BA61ACF0269D /* sestek-webchat-ios.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/sestek-webchat-ios";
+				IBSC_MODULE = sestek_webchat_ios;
+				INFOPLIST_FILE = "Target Support Files/sestek-webchat-ios/ResourceBundle-SestekWebchatBundle-sestek-webchat-ios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = SestekWebchatBundle;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -2463,8 +2465,8 @@
 		007DC682B825FA29276572EDEF8A53E2 /* Build configuration list for PBXNativeTarget "sestek-webchat-ios-SestekWebchatBundle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B9E610CA3B472F4E35B939F3EFE7DFE /* Debug */,
-				97616D4D21E2F480901C0C527A44D8AE /* Release */,
+				9C09F4F7DBC6E937D5BAE13AB7C227F4 /* Debug */,
+				A90914299EAF86D19842AB0927900631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
