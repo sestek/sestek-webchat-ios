@@ -66,6 +66,7 @@ final class ChatTableViewSource: NSObject, UITableViewDataSource, UITableViewDel
             } else {
                 return UITableViewCell()
             }
+            
             return cell
         }
     }

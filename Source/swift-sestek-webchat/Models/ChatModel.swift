@@ -10,10 +10,10 @@ import Foundation
 struct ChatModel {
     var id: String = UUID().uuidString
     var text: String
-    var attachment: AttachmentResponseModel?
+    var attachment: [AttachmentResponseModel]?
     var isOwner: Bool
     var date: String?
-    var layout: AttachmentLayoutEnums = .unknown
+    var layout: AttachmentLayoutEnums 
     var location: GeoResponseModel?
     var recordedFileURL: URL?
 }

@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.framework = "UIKit"
   s.dependency 'Alamofire', '~> 4.9.1'
   s.dependency 'Down'
+  s.dependency 'SDWebImage', '~> 5.0'
   
   s.source_files = "Source/swift-sestek-webchat/**/*.{swift}"
   

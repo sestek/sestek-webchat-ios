@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C0785493-217A-4B27-BEA6-132E4DE22EA6"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB81D96E-9ACC-42EB-8219-23F4FEDE4D3F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/swift-sestek-webchat/TableviewCells/AttachmentCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "updateCell(_:height:maxButtonHeight:delegate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B2F5547-9379-45B9-ADD4-415AA01EBDFB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/swift-sestek-webchat/ViewControllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "onNewMessageReceived(messageDetail:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B2F5547-9379-45B9-ADD4-415AA01EBDFB - e91809c9d1585316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sestek_webchat_ios.ChatViewController.onNewMessageReceived(messageDetail: Swift.Optional&lt;sestek_webchat_ios.MessageDetailResponseModel&gt;) -&gt; ()"
+                  moduleName = "sestek_webchat_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tolgataner/Desktop/apps/Sestek/Source/swift-sestek-webchat/ViewControllers/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "3156">
+               </Location>
+               <Location
+                  uuid = "0B2F5547-9379-45B9-ADD4-415AA01EBDFB - e91809c9d1585316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sestek_webchat_ios.ChatViewController.onNewMessageReceived(messageDetail: Swift.Optional&lt;sestek_webchat_ios.MessageDetailResponseModel&gt;) -&gt; ()"
+                  moduleName = "sestek_webchat_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tolgataner/Desktop/apps/Sestek/Source/swift-sestek-webchat/ViewControllers/ChatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "5148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4327CB83-BF94-49C0-BB96-93CDB04F79DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/swift-sestek-webchat/TableviewCells/ChatLeftTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "configureImageCollectionView()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "108D2FCD-8071-41B0-AF84-B22F2E32E486"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/swift-sestek-webchat/TableviewCells/ChatLeftTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "configureImageCollectionView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "108D2FCD-8071-41B0-AF84-B22F2E32E486 - 6843cd6659d034d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sestek_webchat_ios.ChatLeftTableViewCell.configureImageCollectionView() -&gt; ()"
+                  moduleName = "sestek_webchat_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tolgataner/Desktop/apps/Sestek/Source/swift-sestek-webchat/TableviewCells/ChatLeftTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "2140">
+               </Location>
+               <Location
+                  uuid = "108D2FCD-8071-41B0-AF84-B22F2E32E486 - 6843cd6659d034d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "sestek_webchat_ios.ChatLeftTableViewCell.configureImageCollectionView() -&gt; ()"
+                  moduleName = "sestek_webchat_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tolgataner/Desktop/apps/Sestek/Source/swift-sestek-webchat/TableviewCells/ChatLeftTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "163"
+                  endingLineNumber = "163"
+                  offsetFromSymbolStart = "2204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

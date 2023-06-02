@@ -131,12 +131,12 @@ fileprivate extension ChatViewController {
     }
     
     func setOwnerMessage(message: String) {
-        SignalRConnectionManager.shared.chat.append(ChatModel(text: message, attachment: nil, isOwner: true, date: nil))
+        SignalRConnectionManager.shared.chat.append(ChatModel(text: message, attachment: nil, isOwner: true, date: nil, layout: .unknown))
         setTableView()
     }
     
     func setOwnerMessage(recordedFileUrl: URL?) {
-        SignalRConnectionManager.shared.chat.append(ChatModel(text: "", isOwner: true, recordedFileURL: recordedFileUrl))
+        SignalRConnectionManager.shared.chat.append(ChatModel(text: "", isOwner: true, layout: .unknown, recordedFileURL: recordedFileUrl))
         setTableView()
     }
     
@@ -174,26 +174,14 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
         if let attachments = messageDetail?.attachments, attachments.count > 0 {
             // for carousel layouts
             if messageDetail?.attachmentLayout == .carousel {
-                var tempAttachments = attachments
-                let _ = tempAttachments.enumerated()
-                    .map { (index, attachment) -> AttachmentResponseModel? in
-                        if index != 0 {
-                            tempAttachments[0]?.content?.images?.append(contentsOf: attachment?.content?.images ?? [])
-                        }
-                        return attachment
-                    }
-                if let attachment = tempAttachments.first {
-                    model = ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
-                    SignalRConnectionManager.shared.chat.append(model)
-                }
+                model = ChatModel(text: messageDetail?.text ?? "", attachment: attachments, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .carousel, location: geoModel)
+                SignalRConnectionManager.shared.chat.append(model)
             } else { // for other layouts
-                attachments.forEach { attachment in
-                    model = ChatModel(text: messageDetail?.text ?? "", attachment: attachment, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
-                    SignalRConnectionManager.shared.chat.append(model)
-                }
+                model = ChatModel(text: messageDetail?.text ?? "", attachment: attachments, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .unknown, location: geoModel)
+                SignalRConnectionManager.shared.chat.append(model)
             }
         } else {
-            model = ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", location: geoModel)
+            model = ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .unknown, location: geoModel)
             SignalRConnectionManager.shared.chat.append(model)
         }
         setChatbotText(model)

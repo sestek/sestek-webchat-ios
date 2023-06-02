@@ -20,7 +20,7 @@ struct MessageDetailResponseModel: Decodable {
     let locale: String?
     let text, speak: String?
     let inputHint, summary, suggestedActions: String?
-    let attachments: [AttachmentResponseModel?]?
+    let attachments: [AttachmentResponseModel]?
     let entities: [EntitiesResponseModel?]?
     let channelData: ChannelDataResponseModel?
     let action: String?
@@ -71,8 +71,8 @@ struct AttachmentResponseModel: Decodable {
 
 struct ContentResponseModel: Decodable {
     let title, subtitle, text: String?
-    var images: [ImageResponseModel?]?
-    let buttons: [ButtonResponseModel?]?
+    var images: [ImageResponseModel]?
+    let buttons: [ButtonResponseModel]?
     let tap: String?
 }
 
