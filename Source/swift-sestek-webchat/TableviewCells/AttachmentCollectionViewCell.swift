@@ -11,7 +11,6 @@ protocol AttachmentCollectionViewCellDelegate: AnyObject {
 }
 class AttachmentCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var subTitleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -26,13 +25,10 @@ class AttachmentCollectionViewCell: UICollectionViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(cell: ImageCollectionViewCell.self)
-        pageControl.numberOfPages = 0
-        pageControl.currentPageIndicatorTintColor = .red
-        pageControl.tintColor = .gray
-        pageControl.pageIndicatorTintColor = .gray
         collectionView.isPagingEnabled = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isScrollEnabled = false
     }
     
     private func setLabel(text: String?, content: UILabel) {
@@ -58,16 +54,15 @@ class AttachmentCollectionViewCell: UICollectionViewCell {
         setLabel(text: attachment.content?.subtitle ?? attachment.content?.text, content: subTitleLabel)
         collectionViewHeight.constant = height
         collectionView.reloadData()
-        pageControl.numberOfPages = attachment.content?.images?.count ?? 0
     }
 }
-extension AttachmentCollectionViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIScrollViewDelegate {
+extension AttachmentCollectionViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell {
             if let attachment = attachment,
                let content = attachment.content {
-                let imageUrl = content.images?[safe: indexPath.row]?.url
-                cell.updateCell(imageUrl: imageUrl, buttonResponse: content.buttons, maxHeight: maxButtonHeight, delegate: self)
+                let imageUrl = content.images?.compactMap{ $0.url }
+                cell.updateCell(imageUrl, buttonResponse: content.buttons, maxHeight: maxButtonHeight, delegate: self)
             }
             return cell
         }
@@ -83,23 +78,11 @@ extension AttachmentCollectionViewCell: UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let haveAnyImages: Bool = !(attachment?.content?.images?.isEmpty ?? true)
-        if haveAnyImages {
-            return attachment?.content?.images?.count ?? 0
-        } else {
-            return 1
-        }
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width, height: maxButtonHeight + 10 + 180 + 10)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let x = scrollView.contentOffset.x
-        let w = scrollView.bounds.size.width
-        let currentPage = Int(ceil(x/w))
-        pageControl.currentPage = currentPage
+        CGSize(width: collectionView.bounds.width, height: maxButtonHeight + 10 + CGFloat(100 * (attachment?.content?.images?.count ?? 0)) + 10)
     }
 }
 extension AttachmentCollectionViewCell: ImageCollectionViewCellDelegate {

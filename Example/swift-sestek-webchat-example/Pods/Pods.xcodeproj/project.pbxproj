@@ -251,6 +251,8 @@
 		95AF9DAA2A29A7A5009915DE /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF9DA82A29A7A5009915DE /* ButtonCollectionViewCell.swift */; };
 		95AF9DAB2A29A7A5009915DE /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AF9DA92A29A7A5009915DE /* ButtonCollectionViewCell.xib */; };
 		95AF9DAD2A29D604009915DE /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF9DAC2A29D604009915DE /* UIButton+Extension.swift */; };
+		95AF9DB02A2A12A5009915DE /* AttachmentImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF9DAE2A2A12A5009915DE /* AttachmentImageTableViewCell.swift */; };
+		95AF9DB12A2A12A5009915DE /* AttachmentImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AF9DAF2A2A12A5009915DE /* AttachmentImageTableViewCell.xib */; };
 		95CDDD4FCDBCFD57127CB8F2C19F5B7F /* SDImageCachesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D1EC2C5824A96CF8DF920FCAFB91BE /* SDImageCachesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96DE1D1EA953A9F455A40B71A46503FD /* SDImageCachesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E993B27DD0C0FAA51F94ABBE7A90D2FA /* SDImageCachesManager.m */; };
 		970EB245D01BA2F821CCF1CF153D9885 /* UICollectionViewCell+identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DA7E10D2564978A2D9289F6D685A6 /* UICollectionViewCell+identifier.swift */; };
@@ -772,6 +774,8 @@
 		95AF9DA82A29A7A5009915DE /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		95AF9DA92A29A7A5009915DE /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		95AF9DAC2A29D604009915DE /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		95AF9DAE2A2A12A5009915DE /* AttachmentImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentImageTableViewCell.swift; sourceTree = "<group>"; };
+		95AF9DAF2A2A12A5009915DE /* AttachmentImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentImageTableViewCell.xib; sourceTree = "<group>"; };
 		95B387BA9BDA43323D819E04F46088C8 /* AttachmentCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AttachmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		96905717FB5288FE6F3A33086BF0AF4C /* SDAssociatedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAssociatedObject.m; path = SDWebImage/Private/SDAssociatedObject.m; sourceTree = "<group>"; };
 		973B232EDAF4896CBFC2A669033A44C9 /* Token.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -1625,6 +1629,8 @@
 				1FE2814900A1422A34ABF46657898840 /* ImageCollectionViewCell.xib */,
 				95AF9DA82A29A7A5009915DE /* ButtonCollectionViewCell.swift */,
 				95AF9DA92A29A7A5009915DE /* ButtonCollectionViewCell.xib */,
+				95AF9DAE2A2A12A5009915DE /* AttachmentImageTableViewCell.swift */,
+				95AF9DAF2A2A12A5009915DE /* AttachmentImageTableViewCell.xib */,
 			);
 			name = CollectionViewCells;
 			path = "Source/swift-sestek-webchat/CollectionViewCells";
@@ -2137,6 +2143,7 @@
 				D67E8D87E194A3F784F38856165D0F91 /* ic_close@2x.png in Resources */,
 				24212479F4B4C767F8A38BB0AC5C6CE0 /* ic_close@3x.png in Resources */,
 				4D34817D3E0EABF00E4F1D1DD488D7B0 /* ic_hide.png in Resources */,
+				95AF9DB12A2A12A5009915DE /* AttachmentImageTableViewCell.xib in Resources */,
 				6ADF3720C43DBD9A7CAF828531604B3A /* ic_hide@2x.png in Resources */,
 				CA41F1A17D9B68158ED4708DB4C3FE2A /* ic_hide@3x.png in Resources */,
 				E699CEF48C0BA5BF06FCC6C3943D9E2E /* ImageCollectionViewCell.xib in Resources */,
@@ -2484,6 +2491,7 @@
 				1B50FEE0B2227623301CD46668027AF5 /* ServerInvocationHandler.swift in Sources */,
 				5DCD51D451732121DE5C7D7E1E98E3F2 /* Services.swift in Sources */,
 				CA59524B348F385F88984363F79F1AE5 /* sestek-webchat-ios-dummy.m in Sources */,
+				95AF9DB02A2A12A5009915DE /* AttachmentImageTableViewCell.swift in Sources */,
 				070E48620A181333EE5092246C6A8357 /* SestekWebChat.swift in Sources */,
 				BD0F9E5D708334ECF4F80B19C6B21F20 /* SignalRConnectionManager.swift in Sources */,
 				8291C20F1E69E534403C793E3FFF9E1A /* SignalRError.swift in Sources */,

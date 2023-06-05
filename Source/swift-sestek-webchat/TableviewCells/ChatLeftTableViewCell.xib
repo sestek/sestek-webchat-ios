@@ -78,7 +78,7 @@
                                                         </collectionViewFlowLayout>
                                                     </collectionView>
                                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-9W-T23">
-                                                        <rect key="frame" x="162.5" y="-17" width="116.5" height="26"/>
+                                                        <rect key="frame" x="162.5" y="-20" width="116.5" height="26"/>
                                                     </pageControl>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,7 +88,7 @@
                                                     <constraint firstItem="nxj-9W-T23" firstAttribute="centerX" secondItem="365-ch-spb" secondAttribute="centerX" id="Ijc-I4-whb"/>
                                                     <constraint firstItem="zpJ-nN-Sqa" firstAttribute="top" secondItem="365-ch-spb" secondAttribute="top" id="aio-Um-102"/>
                                                     <constraint firstAttribute="bottom" secondItem="zpJ-nN-Sqa" secondAttribute="bottom" id="daC-cu-PeQ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="nxj-9W-T23" secondAttribute="bottom" constant="-8" id="hOA-0C-Go8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nxj-9W-T23" secondAttribute="bottom" constant="-5" id="hOA-0C-Go8"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

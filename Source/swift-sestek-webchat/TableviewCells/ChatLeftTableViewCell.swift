@@ -71,10 +71,6 @@ class ChatLeftTableViewCell: UITableViewCell {
         setLabels(texts: TextHelper().getTextsWithAttributes(chat?.text), content: content)
         labelTime.text = (chat?.date ?? "").getDate(formatter: .yyyyMMddTHHmmssSSSSSSSZ)?.getAsString(.yyyyMMddHHmm)
         svRootLocations.isHidden = true
-        if let buttons = (chat?.attachment?.first?.content?.buttons), buttons.count > 0 {
-            svRootButtons.isHidden = false
-            setButtons(buttons: chat?.attachment?.first?.content?.buttons)
-        }
         if !(chat?.attachment?.isEmpty ?? false) {
             svImages.isHidden = false
         }
@@ -159,7 +155,15 @@ class ChatLeftTableViewCell: UITableViewCell {
             attachmentCollectionView.isPagingEnabled = true
             attachmentCollectionView.reloadData()
             pageControlImages.numberOfPages = chat?.attachment?.count ?? 0
+            pageControlImages.currentPageIndicatorTintColor = .darkGray
+            pageControlImages.tintColor = .gray
+            pageControlImages.pageIndicatorTintColor = .gray
         } else {
+            pageControlImages.numberOfPages = 0
+            if let buttons = (chat?.attachment?.first?.content?.buttons), buttons.count > 0 {
+                svRootButtons.isHidden = false
+                setButtons(buttons: chat?.attachment?.first?.content?.buttons)
+            }
             attachmentCollectionViewHeightConstraint.constant = 0
         }
     }
@@ -167,7 +171,9 @@ class ChatLeftTableViewCell: UITableViewCell {
     private func getMaxHeightOfImage() -> CGFloat {
         var maxHeight: CGFloat = 0
         chat?.attachment?.enumerated().forEach { index, element in
-            maxHeight = max(maxHeight,(chat?.attachment?[index].content?.images?.isEmpty ?? true ? 0 : 160))
+            let isEmpty = (chat?.attachment?[index].content?.images?.isEmpty ?? true)
+            let imageCount = chat?.attachment?[index].content?.images?.count ?? 0
+            maxHeight = max(maxHeight,CGFloat((isEmpty ? 0 : 100 * imageCount)))
         }
         return maxHeight
     }
@@ -185,7 +191,6 @@ class ChatLeftTableViewCell: UITableViewCell {
     }
     
     private func getTitlesHeight(forCollectionView collectionView: UICollectionView) -> CGFloat {
-        
         var maxHeight: Int = 0
         chat?.attachment?.enumerated().forEach { index, element in
             let titleHeight = chat?.attachment?[index].content?.title?.height(constraintedWidth: collectionView.bounds.width - 20, font: .systemFont(ofSize: 13, weight: .regular)) ?? 0

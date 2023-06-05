@@ -21,13 +21,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBx-L2-3nt">
                         <rect key="frame" x="0.0" y="48" width="354" height="261"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b5X-BO-Pms">
-                                <rect key="frame" x="10" y="10" width="334" height="150"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2j-Lr-75z">
+                                <rect key="frame" x="10" y="10" width="334" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="DSS-bS-6U4"/>
+                                    <constraint firstAttribute="height" constant="140" id="d4I-v8-44F"/>
                                 </constraints>
-                            </imageView>
+                            </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-V3-DWI">
                                 <rect key="frame" x="10" y="250" width="334" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,13 +44,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="w2j-Lr-75z" firstAttribute="leading" secondItem="dBx-L2-3nt" secondAttribute="leading" constant="10" id="FHn-XY-F5G"/>
+                            <constraint firstItem="w2j-Lr-75z" firstAttribute="top" secondItem="dBx-L2-3nt" secondAttribute="top" constant="10" id="Gtq-md-u0C"/>
                             <constraint firstAttribute="trailing" secondItem="sgL-V3-DWI" secondAttribute="trailing" constant="10" id="Iaq-wU-v3o"/>
                             <constraint firstItem="sgL-V3-DWI" firstAttribute="leading" secondItem="dBx-L2-3nt" secondAttribute="leading" constant="10" id="NmO-qF-DaL"/>
-                            <constraint firstItem="b5X-BO-Pms" firstAttribute="top" secondItem="dBx-L2-3nt" secondAttribute="top" constant="10" id="RUy-YV-POU"/>
                             <constraint firstAttribute="bottom" secondItem="sgL-V3-DWI" secondAttribute="bottom" constant="10" id="TMF-j9-u6r"/>
-                            <constraint firstAttribute="trailing" secondItem="b5X-BO-Pms" secondAttribute="trailing" constant="10" id="d9M-PB-TBQ"/>
+                            <constraint firstAttribute="trailing" secondItem="w2j-Lr-75z" secondAttribute="trailing" constant="10" id="d6N-4u-nzi"/>
                             <constraint firstItem="sgL-V3-DWI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dBx-L2-3nt" secondAttribute="top" constant="20" id="iuM-8Q-0Q0"/>
-                            <constraint firstItem="b5X-BO-Pms" firstAttribute="leading" secondItem="dBx-L2-3nt" secondAttribute="leading" constant="10" id="xIG-r3-63z"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,7 +67,8 @@
             <connections>
                 <outlet property="buttonsCollectionView" destination="sgL-V3-DWI" id="Tn1-mQ-U4E"/>
                 <outlet property="buttonsCollectionViewHeight" destination="koI-kS-8u8" id="sZA-Jf-ZBH"/>
-                <outlet property="imageView" destination="b5X-BO-Pms" id="J9C-uQ-y1p"/>
+                <outlet property="imagesTableView" destination="w2j-Lr-75z" id="0Pd-YD-OG9"/>
+                <outlet property="tableViewHeightConstraint" destination="d4I-v8-44F" id="ZDT-oP-hiT"/>
             </connections>
             <point key="canvasLocation" x="350.72463768115944" y="143.63839285714286"/>
         </collectionViewCell>
