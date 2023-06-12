@@ -26,6 +26,7 @@ class ChatLeftTableViewCell: UITableViewCell {
             viewRoot.backgroundColor = CustomConfiguration.config.messageBoxColor
         }
     }
+    @IBOutlet weak var attachmentCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var ivSender: UIImageView! {
         didSet {
             switch CustomConfiguration.config.outgoingIcon {
@@ -48,12 +49,12 @@ class ChatLeftTableViewCell: UITableViewCell {
     @IBOutlet private weak var svRootButtons: UIStackView!
     @IBOutlet private weak var labelTime: UILabel!
     @IBOutlet private weak var svImages: UIStackView!
-    @IBOutlet private weak var collectionViewImage: UICollectionView! {
+    @IBOutlet private weak var attachmentCollectionView: SelfSizingCollectionView! {
         didSet {
-            collectionViewImage.register(cell: ImageCollectionViewCell.self)
+            attachmentCollectionView.register(cell: AttachmentCollectionViewCell.self)
         }
     }
-    @IBOutlet private weak var pageControlImages: UIPageControl!
+    @IBOutlet weak var pageControlImages: UIPageControl!
     @IBOutlet private weak var svRootLocations: UIStackView!
     
     private weak var delegate: ChatTableViewCellDelegate?
@@ -70,25 +71,21 @@ class ChatLeftTableViewCell: UITableViewCell {
         setLabels(texts: TextHelper().getTextsWithAttributes(chat?.text), content: content)
         labelTime.text = (chat?.date ?? "").getDate(formatter: .yyyyMMddTHHmmssSSSSSSSZ)?.getAsString(.yyyyMMddHHmm)
         svRootLocations.isHidden = true
-        if let buttons = (chat?.attachment?.content?.buttons), buttons.count > 0 {
-            svRootButtons.isHidden = false
-            setButtons(buttons: chat?.attachment?.content?.buttons)
-        }
-        if let images = (chat?.attachment?.content?.images), images.count > 0 {
+        if !(chat?.attachment?.isEmpty ?? false) {
             svImages.isHidden = false
-            configureImageCollectionView()
         }
         if let location = chat?.location {
             svRootLocations.isHidden = false
             setLocation(location: location)
         }
+        configureImageCollectionView()
     }
     
     private func setDefaultUI() {
         svRootButtons.isHidden = true
         svImages.isHidden = true
-        collectionViewImage.delegate = nil
-        collectionViewImage.dataSource = nil
+        attachmentCollectionView.delegate = nil
+        attachmentCollectionView.dataSource = nil
     }
     
     private func setButtons(buttons: [ButtonResponseModel?]?) {
@@ -151,28 +148,84 @@ class ChatLeftTableViewCell: UITableViewCell {
     }
     
     private func configureImageCollectionView() {
-        collectionViewImage.dataSource = self
-        collectionViewImage.delegate = self
-        collectionViewImage.reloadData()
-        pageControlImages.numberOfPages = chat?.attachment?.content?.images?.count ?? 0
+        if chat?.layout == .carousel {
+            attachmentCollectionViewHeightConstraint.constant = getCalculatedHeightOfAttachment(forCollectionView: attachmentCollectionView)
+            attachmentCollectionView.dataSource = self
+            attachmentCollectionView.delegate = self
+            attachmentCollectionView.isPagingEnabled = true
+            attachmentCollectionView.reloadData()
+            pageControlImages.numberOfPages = chat?.attachment?.count ?? 0
+            pageControlImages.currentPageIndicatorTintColor = .darkGray
+            pageControlImages.tintColor = .gray
+            pageControlImages.pageIndicatorTintColor = .gray
+        } else {
+            pageControlImages.numberOfPages = 0
+            if let buttons = (chat?.attachment?.first?.content?.buttons), buttons.count > 0 {
+                svRootButtons.isHidden = false
+                setButtons(buttons: chat?.attachment?.first?.content?.buttons)
+            }
+            attachmentCollectionViewHeightConstraint.constant = 0
+        }
+    }
+    
+    private func getMaxHeightOfImage() -> CGFloat {
+        var maxHeight: CGFloat = 0
+        chat?.attachment?.enumerated().forEach { index, element in
+            let isEmpty = (chat?.attachment?[index].content?.images?.isEmpty ?? true)
+            let imageCount = chat?.attachment?[index].content?.images?.count ?? 0
+            maxHeight = max(maxHeight,CGFloat((isEmpty ? 0 : 100 * imageCount)))
+        }
+        return maxHeight
+    }
+    
+    private func getMaxHeightOfButtons() -> CGFloat {
+        var maxHeight: Int = 0
+        chat?.attachment?.enumerated().forEach { index, element in
+            let buttonsCount = chat?.attachment?[index].content?.buttons?.count ?? 1
+            let totalButtonsHeight = (buttonsCount * 40)
+            let eachSpacingBetweenButtons = buttonsCount * 10
+            let totalHeight = totalButtonsHeight + eachSpacingBetweenButtons
+            maxHeight = max(totalHeight, maxHeight)
+        }
+        return CGFloat(maxHeight)
+    }
+    
+    private func getTitlesHeight(forCollectionView collectionView: UICollectionView) -> CGFloat {
+        var maxHeight: Int = 0
+        chat?.attachment?.enumerated().forEach { index, element in
+            let titleHeight = chat?.attachment?[index].content?.title?.height(constraintedWidth: collectionView.bounds.width - 20, font: .systemFont(ofSize: 13, weight: .regular)) ?? 0
+            let subTitle = chat?.attachment?[index].content?.title ?? chat?.attachment?[index].content?.subtitle
+            let subTitleHeight = subTitle?.height(constraintedWidth: collectionView.bounds.width - 20, font: .systemFont(ofSize: 13, weight: .regular)) ?? 0
+            let totalHeight = titleHeight + subTitleHeight
+            maxHeight = max(Int(totalHeight), maxHeight)
+        }
+        let spacingBetweenLabels: Int = 40
+        return CGFloat(spacingBetweenLabels + 40)
+    }
+    
+    func getCalculatedHeightOfAttachment(forCollectionView collectionView: UICollectionView) -> CGFloat {
+        getMaxHeightOfImage() + getMaxHeightOfButtons() + getTitlesHeight(forCollectionView: collectionView)
     }
 }
 
 extension ChatLeftTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        chat?.attachment?.content?.images?.count ?? 0
+        chat?.attachment?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        cell.updateCell(imageUrl: chat?.attachment?.content?.images?[indexPath.row]?.url ?? "")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AttachmentCollectionViewCell", for: indexPath) as! AttachmentCollectionViewCell
+        if let attachment = chat?.attachment {
+            let item = attachment[indexPath.row]
+            cell.updateCell(item, height: getMaxHeightOfImage() + getMaxHeightOfButtons(), maxButtonHeight: getMaxHeightOfButtons(), delegate: self)
+        }
         return cell
     }
 }
 
 extension ChatLeftTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+        return CGSize(width: collectionView.bounds.width, height: getCalculatedHeightOfAttachment(forCollectionView: attachmentCollectionView))
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -187,5 +240,10 @@ extension ChatLeftTableViewCell: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         delegate?.onLinkClicked(with: URL)
         return false
+    }
+}
+extension ChatLeftTableViewCell: AttachmentCollectionViewCellDelegate {
+    func onButtonClicked(value: String) {
+        delegate?.onButtonClicked(value: value)
     }
 }

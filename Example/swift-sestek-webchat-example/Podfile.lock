@@ -1,9 +1,13 @@
 PODS:
   - Alamofire (4.9.1)
   - Down (0.11.0)
-  - sestek-webchat-ios (0.0.6):
+  - SDWebImage (5.15.8):
+    - SDWebImage/Core (= 5.15.8)
+  - SDWebImage/Core (5.15.8)
+  - sestek-webchat-ios (0.0.7):
     - Alamofire (~> 4.9.1)
     - Down
+    - SDWebImage (~> 5.0)
 
 DEPENDENCIES:
   - sestek-webchat-ios (from `../../`)
@@ -12,6 +16,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Down
+    - SDWebImage
 
 EXTERNAL SOURCES:
   sestek-webchat-ios:
@@ -20,8 +25,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Down: b6ba1bc985c9d2f4e15e3b293d2207766fa12612
-  sestek-webchat-ios: e351593984dcefeae3439afc7ea7e5ea563f4ae5
+  SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
+  sestek-webchat-ios: 626c4849c6322c8a4ec4f2c2eea8082e80e81f0d
 
-PODFILE CHECKSUM: dee70ff9a3bfe05bef83802cafb4e5de4e73fb57
+PODFILE CHECKSUM: 1e72faaed4ddf5ff0aad0ce972a58563247cf1d1
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3

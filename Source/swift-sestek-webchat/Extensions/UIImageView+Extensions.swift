@@ -6,15 +6,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 extension UIImageView {
-    func setImage(with urlString: String?) {
-        guard let url = URL(string: urlString ?? "") else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data)
-            }
-        }.resume()
+    func setImage(with urlString: String?, completion: @escaping () -> () = {}) {
+        guard let urlString = urlString else { return }
+        sd_setImage(with: URL(string: urlString)) { _, _, _, _ in
+            completion()
+        }
     }
 }

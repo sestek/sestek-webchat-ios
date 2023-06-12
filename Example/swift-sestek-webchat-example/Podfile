@@ -5,7 +5,6 @@ target 'swift-sestek-webchat-example' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'sestek-webchat-ios', :path => '../../'
-
   # Pods for swift-sestek-webchat-example
 
   target 'swift-sestek-webchat-exampleTests' do
