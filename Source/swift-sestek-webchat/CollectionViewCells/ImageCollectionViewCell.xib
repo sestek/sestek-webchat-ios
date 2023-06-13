@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="48" width="354" height="261"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w2j-Lr-75z">
-                                <rect key="frame" x="10" y="10" width="334" height="140"/>
+                                <rect key="frame" x="10" y="10" width="334" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="d4I-v8-44F"/>
+                                    <constraint firstAttribute="height" constant="100" id="d4I-v8-44F"/>
                                 </constraints>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-V3-DWI">
@@ -48,9 +48,10 @@
                             <constraint firstItem="w2j-Lr-75z" firstAttribute="top" secondItem="dBx-L2-3nt" secondAttribute="top" constant="10" id="Gtq-md-u0C"/>
                             <constraint firstAttribute="trailing" secondItem="sgL-V3-DWI" secondAttribute="trailing" constant="10" id="Iaq-wU-v3o"/>
                             <constraint firstItem="sgL-V3-DWI" firstAttribute="leading" secondItem="dBx-L2-3nt" secondAttribute="leading" constant="10" id="NmO-qF-DaL"/>
+                            <constraint firstItem="sgL-V3-DWI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="w2j-Lr-75z" secondAttribute="bottom" id="TIq-YE-DyE"/>
                             <constraint firstAttribute="bottom" secondItem="sgL-V3-DWI" secondAttribute="bottom" constant="10" id="TMF-j9-u6r"/>
                             <constraint firstAttribute="trailing" secondItem="w2j-Lr-75z" secondAttribute="trailing" constant="10" id="d6N-4u-nzi"/>
-                            <constraint firstItem="sgL-V3-DWI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dBx-L2-3nt" secondAttribute="top" constant="20" id="iuM-8Q-0Q0"/>
+                            <constraint firstItem="sgL-V3-DWI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dBx-L2-3nt" secondAttribute="top" constant="10" id="iuM-8Q-0Q0"/>
                         </constraints>
                     </view>
                 </subviews>
