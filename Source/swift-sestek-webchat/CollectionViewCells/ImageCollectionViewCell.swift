@@ -39,6 +39,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         static let buttonHeight: CGFloat = 40
         static let eachButtonSpacing: CGFloat = 10
         static let buttonsToBottomHeight: CGFloat = 10
+        static let buttonsToTopHeight: CGFloat = 10
         static let imageHeight: Int = 100
     }
     
@@ -56,7 +57,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
             tableViewHeightConstraint.constant = 0
         }
         imagesTableView.reloadData()
-        buttonsCollectionViewHeight.constant = maxHeight + Constant.buttonsToBottomHeight
+        if let _ = buttonResponse {
+            buttonsCollectionViewHeight.constant = maxHeight + Constant.buttonsToBottomHeight + Constant.buttonsToTopHeight + 10
+        } else {
+            buttonsCollectionViewHeight.constant = Constant.buttonsToBottomHeight + Constant.buttonsToTopHeight + 10
+        }
         buttonsCollectionView.reloadData()
     }
 }

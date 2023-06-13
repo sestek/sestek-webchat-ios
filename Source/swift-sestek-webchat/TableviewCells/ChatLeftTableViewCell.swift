@@ -184,7 +184,7 @@ class ChatLeftTableViewCell: UITableViewCell {
             let buttonsCount = chat?.attachment?[index].content?.buttons?.count ?? 1
             let totalButtonsHeight = (buttonsCount * 40)
             let eachSpacingBetweenButtons = buttonsCount * 10
-            let totalHeight = totalButtonsHeight + eachSpacingBetweenButtons
+            let totalHeight = totalButtonsHeight + eachSpacingBetweenButtons + 30
             maxHeight = max(totalHeight, maxHeight)
         }
         return CGFloat(maxHeight)

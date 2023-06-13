@@ -82,7 +82,7 @@ extension AttachmentCollectionViewCell: UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.bounds.width, height: maxButtonHeight + 10 + CGFloat(100 * (attachment?.content?.images?.count ?? 0)) + 10)
+        CGSize(width: collectionView.bounds.width, height: maxButtonHeight + CGFloat(100 * (attachment?.content?.images?.count ?? 0)) + 10)
     }
 }
 extension AttachmentCollectionViewCell: ImageCollectionViewCellDelegate {
