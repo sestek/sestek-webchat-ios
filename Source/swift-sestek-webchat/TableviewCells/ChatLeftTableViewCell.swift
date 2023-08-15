@@ -56,6 +56,7 @@ class ChatLeftTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var pageControlImages: UIPageControl!
     @IBOutlet private weak var svRootLocations: UIStackView!
+    @IBOutlet private var globalContentView:UIView!
     
     private weak var delegate: ChatTableViewCellDelegate?
     private var chat: ChatModel?
@@ -97,6 +98,7 @@ class ChatLeftTableViewCell: UITableViewCell {
             button.addTarget(self, action: #selector(onCustomButtonClicked(_:)), for: .touchUpInside)
             svRootButtons.addArrangedSubview(button)
         })
+
     }
     
     private func setLabels(texts: [CustomText], content: ChatbotView) {
@@ -168,12 +170,14 @@ class ChatLeftTableViewCell: UITableViewCell {
         }
     }
     
+    // burası
     private func getMaxHeightOfImage() -> CGFloat {
         var maxHeight: CGFloat = 0
         chat?.attachment?.enumerated().forEach { index, element in
             let isEmpty = (chat?.attachment?[index].content?.images?.isEmpty ?? true)
+            let buttonsCount = chat?.attachment?[index].content?.buttons?.count ?? 0
             let imageCount = chat?.attachment?[index].content?.images?.count ?? 0
-            maxHeight = max(maxHeight,CGFloat((isEmpty ? 0 : 100 * imageCount)))
+            maxHeight = max(maxHeight,CGFloat((isEmpty ? 0 : (100 + ((buttonsCount > 0) ? ComponentProperty.subTitleHeight : 0 ))*CGFloat(ComponentProperty.subTitleHeight/50) * CGFloat(imageCount))))
         }
         return maxHeight
     }

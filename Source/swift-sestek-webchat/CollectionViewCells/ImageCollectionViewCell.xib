@@ -68,6 +68,7 @@
             <connections>
                 <outlet property="buttonsCollectionView" destination="sgL-V3-DWI" id="Tn1-mQ-U4E"/>
                 <outlet property="buttonsCollectionViewHeight" destination="koI-kS-8u8" id="sZA-Jf-ZBH"/>
+                <outlet property="globalView" destination="dBx-L2-3nt" id="aPA-b4-Vpa"/>
                 <outlet property="imagesTableView" destination="w2j-Lr-75z" id="0Pd-YD-OG9"/>
                 <outlet property="tableViewHeightConstraint" destination="d4I-v8-44F" id="ZDT-oP-hiT"/>
             </connections>

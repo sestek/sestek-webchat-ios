@@ -134,6 +134,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="GlobalContentView" destination="H2p-sc-9uM" id="Eyk-wh-Fbr"/>
                 <outlet property="attachmentCollectionView" destination="zpJ-nN-Sqa" id="DVE-fy-fXi"/>
                 <outlet property="attachmentCollectionViewHeightConstraint" destination="WYo-RY-yu5" id="35u-dr-xU5"/>
                 <outlet property="contentHeightConstraint" destination="JIU-2h-Jvt" id="5Kr-0H-EMo"/>

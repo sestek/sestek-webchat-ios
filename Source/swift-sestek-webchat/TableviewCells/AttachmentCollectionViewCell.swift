@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol AttachmentCollectionViewCellDelegate: AnyObject {
     func onButtonClicked(value: String)
 }
@@ -52,7 +53,33 @@ class AttachmentCollectionViewCell: UICollectionViewCell {
         self.attachment = attachment
         setLabel(text: attachment.content?.title, content: titleLabel)
         setLabel(text: attachment.content?.subtitle ?? attachment.content?.text, content: subTitleLabel)
-        collectionViewHeight.constant = height
+        
+       
+        if let subtitleText = attachment.content?.subtitle ?? attachment.content?.text {
+            let subtitleAttributedText = NSAttributedString(string: subtitleText, attributes: [
+                .font: UIFont.systemFont(ofSize: 13, weight: .regular)
+            ])
+            
+            let subtitleBoundingRect = subtitleAttributedText.boundingRect(
+                with: CGSize(width: subTitleLabel.bounds.width, height: .greatestFiniteMagnitude),
+                options: [.usesLineFragmentOrigin, .usesFontLeading],
+                context: nil
+            )
+            debugPrint("değer:",subtitleBoundingRect.height)
+            /**
+               subtitle ile image arasında vertical padding  = subtitleBoundingRect.height
+             */
+
+            //subTitleLabel.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 300)
+ 
+            //collectionViewHeight.constant = height + CGFloat(-(subtitleBoundingRect.height/1.5))
+            collectionViewHeight.constant = height + CGFloat(-(subtitleBoundingRect.height+140))
+            //collectionViewHeight.constant = height
+
+            ComponentProperty.subTitleHeight = CGFloat(subtitleBoundingRect.height)
+        }
+         
+        //collectionViewHeight.constant = height
         collectionView.reloadData()
     }
 }

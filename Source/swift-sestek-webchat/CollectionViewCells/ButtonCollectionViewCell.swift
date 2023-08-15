@@ -25,6 +25,10 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         self.delegate = delegate
         actionButton.titleText = buttonResponse.title ?? String()
         actionButton.value = buttonResponse.value ?? ""
+        /*
+        let bottomPadding: CGFloat = ComponentProperty.subTitleHeight/2
+        buttonsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 200).isActive = true
+         */
     }
     
     @IBAction private func actionButtonDidTapped(_ sender: CustomButton) {

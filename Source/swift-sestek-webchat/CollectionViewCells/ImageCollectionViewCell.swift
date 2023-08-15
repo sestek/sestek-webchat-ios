@@ -18,6 +18,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var imagesTableView: UITableView!
     @IBOutlet private weak var buttonsCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var buttonsCollectionView: UICollectionView!
+    @IBOutlet private weak var globalView: UIView!
     
     var buttonResponse: [ButtonResponseModel]? = nil
     var imageUrlList: [String]? = []
@@ -40,7 +41,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         static let eachButtonSpacing: CGFloat = 10
         static let buttonsToBottomHeight: CGFloat = 10
         static let buttonsToTopHeight: CGFloat = 10
-        static let imageHeight: Int = 100
+        static var imageHeight: Int = 100
     }
     
     func updateCell(_ imageUrlList: [String]?,
@@ -52,6 +53,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.maxHeight = maxHeight
         self.buttonResponse = buttonResponse
         if let imageUrlList = imageUrlList {
+            // image containts bottom buttona göre
+            //imagesTableView.bottomAnchor.constraint(equalTo: buttonsCollectionView.bottomAnchor, constant: 100)
             tableViewHeightConstraint.constant = CGFloat(Constant.imageHeight * imageUrlList.count)
         } else {
             tableViewHeightConstraint.constant = 0
@@ -61,7 +64,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
             buttonsCollectionViewHeight.constant = maxHeight + Constant.buttonsToBottomHeight + Constant.buttonsToTopHeight + 10
         } else {
             buttonsCollectionViewHeight.constant = Constant.buttonsToBottomHeight + Constant.buttonsToTopHeight + 10
-        }
+        }        
         buttonsCollectionView.reloadData()
     }
 }

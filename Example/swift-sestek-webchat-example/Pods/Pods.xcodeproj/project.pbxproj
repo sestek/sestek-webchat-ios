@@ -285,6 +285,7 @@
 		A9137F9E46E9156221752F8068D620A6 /* SDImageGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C8B39BBB3601C139BC79863955F79 /* SDImageGraphics.m */; };
 		A939BB96843691E012D9D320478B7D88 /* UIImage+Metadata.h in Headers */ = {isa = PBXBuildFile; fileRef = F1A894D7DF29D8C90F2A0EC172D2E4A7 /* UIImage+Metadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA046DF808F4065B19377512676BE64A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D99C4F649C78483FE70F3164AEF34E8 /* UIColor+Extension.swift */; };
+		AA38A39D2A8B9AF600222754 /* ComponentProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA38A39C2A8B9AF600222754 /* ComponentProperty.swift */; };
 		AA3D0ACC7BEAE87904839D5FB73DF01B /* SDWebImageDownloaderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466ED81301DEF7430998EAF9B7ADBFD /* SDWebImageDownloaderConfig.m */; };
 		AAA1B492B584E841DEEBED7411A742A9 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 066C98E9B4ECBE6FE62C15CBE6333E07 /* node.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AAE595E187A527275DFDAB2578FA460C /* SDWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = DED0892FC6AD44AD83749A2D8A1C04BD /* SDWeakProxy.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -802,6 +803,7 @@
 		A848111017441E826938AA8643341E4B /* Code.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Code.swift; path = Sources/Down/AST/Nodes/Code.swift; sourceTree = "<group>"; };
 		A84A1F118AD240C6147DDE88EA144544 /* SDImageLoadersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoadersManager.h; path = SDWebImage/Core/SDImageLoadersManager.h; sourceTree = "<group>"; };
 		A874812F9DF40D3838F144032573AE5D /* buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = Sources/cmark/buffer.c; sourceTree = "<group>"; };
+		AA38A39C2A8B9AF600222754 /* ComponentProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentProperty.swift; sourceTree = "<group>"; };
 		AA470ADC8E824D6C3F390B229C54E29E /* Pods-swift-sestek-webchat-exampleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-swift-sestek-webchat-exampleTests-Info.plist"; sourceTree = "<group>"; };
 		AA5FBFE23773C5A1AAFA328EAB4DEA5E /* SDImageIOCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOCoder.h; path = SDWebImage/Core/SDImageIOCoder.h; sourceTree = "<group>"; };
 		AAFBD2038E2A212BB65943D3C9BF96D0 /* DownRenderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DownRenderable.swift; path = Sources/Down/Renderers/DownRenderable.swift; sourceTree = "<group>"; };
@@ -1545,6 +1547,7 @@
 				C3F7CCEF2EC534E458303E418A99EA4E /* Language.swift */,
 				E2777E0F84A7F4479186260D0CF3BC02 /* PopoverVisibility.swift */,
 				21BD6F16B123D4819A1C6C2DFBD18E9F /* ResourceType.swift */,
+				AA38A39C2A8B9AF600222754 /* ComponentProperty.swift */,
 			);
 			name = Enums;
 			path = "Source/swift-sestek-webchat/Enums";
@@ -2453,6 +2456,7 @@
 				D248E5DAFE37ADE95CA28D7FBD765EA9 /* ConversationRequestModel.swift in Sources */,
 				05FB7CD3FDED066CD8C095E61357675E /* CustomButton.swift in Sources */,
 				82AE15379E108B0EF96A6973E5A1C7AB /* CustomConfiguration.swift in Sources */,
+				AA38A39D2A8B9AF600222754 /* ComponentProperty.swift in Sources */,
 				5C3323206E8E3AB8954CF3E6EB143F61 /* Date+Extensions.swift in Sources */,
 				F63B025E189F19D7E4962F292B4F0B64 /* DateFormatter+Extensions.swift in Sources */,
 				77BE331308FB07EE53A822B12DD0BB24 /* DefaultConfiguration.swift in Sources */,
