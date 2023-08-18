@@ -173,13 +173,8 @@ extension ChatViewController: SignalRConnectionManagerMessagingDelegate {
         var model: ChatModel!
         if let attachments = messageDetail?.attachments, attachments.count > 0 {
             // for carousel layouts
-            if messageDetail?.attachmentLayout == .carousel {
-                model = ChatModel(text: messageDetail?.text ?? "", attachment: attachments, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .carousel, location: geoModel)
-                SignalRConnectionManager.shared.chat.append(model)
-            } else { // for other layouts
-                model = ChatModel(text: messageDetail?.text ?? "", attachment: attachments, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .unknown, location: geoModel)
-                SignalRConnectionManager.shared.chat.append(model)
-            }
+            model = ChatModel(text: messageDetail?.text ?? "", attachment: attachments, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .carousel, location: geoModel)
+            SignalRConnectionManager.shared.chat.append(model)
         } else {
             model = ChatModel(text: messageDetail?.text ?? "", attachment: nil, isOwner: false, date: messageDetail?.timestamp ?? "", layout: .unknown, location: geoModel)
             SignalRConnectionManager.shared.chat.append(model)

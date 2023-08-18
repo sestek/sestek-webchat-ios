@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>sestek-webchat-ios-SestekWebchatBundle.xcscheme</key>
 		<dict>
 			<key>isShown</key>

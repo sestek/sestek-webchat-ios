@@ -52,6 +52,7 @@ class AttachmentCollectionViewCell: UICollectionViewCell {
         self.attachment = attachment
         setLabel(text: attachment.content?.title, content: titleLabel)
         setLabel(text: attachment.content?.subtitle ?? attachment.content?.text, content: subTitleLabel)
+        titleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         collectionViewHeight.constant = height
         collectionView.reloadData()
     }

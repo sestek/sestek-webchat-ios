@@ -148,24 +148,34 @@ class ChatLeftTableViewCell: UITableViewCell {
     }
     
     private func configureImageCollectionView() {
-        if chat?.layout == .carousel {
-            attachmentCollectionViewHeightConstraint.constant = getCalculatedHeightOfAttachment(forCollectionView: attachmentCollectionView)
-            attachmentCollectionView.dataSource = self
-            attachmentCollectionView.delegate = self
-            attachmentCollectionView.isPagingEnabled = true
-            attachmentCollectionView.reloadData()
-            pageControlImages.numberOfPages = chat?.attachment?.count ?? 0
-            pageControlImages.currentPageIndicatorTintColor = .darkGray
-            pageControlImages.tintColor = .gray
-            pageControlImages.pageIndicatorTintColor = .gray
-        } else {
-            pageControlImages.numberOfPages = 0
-            if let buttons = (chat?.attachment?.first?.content?.buttons), buttons.count > 0 {
-                svRootButtons.isHidden = false
-                setButtons(buttons: chat?.attachment?.first?.content?.buttons)
-            }
-            attachmentCollectionViewHeightConstraint.constant = 0
-        }
+        attachmentCollectionViewHeightConstraint.constant = getCalculatedHeightOfAttachment(forCollectionView: attachmentCollectionView)
+                    attachmentCollectionView.dataSource = self
+                    attachmentCollectionView.delegate = self
+                    attachmentCollectionView.isPagingEnabled = true
+                    attachmentCollectionView.reloadData()
+                    if let attachementCount = chat?.attachment?.count, attachementCount > 1{
+                        // carousel yapı
+                        pageControlImages.numberOfPages = chat?.attachment?.count ?? 0
+                        pageControlImages.currentPageIndicatorTintColor = .darkGray
+                        pageControlImages.tintColor = .gray
+                        pageControlImages.pageIndicatorTintColor = .gray
+                    }else{
+                        // courselsiz
+                        pageControlImages.numberOfPages = 0
+                        var numberOfImageCountFlag = true;
+                        chat?.attachment?.enumerated().forEach { index, element in
+                            if chat?.attachment?[index].content?.images != nil{
+                                numberOfImageCountFlag = false
+                            }
+                        }
+                        if numberOfImageCountFlag == true{
+                            attachmentCollectionViewHeightConstraint.constant = 0
+                            if let buttons = (chat?.attachment?.first?.content?.buttons), buttons.count > 0 {
+                                svRootButtons.isHidden = false
+                                setButtons(buttons: chat?.attachment?.first?.content?.buttons)
+                            }
+                        }
+                    }
     }
     
     private func getMaxHeightOfImage() -> CGFloat {
@@ -194,13 +204,13 @@ class ChatLeftTableViewCell: UITableViewCell {
         var maxHeight: Int = 0
         chat?.attachment?.enumerated().forEach { index, element in
             let titleHeight = chat?.attachment?[index].content?.title?.height(constraintedWidth: collectionView.bounds.width - 20, font: .systemFont(ofSize: 13, weight: .regular)) ?? 0
-            let subTitle = chat?.attachment?[index].content?.title ?? chat?.attachment?[index].content?.subtitle
+            let subTitle = chat?.attachment?[index].content?.subtitle ?? chat?.attachment?[index].content?.text
             let subTitleHeight = subTitle?.height(constraintedWidth: collectionView.bounds.width - 20, font: .systemFont(ofSize: 13, weight: .regular)) ?? 0
             let totalHeight = titleHeight + subTitleHeight
             maxHeight = max(Int(totalHeight), maxHeight)
         }
-        let spacingBetweenLabels: Int = 40
-        return CGFloat(spacingBetweenLabels + 40)
+        
+        return CGFloat(maxHeight)
     }
     
     func getCalculatedHeightOfAttachment(forCollectionView collectionView: UICollectionView) -> CGFloat {
